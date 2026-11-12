@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: dark; }
-body { margin: 0; background: #111111; color: #F9FAFB; font-family: Inter, system-ui, sans-serif; }
-input[type='date'], input[type='time'] { color-scheme: dark; }
+:root {
+  color-scheme: dark;
+  --pcms-bg: 17 17 17;
+  --pcms-sb: 24 24 24;
+  --pcms-cd: 30 30 30;
+  --pcms-ip: 37 37 37;
+  --pcms-pr: 220 38 38;
+  --pcms-ph: 185 28 28;
+  --pcms-tx: 249 250 251;
+  --pcms-mu: 156 163 175;
+  --pcms-bd: 51 51 51;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --pcms-bg: 249 250 251;
+  --pcms-sb: 243 244 246;
+  --pcms-cd: 255 255 255;
+  --pcms-ip: 243 244 246;
+  --pcms-tx: 17 24 39;
+  --pcms-mu: 107 114 128;
+  --pcms-bd: 209 213 219;
+}
+
+body {
+  margin: 0;
+  background: rgb(var(--pcms-bg));
+  color: rgb(var(--pcms-tx));
+  font-family: Inter, system-ui, sans-serif;
+}
+
+input[type='date'], input[type='time'] { color-scheme: inherit; }

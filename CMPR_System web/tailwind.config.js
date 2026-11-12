@@ -6,8 +6,15 @@ export default {
     extend: {
       fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
       colors: {
-        bg: '#111111', sb: '#181818', cd: '#1E1E1E', ip: '#252525',
-        pr: '#DC2626', ph: '#B91C1C', tx: '#F9FAFB', mu: '#9CA3AF', bd: '#333333',
+        bg: 'rgb(var(--pcms-bg) / <alpha-value>)',
+        sb: 'rgb(var(--pcms-sb) / <alpha-value>)',
+        cd: 'rgb(var(--pcms-cd) / <alpha-value>)',
+        ip: 'rgb(var(--pcms-ip) / <alpha-value>)',
+        pr: 'rgb(var(--pcms-pr) / <alpha-value>)',
+        ph: 'rgb(var(--pcms-ph) / <alpha-value>)',
+        tx: 'rgb(var(--pcms-tx) / <alpha-value>)',
+        mu: 'rgb(var(--pcms-mu) / <alpha-value>)',
+        bd: 'rgb(var(--pcms-bd) / <alpha-value>)',
       },
     },
   },
