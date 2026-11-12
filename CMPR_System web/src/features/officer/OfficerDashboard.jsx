@@ -1,0 +1,7 @@
+import { h } from '../../lib/h';
+import { Badge } from '../../components/ui/Badge';
+import { Card, Grid, Pg, Stat } from '../../components/ui/Primitives';
+import { Tbl } from '../../components/ui/Table';
+import { grp, mine } from '../../lib/helpers';
+
+export const OfDash=({S})=>{const m=mine(S);return h`<${Pg} t=${'Welcome, '+S.user.name} sub=${S.user.station+' Police Station'}/><${Grid}><${Stat} l="Total assigned" v=${m.length}/><${Stat} l="New assignments" v=${m.filter(c=>c.status=='Assigned').length} c="text-purple-400"/><${Stat} l="In progress" v=${m.filter(c=>c.status=='Under Investigation').length} c="text-red-400"/><${Stat} l="Completed" v=${m.filter(c=>grp(c.status)==3||c.status=='Investigation Completed').length} c="text-green-400"/><//><div className="grid lg:grid-cols-2 gap-3 mt-4"><${Card} t="Recent assignments"><${Tbl} cols=${[['ID',c=>c.id],['Title',c=>c.title],['Status',c=>h`<${Badge} s=${c.status}/>`]]} rows=${m.slice(0,4)}/><//><${Card} t="Upcoming tasks"><div className="space-y-2 text-sm">${m.filter(c=>['Assigned','Under Investigation'].includes(c.status)).map(c=>h`<div key=${c.id} className="flex justify-between"><span>Follow up: ${c.title}</span><span className="text-mu text-xs">${c.id}</span></div>`)}</div><//></div><${Card} cls="mt-4" t="Recent investigation activities"><div className="space-y-2 text-xs">${m.flatMap(c=>c.hist.slice(-1).map(x=>[c.id,x])).slice(0,5).map(([i,x])=>h`<div key=${i}><b>${i}</b> \u00b7 ${x[2]} <span className="text-mu">(${x[1]})</span></div>`)}</div><//>`};

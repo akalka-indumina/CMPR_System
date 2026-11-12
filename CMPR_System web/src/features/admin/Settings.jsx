@@ -1,0 +1,13 @@
+import { useState } from 'react';
+import { h } from '../../lib/h';
+import { Card, Fld, Pg, Sel } from '../../components/ui/Primitives';
+import { B1, B2, INP, TODAY } from '../../lib/constants';
+
+export function Settings({S}){const[tab,st]=useState('System profile'),[n,sn]=useState({email:true,sms:false,digest:true}),[p,sp]=useState({a:'',b:'',c:''});const T=['System profile','General','Notifications','Password','System info'];
+ const pw=()=>p.b.length<8?S.toast('New password must be at least 8 characters','err'):p.b!=p.c?S.toast('Passwords do not match','err'):(sp({a:'',b:'',c:''}),S.toast('Password changed'));
+ return h`<${Pg} t="Settings"/><div className="flex gap-2 flex-wrap mb-3">${T.map(x=>h`<button key=${x} className=${tab==x?B1:B2} onClick=${()=>st(x)}>${x}</button>`)}</div><${Card}>
+ ${tab=='System profile'&&h`<div className="grid sm:grid-cols-2 gap-3"><${Fld} l="System name"><input className=${INP} defaultValue="Integrated Community Safety and Police Complaint Management System"/><//><${Fld} l="Organisation"><input className=${INP} defaultValue="Sri Lanka Police (demo)"/><//><div><button className=${B1} onClick=${()=>S.toast('Profile saved')}>Save changes</button></div></div>`}
+ ${tab=='General'&&h`<div className="grid sm:grid-cols-2 gap-3"><${Fld} l="Language"><${Sel} v="English" set=${()=>{}} opts=${['English','Sinhala','Tamil']}/><//><${Fld} l="Time zone"><${Sel} v="Asia/Colombo" set=${()=>{}} opts=${['Asia/Colombo']}/><//><div><button className=${B1} onClick=${()=>S.toast('Settings saved')}>Save changes</button></div></div>`}
+ ${tab=='Notifications'&&h`<div className="space-y-3">${[['email','Email alerts'],['sms','SMS alerts'],['digest','Daily digest']].map(([k,l])=>h`<label key=${k} className="flex items-center gap-2 text-sm"><input type="checkbox" checked=${n[k]} onChange=${()=>sn({...n,[k]:!n[k]})}/>${l}</label>`)}<button className=${B1} onClick=${()=>S.toast('Preferences saved')}>Save preferences</button></div>`}
+ ${tab=='Password'&&h`<div className="max-w-sm space-y-3">${[['a','Current password'],['b','New password'],['c','Confirm new password']].map(([k,l])=>h`<${Fld} key=${k} l=${l}><input type="password" className=${INP} value=${p[k]} onChange=${e=>sp({...p,[k]:e.target.value})}/><//>`)}<button className=${B1} onClick=${pw}>Change password</button></div>`}
+ ${tab=='System info'&&h`<div className="space-y-1 text-sm">${[['Version','1.0.0 (frontend demo)'],['Environment','Mock data, no backend'],['Last updated',TODAY]].map(x=>h`<div key=${x[0]} className="flex justify-between border-b border-bd py-1"><span className="text-mu">${x[0]}</span>${x[1]}</div>`)}</div>`}<//>`}

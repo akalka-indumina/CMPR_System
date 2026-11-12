@@ -1,35 +1,52 @@
-# ICCMPRS Web (Next.js)
+# Integrated Community Safety and Police Complaint Management System
 
-Integrated Community Complaint Management and Police Response System —
-login page, Admin dashboard and Police Station dashboard.
+Frontend-only demo (React + Vite + Tailwind CSS + React Router + Lucide). All data is mock data held in React state; there is no backend or real authentication.
 
-Stack: Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4
-
-## Setup
+## Run
 
 ```bash
 npm install
-npm run dev        # (uses webpack) http://localhost:3000
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
 ```
 
-Production: `npm run build && npm start`
+Open `/` and choose a portal. There are two separate portals, each with its own login page:
 
-Requires Node.js 20.9 or newer.
+| Portal | Login URL | Roles |
+|---|---|---|
+| Staff Administration Portal | `/staff/login` | Super Administrator, Police Station Account |
+| Citizen and Officer Portal | `/public/login` | Citizen, Police Officer |
 
-## Routes
+Citizen registration is at `/public/register`. Dashboards follow `/<portal>/<role>/<page>`, e.g. `/staff/station/validation`, `/public/officer/mine`, `/public/citizen/submit`. A role cannot open the other portal's pages; it is sent back to that portal's login.
 
-| URL         | What it shows               |
-| ----------- | --------------------------- |
-| `/`         | Login (Admin / Police Station tabs) |
-| `/admin`    | Admin dashboard             |
-| `/station`  | Police Station dashboard    |
+## Structure
 
-Login is currently a **UI mock**: any non-empty ID/password sends the Admin tab
-to `/admin` and the Police Station tab to `/station`.
+```
+src/
+├── main.jsx                  # entry: BrowserRouter + <App/>
+├── App.jsx                   # app state, route handling, sidebar/header shell
+├── index.css                 # Tailwind layers + base styles
+├── routes/pages.js           # role -> page-key -> component registry
+├── lib/
+│   ├── constants.js          # statuses, colours, NAV per role, shared class strings
+│   ├── helpers.js            # grouping/filter helpers (grp, gb, mine, on)
+│   └── h.js                  # htm template helper bound to React
+├── data/                     # mock data (stations, officers, accounts, complaints, audit, users)
+├── components/
+│   ├── ui/                   # Badge, Primitives (Card, Modal, forms), Table, Charts, Icon
+│   └── complaints/           # ComplaintTable, ComplaintModal (workflow), Timeline
+└── features/
+    ├── auth/                 # Landing (portal chooser), Login (per portal), Register
+    ├── admin/                # Super Administrator pages
+    ├── station/              # Station Account pages
+    ├── officer/              # Police Officer pages
+    ├── citizen/              # Citizen portal pages
+    └── shared/               # Notifications, Profile
+```
 
-## Next steps
+## Role rules enforced in the UI
 
-- Real authentication (e.g. Auth.js, or your PHP/MySQL API) and a `middleware.ts`
-  that protects `/admin` and `/station` by role.
-- Split each dashboard's internal pages into real routes (`/admin/stations`, ...).
-- Replace the hard-coded demo data with API calls.
+- Citizens see only their own complaints; officers only complaints assigned to them.
+- Station accounts see only their station and can assign only to officers of the same station.
+- Officers can save progress or send work for review, but cannot close a complaint.
+- Only station accounts perform the final closure. Audit logs are read-only.

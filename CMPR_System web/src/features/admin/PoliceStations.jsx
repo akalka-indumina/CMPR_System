@@ -1,0 +1,9 @@
+import { useState } from 'react';
+import { h } from '../../lib/h';
+import { Bd } from '../../components/ui/Badge';
+import { Bar, Card, Modal, Pg, Sel } from '../../components/ui/Primitives';
+import { Tbl } from '../../components/ui/Table';
+import { B2 } from '../../lib/constants';
+
+export function Stations({S}){const[q,sq]=useState(''),[d,sdd]=useState(''),[v,sv]=useState(null);const rows=S.STN.filter(s=>(s.name+s.code).toLowerCase().includes(q.toLowerCase())&&(!d||s.district==d));
+ return h`<${Pg} t="Police Stations" sub="Predefined master data. Stations cannot be added here."/><${Card}><${Bar} q=${q} sq=${sq}><${Sel} v=${d} set=${sdd} opts=${S.STN.map(s=>s.district)} ph="All districts"/><//><${Tbl} cols=${[['Code',s=>s.code,'code'],['Station',s=>s.name,'name'],['District',s=>s.district,'district'],['Contact',s=>s.tel],['Email',s=>s.email],['Status',s=>h`<${Bd} c=${s.active?'g':'x'} t=${s.active?'Active':'Inactive'}/>`],['Actions',s=>h`<div className="flex gap-1"><button className=${B2} onClick=${()=>sv(s)}>View</button><button className=${B2} onClick=${()=>S.ask((s.active?'Deactivate ':'Activate ')+s.name+' station?',()=>{S.setSTN(S.STN.map(x=>x.code==s.code?{...x,active:!x.active}:x));S.toast(s.name+(s.active?' deactivated':' activated'))})}>${s.active?'Deactivate':'Activate'}</button></div>`]]} rows=${rows}/><//>${v&&h`<${Modal} t=${v.name+' Police Station'} close=${()=>sv(null)} w="max-w-md"><div className="space-y-2 text-sm">${[['Code',v.code],['District',v.district],['Address',v.addr],['Contact',v.tel],['Email',v.email],['Accounts',S.ACC.filter(a=>a.station==v.name).length],['Officers',S.OFF.filter(a=>a.station==v.name).length]].map(x=>h`<div key=${x[0]} className="flex justify-between border-b border-bd py-1"><span className="text-mu">${x[0]}</span>${x[1]}</div>`)}</div><//>`}`}

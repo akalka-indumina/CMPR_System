@@ -1,0 +1,1 @@
+export const ACC0=[['SA-N01','Sunil Fernando','Negombo'],['SA-C01','Anoma Perera','Colombo Fort'],['SA-K01','Lakmal Dias','Kandy'],['SA-G01','Chamari Atapattu','Galle']].map((x,i)=>({id:x[0],name:x[1],email:x[1].split(' ')[0].toLowerCase()+'.stn@police.lk',tel:'071 555 10'+i+i,station:x[2],active:i!=3}));
