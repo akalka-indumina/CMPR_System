@@ -11,5 +11,5 @@ export const NAV={admin:[['dash','Dashboard','home'],['registrations','Citizen R
 export const RL={admin:'Super Administrator',station:'Police Station Account',officer:'Police Officer',citizen:'Citizen'};
 export const IDX={Submitted:0,Received:1,'Under Review':2,'Additional Info Requested':2,Accepted:2,Assigned:3,'Under Investigation':4,'Investigation Completed':5,'Resolved / Closed':6};
 
-export const PORTALS={staff:{title:'Staff Administration Portal',sub:'For Super Administrators and Police Station Accounts',roles:['admin','station']},public:{title:'Citizen and Officer Portal',sub:'For Citizens and Police Officers',roles:['citizen','officer']}};
-export const PORTAL_OF={admin:'staff',station:'staff',citizen:'public',officer:'public'};
+export const PORTALS={staff:{title:'Police Staff Portal',sub:'Internal access for authorized police personnel',roles:['admin','station','officer']},public:{title:'Public Citizen Portal',sub:'Access complaint services and citizen registration',roles:['citizen']}};
+export const PORTAL_OF={admin:'staff',station:'staff',officer:'staff',citizen:'public'};

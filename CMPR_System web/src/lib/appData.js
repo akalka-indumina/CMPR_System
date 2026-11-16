@@ -4,7 +4,11 @@ import { CMP0 } from '../data/complaints';
 import { OFF0 } from '../data/officers';
 import { STN } from '../data/stations';
 import { U0 } from '../data/users';
-import { REGISTRATION_STATUSES } from './registration';
+import {
+  normalizeIdentityNumber,
+  REGISTRATION_STATUSES,
+  SRI_LANKA_DISTRICTS,
+} from './registration';
 
 export const APP_DATA_STORAGE_KEY = 'pcms-demo-data-v1';
 
@@ -45,25 +49,41 @@ const isUsers = value => {
     || !['admin', 'station', 'officer', 'citizen'].every(role => hasStringFields(value[role], ['id', 'name', 'email']))
     || !Array.isArray(value.citizens)
     || Object.prototype.hasOwnProperty.call(value.citizen, 'documentNumber')
-    || !value.citizens.every(user => hasStringFields(user, ['id', 'name', 'email', 'nic', 'tel', 'addr'])
+    || !value.citizens.every(user => hasStringFields(user, ['id', 'name', 'email', 'tel', 'addr'])
+      && typeof user.nic === 'string'
       && user.role === 'citizen' && user.status === 'Approved'
       && !Object.prototype.hasOwnProperty.call(user, 'documentNumber'))) return false;
 
   const allUsers = ['admin', 'station', 'officer', 'citizen'].map(role => value[role]).concat(value.citizens);
   const emails = allUsers.map(user => user.email.trim().toLowerCase());
   const ids = allUsers.map(user => user.id);
-  const nics = [value.citizen, ...value.citizens].map(user => user.nic?.trim().toUpperCase());
+  const nics = [value.citizen, ...value.citizens]
+    .map(user => normalizeIdentityNumber(user.nic))
+    .filter(Boolean);
+  const identityNumbers = [value.citizen, ...value.citizens]
+    .map(user => normalizeIdentityNumber(user.identityNumber || user.nic))
+    .filter(Boolean);
   return allUsers.every(hasCredential)
     && new Set(emails).size === emails.length
     && new Set(ids).size === ids.length
-    && new Set(nics).size === nics.length;
+    && new Set(nics).size === nics.length
+    && new Set(identityNumbers).size === identityNumbers.length
+    && [value.citizen, ...value.citizens].every(user => (
+      (user.identityDocumentType === undefined
+        || (['NIC', 'Driving Licence'].includes(user.identityDocumentType)
+          && typeof user.identityNumber === 'string' && user.identityNumber.length > 0))
+      && (user.district === undefined || SRI_LANKA_DISTRICTS.includes(user.district))
+    ));
 };
 const isRegistrationApplications = value => Array.isArray(value)
   && value.every(application => hasStringFields(application, [
-    'id', 'referenceNumber', 'applicantId', 'fullName', 'nic', 'documentType',
+    'id', 'referenceNumber', 'applicantId', 'fullName', 'identityNumber', 'documentType',
     'dateOfBirth', 'gender', 'email', 'mobile', 'address', 'district', 'status',
     'submittedAt', 'passwordSalt', 'passwordHash',
-  ]) && !Object.prototype.hasOwnProperty.call(application, 'documentNumber')
+  ]) && typeof application.nic === 'string'
+    && !Object.prototype.hasOwnProperty.call(application, 'documentNumber')
+    && ['NIC', 'Driving Licence'].includes(application.documentType)
+    && SRI_LANKA_DISTRICTS.includes(application.district)
     && REGISTRATION_STATUSES.includes(application.status)
     && Array.isArray(application.documentSlots)
     && application.documentSlots.every(slot => typeof slot === 'string')
@@ -83,13 +103,22 @@ const normalizeUsers = saved => {
         ? stored.password
         : INITIAL_APP_DATA.users[role].password,
     };
-    if (role === 'citizen') delete users[role].documentNumber;
+    if (role === 'citizen') {
+      users[role].identityDocumentType ||= 'NIC';
+      users[role].identityNumber ||= users[role].nic;
+      delete users[role].documentNumber;
+    }
   }
   if (!Object.prototype.hasOwnProperty.call(saved, 'citizens')) users.citizens = [];
   else if (Array.isArray(saved.citizens)) {
     users.citizens = saved.citizens.map(user => {
       if (!isRecord(user)) return user;
-      const citizen = { ...user, status: user.status || 'Approved' };
+      const citizen = {
+        ...user,
+        status: user.status || 'Approved',
+        identityDocumentType: user.identityDocumentType || user.documentType || 'NIC',
+        identityNumber: user.identityNumber || user.nic || '',
+      };
       delete citizen.documentNumber;
       return citizen;
     });
@@ -100,7 +129,16 @@ const normalizeUsers = saved => {
 const normalizeRegistrationApplications = saved => Array.isArray(saved)
   ? saved.map(application => {
     if (!isRecord(application)) return application;
-    const normalized = { ...application };
+    const documentType = ['NIC', 'Driving Licence'].includes(application.documentType)
+      ? application.documentType
+      : 'NIC';
+    const identityNumber = application.identityNumber || application.nic || '';
+    const normalized = {
+      ...application,
+      documentType,
+      identityNumber,
+      nic: documentType === 'NIC' ? (application.nic || identityNumber) : '',
+    };
     delete normalized.documentNumber;
     return normalized;
   })
@@ -157,5 +195,87 @@ export function persistAppData(data) {
     window.localStorage.setItem(APP_DATA_STORAGE_KEY, JSON.stringify(data));
   } catch (error) {
     console.error('Demo data could not be saved to localStorage.', error);
+  }
+}
+
+const SHARED_DATA_ENDPOINT = '/__pcms-data';
+const SHARED_DOCUMENT_ENDPOINT = '/__pcms-documents';
+
+async function sharedDataRequest(method, data) {
+  const response = await fetch(SHARED_DATA_ENDPOINT, {
+    method,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ data }),
+  });
+  const result = await response.json();
+  if (!response.ok) {
+    throw new Error(result.error || `Shared demo data request failed (${response.status}).`);
+  }
+  return result.data;
+}
+
+export async function initializeSharedAppData(data, portal) {
+  const existingData = await loadSharedAppData();
+  if (existingData) return existingData;
+  if (portal === 'staff') await new Promise(resolve => setTimeout(resolve, 1500));
+  return sharedDataRequest('POST', data);
+}
+
+export async function loadSharedAppData() {
+  const response = await fetch(SHARED_DATA_ENDPOINT);
+  if (response.status === 404) return null;
+  const result = await response.json();
+  if (!response.ok) {
+    throw new Error(result.error || `Shared demo data request failed (${response.status}).`);
+  }
+  return result.data;
+}
+
+export async function persistSharedAppData(data) {
+  return sharedDataRequest('PUT', data);
+}
+
+const readFileAsDataUrl = file => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.onload = () => resolve(reader.result);
+  reader.onerror = () => reject(reader.error || new Error('Could not read the registration document.'));
+  reader.readAsDataURL(file);
+});
+
+export async function saveSharedRegistrationDocuments(applicationId, files) {
+  const documents = {};
+  for (const [slot, file] of Object.entries(files)) {
+    const extension = file.name.split('.').pop()?.toLowerCase();
+    const type = file.type || (extension === 'jpg' || extension === 'jpeg' ? 'image/jpeg' : 'image/png');
+    documents[slot] = { name: file.name, type, dataUrl: await readFileAsDataUrl(file) };
+  }
+  const response = await fetch(`${SHARED_DOCUMENT_ENDPOINT}/${encodeURIComponent(applicationId)}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ documents }),
+  });
+  const result = await response.json();
+  if (!response.ok) {
+    throw new Error(result.error || `Registration document upload failed (${response.status}).`);
+  }
+}
+
+export async function loadSharedRegistrationDocuments(applicationId) {
+  const response = await fetch(`${SHARED_DOCUMENT_ENDPOINT}/${encodeURIComponent(applicationId)}`);
+  if (response.status === 404) return null;
+  const result = await response.json();
+  if (!response.ok) {
+    throw new Error(result.error || `Registration document request failed (${response.status}).`);
+  }
+  return Object.fromEntries(Object.entries(result.documents || {}).map(([slot, document]) => [slot, document.dataUrl]));
+}
+
+export async function deleteSharedRegistrationDocuments(applicationId) {
+  const response = await fetch(`${SHARED_DOCUMENT_ENDPOINT}/${encodeURIComponent(applicationId)}`, {
+    method: 'DELETE',
+  });
+  const result = await response.json();
+  if (!response.ok) {
+    throw new Error(result.error || `Registration document cleanup failed (${response.status}).`);
   }
 }

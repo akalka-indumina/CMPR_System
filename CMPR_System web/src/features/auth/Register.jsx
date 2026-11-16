@@ -4,15 +4,21 @@ import { Fld, Sel } from '../../components/ui/Primitives';
 import { B1, B2, INP } from '../../lib/constants';
 import { createUniqueId } from '../../lib/helpers';
 import { hashPassword } from '../../lib/credentials';
-import { nextRegistrationReference } from '../../lib/registration';
+import {
+  CITIZEN_GENDERS,
+  nextRegistrationReference,
+  normalizeIdentityNumber,
+  SRI_LANKA_DISTRICTS,
+} from '../../lib/registration';
 
 const NIC_PATTERN = /^(?:\d{9}[VX]|\d{12})$/;
+const DRIVING_LICENCE_PATTERN = /^(?=.*\d)[A-Z0-9]{5,20}$/;
 const IMAGE_SIZE_LIMIT = 5 * 1024 * 1024;
 const IMAGE_MIME_TYPES = ['image/jpeg', 'image/png'];
 
 const createForm = application => ({
   fullName: application?.fullName || '',
-  nic: application?.nic || '',
+  identityNumber: application?.identityNumber || application?.nic || '',
   dateOfBirth: application?.dateOfBirth || '',
   gender: application?.gender || '',
   email: application?.email || '',
@@ -24,13 +30,12 @@ const createForm = application => ({
   confirmPassword: '',
 });
 
-export function Register({ go, toast, users, applications, stations, previousApplication, onSubmit }) {
+export function Register({ go, toast, users, applications, previousApplication, onSubmit }) {
   const [form, setForm] = useState(() => createForm(previousApplication));
   const [errors, setErrors] = useState({});
   const [images, setImages] = useState({});
   const [previews, setPreviews] = useState({});
   const [submitting, setSubmitting] = useState(false);
-  const districts = [...new Set(stations.map(station => station.district))];
   const imageSlots = form.documentType === 'NIC'
     ? [['front', 'NIC Front Side Image'], ['back', 'NIC Back Side Image']]
     : [['licence', 'Driving Licence Image']];
@@ -47,7 +52,7 @@ export function Register({ go, toast, users, applications, stations, previousApp
   };
 
   const changeDocumentType = type => {
-    setForm(current => ({ ...current, documentType: type }));
+    setForm(current => ({ ...current, documentType: type, identityNumber: '' }));
     setImages({});
     setErrors({});
   };
@@ -88,13 +93,20 @@ export function Register({ go, toast, users, applications, stations, previousApp
   const submit = async () => {
     const nextErrors = {};
     const email = form.email.trim().toLowerCase();
-    const nic = form.nic.trim().toUpperCase();
-    const required = ['fullName', 'nic', 'dateOfBirth', 'gender', 'email', 'mobile', 'address', 'district', 'password', 'confirmPassword'];
+    const identityNumber = normalizeIdentityNumber(form.identityNumber);
+    const required = ['fullName', 'identityNumber', 'dateOfBirth', 'gender', 'email', 'mobile', 'address', 'district', 'password', 'confirmPassword'];
     required.forEach(key => {
       if (!form[key].trim()) nextErrors[key] = 'Required';
     });
+    if (!CITIZEN_GENDERS.includes(form.gender)) nextErrors.gender = 'Select Male or Female.';
+    if (!SRI_LANKA_DISTRICTS.includes(form.district)) nextErrors.district = 'Select a valid district.';
     if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) nextErrors.email = 'Enter a valid email address.';
-    if (form.nic && !NIC_PATTERN.test(nic)) nextErrors.nic = 'Use 9 digits + V/X or 12 digits.';
+    if (form.identityNumber && form.documentType === 'NIC' && !NIC_PATTERN.test(identityNumber)) {
+      nextErrors.identityNumber = 'Use 9 digits + V/X or 12 digits.';
+    }
+    if (form.identityNumber && form.documentType === 'Driving Licence' && !DRIVING_LICENCE_PATTERN.test(identityNumber)) {
+      nextErrors.identityNumber = 'Use 5–20 letters and digits, with at least one digit. Spaces and hyphens are allowed.';
+    }
     if (form.dateOfBirth && (
       Number.isNaN(new Date(`${form.dateOfBirth}T00:00:00`).getTime())
       || form.dateOfBirth > new Date().toISOString().slice(0, 10)
@@ -116,13 +128,15 @@ export function Register({ go, toast, users, applications, stations, previousApp
       nextErrors.email = 'An application or account already uses this email.';
     }
     const savedCitizens = [users.citizen, ...(users.citizens || [])];
-    const duplicateCitizenNic = nic && savedCitizens.some(user => user.nic && user.nic.trim().toUpperCase() === nic);
-    if (duplicateCitizenNic) {
-      nextErrors.nic = 'An approved Citizen account already uses this NIC.';
-    } else if (nic && activeApplications.some(application => (
-      application.nic.trim().toUpperCase() === nic
+    const duplicateApprovedIdentity = identityNumber && savedCitizens.some(user => (
+      normalizeIdentityNumber(user.identityNumber || user.nic) === identityNumber
+    ));
+    if (duplicateApprovedIdentity) {
+      nextErrors.identityNumber = 'An approved Citizen account already uses this identity number.';
+    } else if (identityNumber && activeApplications.some(application => (
+      normalizeIdentityNumber(application.identityNumber || application.nic) === identityNumber
     ))) {
-      nextErrors.nic = 'An active application already uses this NIC.';
+      nextErrors.identityNumber = 'An active application already uses this identity number.';
     }
 
     setErrors(nextErrors);
@@ -154,7 +168,8 @@ export function Register({ go, toast, users, applications, stations, previousApp
         referenceNumber,
         applicantId,
         fullName: form.fullName.trim(),
-        nic,
+        nic: form.documentType === 'NIC' ? identityNumber : '',
+        identityNumber,
         dateOfBirth: form.dateOfBirth,
         gender: form.gender,
         email,
@@ -174,7 +189,7 @@ export function Register({ go, toast, users, applications, stations, previousApp
         passwordSalt,
         passwordHash,
       };
-      onSubmit(application, images);
+      await onSubmit(application, images);
       toast('Application submitted. Your identity verification is under review.');
     } catch (error) {
       toast(error instanceof Error ? error.message : 'Could not submit the application.', 'err');
@@ -184,28 +199,28 @@ export function Register({ go, toast, users, applications, stations, previousApp
   };
 
   return h`<div className="min-h-screen flex items-center justify-center p-4"><div className="w-full max-w-3xl bg-cd border border-bd rounded-xl p-6 space-y-4">
-    <div><h1 className="font-bold text-lg">Citizen registration</h1><p className="text-mu text-xs mt-1">Frontend demo only. Use fictional information; submitted text is stored in this browser. Identity images are temporary and are not saved.</p></div>
+    <div><h1 className="font-bold text-lg">Citizen registration</h1><p className="text-mu text-xs mt-1">Frontend demo only. Use fictional information; submitted text is stored in local development data. Identity images are shared through the local development cache for staff review.</p></div>
     ${previousApplication&&h`<div className="rounded-lg border border-orange-500/40 bg-orange-500/10 p-3 text-sm"><b className="text-orange-400">Previous rejection:</b> ${previousApplication.rejectionReason}</div>`}
     <div><h2 className="font-semibold text-sm mb-3">Personal Information</h2><div className="grid sm:grid-cols-2 gap-3">
       <${Fld} l="Full Name" err=${errors.fullName}><input className=${INP} value=${form.fullName} onChange=${setField('fullName')}/><//>
-      <${Fld} l="NIC Number" err=${errors.nic}><input className=${INP} value=${form.nic} onChange=${setField('nic')}/><//>
+      <${Fld} l=${form.documentType === 'NIC' ? 'NIC Number' : 'Driving Licence Number'} err=${errors.identityNumber}><input className=${INP} autoComplete="off" value=${form.identityNumber} onChange=${setField('identityNumber')}/><//>
       <${Fld} l="Date of Birth" err=${errors.dateOfBirth}><input type="date" className=${INP} value=${form.dateOfBirth} onChange=${setField('dateOfBirth')}/><//>
-      <${Fld} l="Gender" err=${errors.gender}><${Sel} v=${form.gender} set=${value=>{setForm(current=>({...current,gender:value}));setErrors(current=>({...current,gender:''}))}} opts=${['Female','Male','Other','Prefer not to say']} ph="Select gender"/><//>
+      <${Fld} l="Gender" err=${errors.gender}><${Sel} v=${form.gender} set=${value=>{setForm(current=>({...current,gender:value}));setErrors(current=>({...current,gender:''}))}} opts=${CITIZEN_GENDERS} ph="Select Gender"/><//>
       <${Fld} l="Email Address" err=${errors.email}><input type="email" className=${INP} value=${form.email} onChange=${setField('email')}/><//>
       <${Fld} l="Mobile Number" err=${errors.mobile}><input type="tel" className=${INP} value=${form.mobile} onChange=${setField('mobile')}/><//>
       <div className="sm:col-span-2"><${Fld} l="Residential Address" err=${errors.address}><textarea rows="2" className=${INP} value=${form.address} onChange=${setField('address')}></textarea><//></div>
-      <${Fld} l="District" err=${errors.district}><${Sel} v=${form.district} set=${value=>{setForm(current=>({...current,district:value}));setErrors(current=>({...current,district:''}))}} opts=${districts} ph="Select district"/><//>
+      <${Fld} l="District" err=${errors.district}><${Sel} v=${form.district} set=${value=>{setForm(current=>({...current,district:value}));setErrors(current=>({...current,district:''}))}} opts=${SRI_LANKA_DISTRICTS} ph="Select District"/><//>
     </div></div>
     <div><h2 className="font-semibold text-sm mb-3">Identity Document Information</h2><div className="grid sm:grid-cols-2 gap-3">
       <${Fld} l="Document Type"><${Sel} v=${form.documentType} set=${changeDocumentType} opts=${['NIC','Driving Licence']}/><//>
       ${imageSlots.map(([slot,label])=>h`<div key=${slot} className="sm:col-span-2"><${Fld} l=${label} err=${errors['image_'+slot]}><input type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png" className=${INP} onChange=${event=>selectImage(slot,event)}/><//>${images[slot]&&h`<div className="mt-2 flex items-center gap-3"><img src=${previews[slot]} alt=${label+' preview'} className="h-24 max-w-40 rounded border border-bd object-contain"/><span className="text-xs text-mu truncate">${images[slot].name}</span><button type="button" className=${B2} onClick=${()=>removeImage(slot)}>Remove</button></div>`}</div>`)}
-      <p className="sm:col-span-2 text-xs text-mu">JPG, JPEG, or PNG only; maximum 5 MB per image. Do not upload real identity documents.</p>
+      <p className="sm:col-span-2 text-xs text-mu">JPG, JPEG, or PNG only; maximum 5 MB per image. Use fictional documents only. Local development shares images through a temporary Vite cache for staff review.</p>
     </div></div>
     <div><h2 className="font-semibold text-sm mb-3">Account Information</h2><div className="grid sm:grid-cols-2 gap-3">
       <${Fld} l="Password" err=${errors.password}><input type="password" className=${INP} value=${form.password} onChange=${setField('password')}/><//>
       <${Fld} l="Confirm Password" err=${errors.confirmPassword}><input type="password" className=${INP} value=${form.confirmPassword} onChange=${setField('confirmPassword')}/><//>
     </div></div>
     <div className="flex flex-wrap gap-2 justify-end"><button className=${B2} onClick=${()=>go('login')}>Back to sign in</button><button className=${B1} disabled=${submitting} onClick=${submit}>${submitting?'Submitting...':'Submit for verification'}</button></div>
-    <p className="text-xs text-mu">Secure identity-document storage and verification require a protected backend. This demo keeps uploaded images in temporary browser memory only.</p>
+    <p className="text-xs text-mu">Secure identity-document storage and verification require a protected backend. Uploaded images in local development are stored in the local development cache until reviewed.</p>
   </div></div>`;
 }

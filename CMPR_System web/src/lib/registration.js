@@ -1,4 +1,35 @@
 export const REGISTRATION_STATUSES = ['Pending Review', 'Approved', 'Rejected', 'Resubmitted'];
+export const CITIZEN_GENDERS = ['Male', 'Female'];
+
+export const SRI_LANKA_DISTRICTS = [
+  'Colombo',
+  'Gampaha',
+  'Kalutara',
+  'Kandy',
+  'Matale',
+  'Nuwara Eliya',
+  'Galle',
+  'Matara',
+  'Hambantota',
+  'Jaffna',
+  'Kilinochchi',
+  'Mannar',
+  'Vavuniya',
+  'Mullaitivu',
+  'Batticaloa',
+  'Ampara',
+  'Trincomalee',
+  'Kurunegala',
+  'Puttalam',
+  'Anuradhapura',
+  'Polonnaruwa',
+  'Badulla',
+  'Monaragala',
+  'Ratnapura',
+  'Kegalle',
+];
+
+export const normalizeIdentityNumber = value => String(value || '').trim().toUpperCase().replace(/[\s-]/g, '');
 
 export const nextRegistrationReference = applications => {
   const year = new Date().getFullYear();
@@ -17,6 +48,6 @@ export const nextRegistrationReference = applications => {
   return referenceNumber;
 };
 
-export const maskNic = value => value.length <= 4
+export const maskIdentityNumber = value => value.length <= 4
   ? value
   : `${'\u2022'.repeat(Math.min(8, value.length - 4))}${value.slice(-4)}`;
