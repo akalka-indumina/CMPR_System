@@ -1,0 +1,4 @@
+import { useState } from 'react';
+import { h } from '../../lib/h';
+
+export function Tbl({cols,rows}){const[k,sk]=useState(null),[d,sdir]=useState(1);const r=k?[...rows].sort((a,b)=>(a[k]>b[k]?1:-1)*d):rows;return h`<div className="overflow-x-auto"><table className="w-full text-sm text-left"><thead><tr className="text-mu text-xs">${cols.map((c,i)=>h`<th key=${i} className=${'px-3 py-2 whitespace-nowrap '+(c[2]?'cursor-pointer hover:text-tx':'')} onClick=${()=>c[2]&&(k==c[2]?sdir(-d):(sk(c[2]),sdir(1)))}>${c[0]}${k==c[2]&&c[2]?(d>0?' \u2191':' \u2193'):''}</th>`)}</tr></thead><tbody>${r.length?r.map((x,i)=>h`<tr key=${i} className="border-t border-bd hover:bg-ip/50">${cols.map((c,j)=>h`<td key=${j} className="px-3 py-2.5 align-middle">${c[1](x)}</td>`)}</tr>`):h`<tr><td colSpan=${cols.length} className="p-8 text-center text-mu">No records match your filters.</td></tr>`}</tbody></table></div>`}
