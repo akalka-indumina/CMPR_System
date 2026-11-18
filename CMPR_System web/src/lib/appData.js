@@ -1,34 +1,22 @@
-import { ACC0 } from '../data/accounts';
-import { AUD0 } from '../data/audit';
-import { CMP0 } from '../data/complaints';
-import { OFF0 } from '../data/officers';
-import { STN } from '../data/stations';
 import { U0 } from '../data/users';
 import {
-  normalizeIdentityNumber,
   REGISTRATION_STATUSES,
   SRI_LANKA_DISTRICTS,
 } from './registration';
 
-export const APP_DATA_STORAGE_KEY = 'pcms-demo-data-v1';
-
-const NOTIFICATIONS0 = [
-  { id: 'NTF-001', role: 'citizen', m: 'Complaint CMP-2026-0102 was assigned to an officer.', read: false },
-  { id: 'NTF-002', role: 'citizen', m: 'Your complaint CMP-2026-0103 is under review.', read: false },
-  { id: 'NTF-003', role: 'station', m: 'New complaint CMP-2026-0105 received.', read: false },
-  { id: 'NTF-004', role: 'station', m: 'Investigation completed on CMP-2026-0107. Review required.', read: false },
-  { id: 'NTF-005', role: 'officer', m: 'CMP-2026-0102 assigned to you.', read: false },
-  { id: 'NTF-006', role: 'admin', m: 'Monthly report is ready.', read: true },
-];
+export const APP_DATA_STORAGE_KEY = 'pcms-app-data-v3';
+const LEGACY_APP_DATA_STORAGE_KEYS = ['pcms-demo-data-v1', 'pcms-app-data-v2'];
 
 export const INITIAL_APP_DATA = {
-  complaints: CMP0,
+  complaints: [],
   users: U0,
-  accounts: ACC0,
-  stations: STN,
-  officers: OFF0,
-  notifications: NOTIFICATIONS0,
-  audit: AUD0,
+  administrators: [],
+  citizens: [],
+  accounts: [],
+  stations: [],
+  officers: [],
+  notifications: [],
+  audit: [],
   registrationApplications: [],
 };
 
@@ -38,43 +26,19 @@ const hasStringFields = (value, fields) => isRecord(value)
 const isEntityList = (value, fields) => Array.isArray(value)
   && value.every(item => hasStringFields(item, fields))
   && new Set(value.map(item => item.id || item.code)).size === value.length;
+const isUsers = value => Array.isArray(value)
+  && value.every(user => hasStringFields(user, ['id', 'email', 'role', 'profileId'])
+    && ['admin', 'station', 'officer', 'citizen'].includes(user.role)
+    && typeof user.active === 'boolean'
+    && !Object.prototype.hasOwnProperty.call(user, 'password')
+    && ((user.passwordSalt === undefined && user.passwordHash === undefined && !user.active)
+      || (typeof user.passwordSalt === 'string' && user.passwordSalt.length > 0
+        && typeof user.passwordHash === 'string' && user.passwordHash.length > 0)))
+  && new Set(value.map(user => user.id)).size === value.length
+  && new Set(value.map(user => user.email.trim().toLowerCase())).size === value.length;
 const isNotifications = value => Array.isArray(value)
   && value.every(item => hasStringFields(item, ['id', 'role', 'm']) && typeof item.read === 'boolean')
   && new Set(value.map(item => item.id)).size === value.length;
-const hasCredential = user => (typeof user.password === 'string' && user.password.length > 0)
-  || (typeof user.passwordSalt === 'string' && user.passwordSalt.length > 0
-    && typeof user.passwordHash === 'string' && user.passwordHash.length > 0);
-const isUsers = value => {
-  if (!isRecord(value)
-    || !['admin', 'station', 'officer', 'citizen'].every(role => hasStringFields(value[role], ['id', 'name', 'email']))
-    || !Array.isArray(value.citizens)
-    || Object.prototype.hasOwnProperty.call(value.citizen, 'documentNumber')
-    || !value.citizens.every(user => hasStringFields(user, ['id', 'name', 'email', 'tel', 'addr'])
-      && typeof user.nic === 'string'
-      && user.role === 'citizen' && user.status === 'Approved'
-      && !Object.prototype.hasOwnProperty.call(user, 'documentNumber'))) return false;
-
-  const allUsers = ['admin', 'station', 'officer', 'citizen'].map(role => value[role]).concat(value.citizens);
-  const emails = allUsers.map(user => user.email.trim().toLowerCase());
-  const ids = allUsers.map(user => user.id);
-  const nics = [value.citizen, ...value.citizens]
-    .map(user => normalizeIdentityNumber(user.nic))
-    .filter(Boolean);
-  const identityNumbers = [value.citizen, ...value.citizens]
-    .map(user => normalizeIdentityNumber(user.identityNumber || user.nic))
-    .filter(Boolean);
-  return allUsers.every(hasCredential)
-    && new Set(emails).size === emails.length
-    && new Set(ids).size === ids.length
-    && new Set(nics).size === nics.length
-    && new Set(identityNumbers).size === identityNumbers.length
-    && [value.citizen, ...value.citizens].every(user => (
-      (user.identityDocumentType === undefined
-        || (['NIC', 'Driving Licence'].includes(user.identityDocumentType)
-          && typeof user.identityNumber === 'string' && user.identityNumber.length > 0))
-      && (user.district === undefined || SRI_LANKA_DISTRICTS.includes(user.district))
-    ));
-};
 const isRegistrationApplications = value => Array.isArray(value)
   && value.every(application => hasStringFields(application, [
     'id', 'referenceNumber', 'applicantId', 'fullName', 'identityNumber', 'documentType',
@@ -90,41 +54,6 @@ const isRegistrationApplications = value => Array.isArray(value)
     && Array.isArray(application.reviewHistory))
   && new Set(value.map(application => application.id)).size === value.length
   && new Set(value.map(application => application.referenceNumber)).size === value.length;
-
-const normalizeUsers = saved => {
-  if (!isRecord(saved)) return saved;
-  const users = { ...INITIAL_APP_DATA.users, ...saved };
-  for (const role of ['admin', 'station', 'officer', 'citizen']) {
-    const stored = isRecord(saved[role]) ? saved[role] : {};
-    users[role] = {
-      ...INITIAL_APP_DATA.users[role],
-      ...stored,
-      password: typeof stored.password === 'string' && stored.password
-        ? stored.password
-        : INITIAL_APP_DATA.users[role].password,
-    };
-    if (role === 'citizen') {
-      users[role].identityDocumentType ||= 'NIC';
-      users[role].identityNumber ||= users[role].nic;
-      delete users[role].documentNumber;
-    }
-  }
-  if (!Object.prototype.hasOwnProperty.call(saved, 'citizens')) users.citizens = [];
-  else if (Array.isArray(saved.citizens)) {
-    users.citizens = saved.citizens.map(user => {
-      if (!isRecord(user)) return user;
-      const citizen = {
-        ...user,
-        status: user.status || 'Approved',
-        identityDocumentType: user.identityDocumentType || user.documentType || 'NIC',
-        identityNumber: user.identityNumber || user.nic || '',
-      };
-      delete citizen.documentNumber;
-      return citizen;
-    });
-  }
-  return users;
-};
 
 const normalizeRegistrationApplications = saved => Array.isArray(saved)
   ? saved.map(application => {
@@ -148,11 +77,17 @@ const VALIDATORS = {
   complaints: value => isEntityList(value, ['id', 'title', 'cit', 'stationCode'])
     && value.every(item => typeof item.citizenId === 'string'),
   users: isUsers,
+  administrators: value => isEntityList(value, ['id', 'name']),
+  citizens: value => isEntityList(value, ['id', 'name', 'tel', 'addr'])
+    && value.every(citizen => typeof citizen.status === 'string'
+      && typeof citizen.identityNumber === 'string'
+      && (citizen.district === undefined || SRI_LANKA_DISTRICTS.includes(citizen.district))),
   accounts: value => isEntityList(value, ['id', 'name', 'station', 'stationCode']),
   stations: value => isEntityList(value, ['code', 'name', 'district']),
   officers: value => isEntityList(value, ['id', 'name', 'station', 'stationCode']),
   notifications: isNotifications,
-  audit: value => isEntityList(value, ['id', 'user', 'role', 'action', 'desc', 'dt', 'ip']),
+  audit: value => isEntityList(value, ['id', 'user', 'role', 'action', 'desc', 'dt'])
+    && value.every(item => typeof item.ip === 'string'),
   registrationApplications: isRegistrationApplications,
 };
 
@@ -161,28 +96,27 @@ export function loadAppData() {
 
   let saved;
   try {
+    LEGACY_APP_DATA_STORAGE_KEYS.forEach(key => window.localStorage.removeItem(key));
     const raw = window.localStorage.getItem(APP_DATA_STORAGE_KEY);
     if (raw === null) return INITIAL_APP_DATA;
     saved = JSON.parse(raw);
   } catch (error) {
-    console.warn('Saved demo data could not be read; using the sample data.', error);
+    console.warn('Saved application data could not be read; using empty defaults.', error);
     return INITIAL_APP_DATA;
   }
 
   if (!isRecord(saved)) {
-    console.warn('Saved demo data has an invalid format; using the sample data.');
+    console.warn('Saved application data has an invalid format; using empty defaults.');
     return INITIAL_APP_DATA;
   }
 
   return Object.keys(INITIAL_APP_DATA).reduce((data, key) => {
     if (!Object.prototype.hasOwnProperty.call(saved, key)) return data;
-    const value = key === 'users'
-      ? normalizeUsers(saved[key])
-      : key === 'registrationApplications'
-        ? normalizeRegistrationApplications(saved[key])
-        : saved[key];
+    const value = key === 'registrationApplications'
+      ? normalizeRegistrationApplications(saved[key])
+      : saved[key];
     if (!VALIDATORS[key](value)) {
-      console.warn(`Saved demo ${key} data is invalid; using the sample data for that collection.`);
+      console.warn(`Saved ${key} data is invalid; using empty defaults for that collection.`);
       return data;
     }
     return { ...data, [key]: value };
@@ -198,8 +132,8 @@ export function persistAppData(data) {
   }
 }
 
-const SHARED_DATA_ENDPOINT = '/__pcms-data';
-const SHARED_DOCUMENT_ENDPOINT = '/__pcms-documents';
+const SHARED_DATA_ENDPOINT = '/api/data';
+const SHARED_DOCUMENT_ENDPOINT = '/api/documents';
 
 async function sharedDataRequest(method, data) {
   const response = await fetch(SHARED_DATA_ENDPOINT, {

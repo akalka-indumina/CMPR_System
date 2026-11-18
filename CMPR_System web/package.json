@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently --kill-others \"npm:dev:citizen\" \"npm:dev:staff\"",
+    "dev:all": "concurrently --kill-others \"npm --prefix ../server start\" \"npm:dev:citizen\" \"npm:dev:staff\"",
     "dev:citizen": "vite --mode citizen",
     "dev:staff": "vite --mode staff",
     "build": "vite build",

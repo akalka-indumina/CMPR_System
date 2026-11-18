@@ -1,5 +1,7 @@
 # Integrated Community Safety and Police Complaint Management System
 
+> **Backend:** data is now stored in MongoDB through an Express server in `server/`. See `BACKEND_SETUP.md` for setup. Use `npm run dev:all` in `CMPR_System web`. The localStorage/Vite-bridge notes below describe the older demo mode.
+
 Frontend demo (React + Vite + Tailwind CSS + React Router + Lucide). Production authentication and a production backend are not included. Demo data remains in browser localStorage (`pcms-demo-data-v1`) and is shared between the development portals by a local Vite middleware bridge.
 
 ## Run

@@ -74,14 +74,16 @@ export function Profile({ S }) {
       S.toast('Enter a valid email address', 'err');
       return;
     }
+    if (S.USERS.some(account => account.profileId !== u.id
+      && account.email.toLowerCase() === d.email.trim().toLowerCase())) {
+      S.toast('Another account already uses this email address', 'err');
+      return;
+    }
 
-    S.setU({
-      ...S.U,
-      [S.role]: {
-        ...d,
-        name: d.name.trim(),
-        email: d.email.trim()
-      }
+    S.setProfile({
+      ...d,
+      name: d.name.trim(),
+      email: d.email.trim()
     });
 
     setEditing(false);

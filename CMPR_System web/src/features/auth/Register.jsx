@@ -30,7 +30,7 @@ const createForm = application => ({
   confirmPassword: '',
 });
 
-export function Register({ go, toast, users, applications, previousApplication, onSubmit }) {
+export function Register({ go, toast, users = [], citizens = [], applications = [], previousApplication, onSubmit }) {
   const [form, setForm] = useState(() => createForm(previousApplication));
   const [errors, setErrors] = useState({});
   const [images, setImages] = useState({});
@@ -118,17 +118,15 @@ export function Register({ go, toast, users, applications, previousApplication, 
       if (!images[slot]) nextErrors[`image_${slot}`] = 'This image is required.';
     });
 
-    const allUsers = [users.admin, users.station, users.officer, users.citizen, ...(users.citizens || [])];
     const activeApplications = applications.filter(application => (
       ['Pending Review', 'Resubmitted'].includes(application.status)
       && application.id !== previousApplication?.id
     ));
-    if (email && [...allUsers.map(user => user.email), ...activeApplications.map(application => application.email)]
-      .some(value => value.trim().toLowerCase() === email)) {
+    if (email && (users.some(user => user.email.trim().toLowerCase() === email)
+      || activeApplications.some(application => application.email.trim().toLowerCase() === email))) {
       nextErrors.email = 'An application or account already uses this email.';
     }
-    const savedCitizens = [users.citizen, ...(users.citizens || [])];
-    const duplicateApprovedIdentity = identityNumber && savedCitizens.some(user => (
+    const duplicateApprovedIdentity = identityNumber && citizens.some(user => (
       normalizeIdentityNumber(user.identityNumber || user.nic) === identityNumber
     ));
     if (duplicateApprovedIdentity) {

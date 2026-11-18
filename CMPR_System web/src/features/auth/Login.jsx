@@ -18,8 +18,8 @@ export function Login({
   const first = P.roles[0];
 
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState(users[first].email);
-  const [password, setPassword] = useState('demo1234');
+  const [email, setEmail] = useState(users.find(user => user.role === first && user.active)?.email || '');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [application, setApplication] = useState(null);
   const [submitting, setSubmitting] = useState(false);
@@ -30,35 +30,24 @@ export function Login({
     setApplication(null);
 
     try {
-      const candidates = P.roles.flatMap(role => {
-        const accounts = role === 'citizen'
-          ? [
-              users.citizen,
-              ...(users.citizens || []).filter(
-                user => user.status === 'Approved'
-              )
-            ]
-          : [users[role]];
-
-        return accounts.map(account => ({ role, account }));
-      });
+      const candidates = users.filter(user => P.roles.includes(user.role) && user.active);
 
       const normalizedEmail = email.trim().toLowerCase();
       let matchedAccount = null;
 
-      for (const candidate of candidates) {
+      for (const account of candidates) {
         const identifiers = [
-          candidate.account.email,
-          candidate.account.id
+          account.email,
+          account.id
         ]
           .filter(Boolean)
           .map(identifier => identifier.trim().toLowerCase());
 
         if (
           identifiers.includes(normalizedEmail) &&
-          await verifyPassword(password, candidate.account)
+          await verifyPassword(password, account)
         ) {
-          matchedAccount = candidate;
+          matchedAccount = account;
           break;
         }
       }
@@ -69,7 +58,7 @@ export function Login({
 
         onLogin({
           role: matchedAccount.role,
-          id: matchedAccount.account.id
+          id: matchedAccount.id
         });
 
         return;

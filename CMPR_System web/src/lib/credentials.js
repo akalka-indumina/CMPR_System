@@ -32,5 +32,5 @@ export async function verifyPassword(password, account) {
     );
     return toHex(result) === account.passwordHash;
   }
-  return typeof account.password === 'string' && account.password === password;
+  return false;
 }

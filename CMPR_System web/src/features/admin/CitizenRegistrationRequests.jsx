@@ -39,7 +39,7 @@ export function CitizenRegistrationRequests({ S }) {
   }, [selected?.id, files]);
 
   useEffect(() => {
-    if (!selected || !import.meta.env.DEV || S.registrationDocuments[selected.id]) return undefined;
+    if (!selected || S.registrationDocuments[selected.id]) return undefined;
     let active = true;
     loadSharedRegistrationDocuments(selected.id).then(documents => {
       if (active && documents) {
@@ -75,7 +75,7 @@ export function CitizenRegistrationRequests({ S }) {
     action,
     desc: `${action}: ${application.referenceNumber}`,
     dt: reviewedAt,
-    ip: 'local-demo',
+    ip: '',
     applicantId: application.applicantId,
     applicantName: application.fullName,
     relatedReference: application.referenceNumber,
@@ -103,10 +103,9 @@ export function CitizenRegistrationRequests({ S }) {
     }
     S.ask(`Approve application ${selected.referenceNumber}?`, () => {
       const identityNumber = normalizeIdentityNumber(selected.identityNumber || selected.nic);
-      const alreadyExists = [S.U.citizen, ...S.U.citizens].some(user => (
+      const alreadyExists = S.CIT.some(user => (
         normalizeIdentityNumber(user.identityNumber || user.nic) === identityNumber
-        || user.email.trim().toLowerCase() === selected.email.trim().toLowerCase()
-      ));
+      )) || S.USERS.some(user => user.email.trim().toLowerCase() === selected.email.trim().toLowerCase());
       if (alreadyExists) {
         S.toast('A matching Citizen account already exists. This application was not approved.', 'err');
         return;
@@ -114,7 +113,6 @@ export function CitizenRegistrationRequests({ S }) {
       const reviewedAt = new Date().toISOString();
       const citizen = {
         id: selected.applicantId,
-        role: 'citizen',
         status: 'Approved',
         name: selected.fullName,
         nic: selected.documentType === 'NIC' ? identityNumber : '',
@@ -122,9 +120,6 @@ export function CitizenRegistrationRequests({ S }) {
         identityNumber,
         dateOfBirth: selected.dateOfBirth,
         gender: selected.gender,
-        email: selected.email,
-        passwordSalt: selected.passwordSalt,
-        passwordHash: selected.passwordHash,
         tel: selected.mobile,
         addr: selected.address,
         district: selected.district,
@@ -137,7 +132,16 @@ export function CitizenRegistrationRequests({ S }) {
         actorName: S.user.name,
         note: 'Application approved by Super Administrator.',
       };
-      S.setU(current => ({ ...current, citizens: [...(current.citizens || []), citizen] }));
+      S.setCIT(current => [...current, citizen]);
+      S.setU(current => [...current, {
+        id: selected.applicantId,
+        email: selected.email.trim().toLowerCase(),
+        passwordSalt: selected.passwordSalt,
+        passwordHash: selected.passwordHash,
+        role: 'citizen',
+        profileId: citizen.id,
+        active: true,
+      }]);
       updateApplication(selected, {
         status: 'Approved',
         reviewedById: S.user.id,
@@ -159,7 +163,7 @@ export function CitizenRegistrationRequests({ S }) {
         delete next[selected.id];
         return next;
       });
-      if (import.meta.env.DEV)deleteSharedRegistrationDocuments(selected.id).catch(error=>console.error('Reviewed registration documents could not be removed.',error));
+      deleteSharedRegistrationDocuments(selected.id).catch(error=>console.error('Reviewed registration documents could not be removed.',error));
       S.toast(`Application ${selected.referenceNumber} approved.`);
       closeReview();
     });
@@ -202,7 +206,7 @@ export function CitizenRegistrationRequests({ S }) {
         delete next[selected.id];
         return next;
       });
-      if (import.meta.env.DEV)deleteSharedRegistrationDocuments(selected.id).catch(error=>console.error('Reviewed registration documents could not be removed.',error));
+      deleteSharedRegistrationDocuments(selected.id).catch(error=>console.error('Reviewed registration documents could not be removed.',error));
       S.toast(`Application ${selected.referenceNumber} rejected.`);
       closeReview();
     });

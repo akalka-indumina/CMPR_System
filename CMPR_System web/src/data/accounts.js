@@ -1,1 +1,1 @@
-export const ACC0=[['SA-N01','Sunil Fernando','Negombo','NEG','071 555 1000',true],['SA-C01','Anoma Perera','Colombo Fort','CFT','071 555 1011',true],['SA-K01','Lakmal Dias','Kandy','KDY','071 555 1022',true],['SA-G01','Chamari Atapattu','Galle','GAL','071 555 1033',false]].map(x=>({id:x[0],name:x[1],email:x[1].split(' ')[0].toLowerCase()+'.stn@police.lk',station:x[2],stationCode:x[3],tel:x[4],active:x[5]}));
+export const ACC0 = [];

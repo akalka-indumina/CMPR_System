@@ -23,6 +23,12 @@ import { NotificationPanel } from './features/shared/Notifications';
 const THEME_STORAGE_KEY = 'pcms-demo-theme-v1';
 const CITIZEN_SESSION_KEY = 'pcms-citizen-session-v1';
 const STAFF_SESSION_KEY = 'pcms-staff-session-v1';
+const PROFILE_COLLECTIONS = {
+ admin:'administrators',
+ station:'accounts',
+ officer:'officers',
+ citizen:'citizens',
+};
 const getRolePath = (role,page) => role==='citizen'?`/citizen/${page}`:`/${PORTAL_OF[role]}/${role}/${page}`;
 const getRoleHome = role => getRolePath(role,NAV[role][0][0]);
 const getLoginPath = () => '/';
@@ -49,10 +55,9 @@ export default function App(){
  const isRegistrationStatus=statusIndex>=0&&parts.length>statusIndex;
  const isDashboard=Boolean(NAV[role]?.some(item=>item[0]===page));
  const view=isPublicLogin||isStaffLogin?'login':isRegister?'register':isRegistrationStatus?'registrationStatus':isDashboard?'app':'notFound';
- const[data,setData]=useState(loadAppData),[sharedDataReady,setSharedDataReady]=useState(!import.meta.env.DEV),[activeUser,setActiveUser]=useState(null),[sessionReady,setSessionReady]=useState(false),[registrationDocuments,setRegistrationDocuments]=useState({}),[registrationReviewId,setRegistrationReviewId]=useState(null),[theme,setTheme]=useState(getInitialTheme),[notificationOpen,setNotificationOpen]=useState(false),[m,setM]=useState(null),[tt,stt]=useState(null),[cf,scf]=useState(null),[sb,ssb]=useState(false);
+ const[data,setData]=useState(loadAppData),[sharedDataReady,setSharedDataReady]=useState(false),[activeUser,setActiveUser]=useState(null),[sessionReady,setSessionReady]=useState(false),[registrationDocuments,setRegistrationDocuments]=useState({}),[registrationReviewId,setRegistrationReviewId]=useState(null),[theme,setTheme]=useState(getInitialTheme),[notificationOpen,setNotificationOpen]=useState(false),[m,setM]=useState(null),[tt,stt]=useState(null),[cf,scf]=useState(null),[sb,ssb]=useState(false);
  const notificationRef=useRef(null);
  useEffect(()=>{
-  if(!import.meta.env.DEV)return;
   let mounted=true;
   initializeSharedAppData(loadAppData(),portal).then(sharedData=>{
    if(mounted){setData(sharedData);setSharedDataReady(true)}
@@ -63,7 +68,7 @@ export default function App(){
   return()=>{mounted=false};
  },[portal]);
  useEffect(()=>{
-  if(!sharedDataReady||!import.meta.env.DEV)return;
+  if(!sharedDataReady)return;
   let mounted=true,reportedError=false;
   const poll=async()=>{
    try{
@@ -93,11 +98,11 @@ export default function App(){
     if(!saved)continue;
     const session=JSON.parse(saved);
     const accountRole=session?.role;
-    const account=accountRole==='citizen'
-     ?[data.users.citizen,...(data.users.citizens||[])].find(user=>user.id===session.id&&user.status==='Approved')
-     :['admin','station','officer'].includes(accountRole)&&data.users[accountRole]?.id===session?.id
-      ?data.users[accountRole]:null;
-    if(account&&PORTAL_OF[accountRole]===(key===STAFF_SESSION_KEY?'staff':'public')){
+    const account=data.users.find(user=>user.id===session.id&&user.role===accountRole&&user.active&&user.passwordSalt&&user.passwordHash);
+    const profiles=account?data[PROFILE_COLLECTIONS[account.role]]:[];
+    const profile=account&&profiles.find(item=>item.id===account.profileId);
+    if(profile&&(accountRole!=='citizen'||profile.status==='Approved')
+     &&PORTAL_OF[accountRole]===(key===STAFF_SESSION_KEY?'staff':'public')){
      restoredUser={role:accountRole,id:account.id};
      break;
     }
@@ -109,7 +114,7 @@ export default function App(){
    setActiveUser(null);
   }
   setSessionReady(true);
- },[portal,data.users,sharedDataReady]);
+ },[portal,data.users,data.administrators,data.accounts,data.officers,data.citizens,sharedDataReady]);
  useEffect(()=>{
   if(!sharedDataReady)return;
   if(!sessionReady)return;
@@ -162,14 +167,31 @@ export default function App(){
  useEffect(()=>{
   if(!sharedDataReady)return;
   persistAppData(data);
-  if(import.meta.env.DEV)persistSharedAppData(data).catch(error=>console.error('Shared demo data could not be saved.',error));
+  persistSharedAppData(data).catch(error=>console.error('Shared demo data could not be saved.',error));
  },[data,sharedDataReady]);
  useEffect(()=>{if(typeof document!=='undefined')document.documentElement.dataset.theme=theme;try{window.localStorage.setItem(THEME_STORAGE_KEY,theme)}catch(error){console.warn('Theme preference could not be saved.',error)}},[theme]);
  useEffect(()=>{if(!notificationOpen)return;const closeOnOutside=event=>{if(!notificationRef.current?.contains(event.target))setNotificationOpen(false)};const closeOnEscape=event=>{if(event.key==='Escape')setNotificationOpen(false)};document.addEventListener('pointerdown',closeOnOutside);document.addEventListener('keydown',closeOnEscape);return()=>{document.removeEventListener('pointerdown',closeOnOutside);document.removeEventListener('keydown',closeOnEscape)}},[notificationOpen]);
  const setField=useCallback((key,update)=>setData(current=>{const value=typeof update=='function'?update(current[key]):update;return Object.is(value,current[key])?current:{...current,[key]:value}}),[]);
- const setC=useCallback(update=>setField('complaints',update),[setField]),setU=useCallback(update=>setField('users',update),[setField]),setACC=useCallback(update=>setField('accounts',update),[setField]),setSTN=useCallback(update=>setField('stations',update),[setField]),setOFF=useCallback(update=>setField('officers',update),[setField]),setN=useCallback(update=>setField('notifications',update),[setField]),setAUD=useCallback(update=>setField('audit',update),[setField]),setRA=useCallback(update=>setField('registrationApplications',update),[setField]);
- const setCurrentU=useCallback(update=>setField('users',current=>{const next=typeof update=='function'?update(current):update;if(activeUser?.role=='citizen'&&activeUser.id!=current.citizen.id)return{...next,citizen:current.citizen,citizens:(current.citizens||[]).map(user=>user.id==activeUser.id?next.citizen:user)};return next}),[activeUser,setField]);
- const C=data.complaints,U=data.users,ACC=data.accounts,STNS=data.stations,OFF=data.officers,N=data.notifications,AUD=data.audit,RA=data.registrationApplications;
+ const setC=useCallback(update=>setField('complaints',update),[setField]),setU=useCallback(update=>setField('users',update),[setField]),setCIT=useCallback(update=>setField('citizens',update),[setField]),setADM=useCallback(update=>setField('administrators',update),[setField]),setACC=useCallback(update=>setField('accounts',update),[setField]),setSTN=useCallback(update=>setField('stations',update),[setField]),setOFF=useCallback(update=>setField('officers',update),[setField]),setN=useCallback(update=>setField('notifications',update),[setField]),setAUD=useCallback(update=>setField('audit',update),[setField]),setRA=useCallback(update=>setField('registrationApplications',update),[setField]);
+ const setCurrentProfile=useCallback(update=>setData(current=>{
+  const account=current.users.find(item=>item.id===activeUser?.id);
+  if(!account)return current;
+  const collection=PROFILE_COLLECTIONS[account.role],profiles=current[collection]||[];
+  const existing=profiles.find(item=>item.id===account.profileId);
+  if(!existing)return current;
+  const value=typeof update==='function'?update({...existing,email:account.email}):update;
+  const {email,...profile}=value;
+  return {
+   ...current,
+   users:current.users.map(item=>item.id===account.id?{...item,email:email.trim().toLowerCase()}:item),
+   [collection]:profiles.map(item=>item.id===account.profileId?profile:item),
+  };
+ }),[activeUser]);
+ const C=data.complaints,USERS=data.users,CIT=data.citizens,STNS=data.stations,N=data.notifications,AUD=data.audit,RA=data.registrationApplications;
+ const emailFor=(accountRole,profileId)=>USERS.find(item=>item.role===accountRole&&item.profileId===profileId)?.email||'';
+ const ACC=data.accounts.map(item=>({...item,email:emailFor('station',item.id)}));
+ const OFF=data.officers.map(item=>({...item,email:emailFor('officer',item.id)}));
+ const ADM=data.administrators.map(item=>({...item,email:emailFor('admin',item.id)}));
  const go0=r=>{const[a,b]=r.split('-');nav(a=='login'?'/':a=='register'?'/register':getRolePath(a,b));ssb(false);setM(null);setNotificationOpen(false)};
  const login=user=>{
   const key=user.role==='citizen'?CITIZEN_SESSION_KEY:STAFF_SESSION_KEY;
@@ -197,17 +219,19 @@ export default function App(){
   nav('/',{replace:true});
  };
  const toast=(m,t)=>{stt({m,t});setTimeout(()=>stt(null),2600)};const notify=(r,m,extra={})=>setN(n=>[{id:createUniqueId('NTF'),role:r,m,...extra,read:false},...n]);
- const submitRegistration=async(application,files)=>{const submittedAt=application.submittedAt,resubmitted=Boolean(application.previousApplicationId),auditAction=resubmitted?'Citizen registration resubmitted':'Citizen registration submitted';if(import.meta.env.DEV)await saveSharedRegistrationDocuments(application.id,files);setRA(current=>[application,...current]);setRegistrationDocuments(current=>({...current,[application.id]:files}));notify('admin',`New Citizen registration ${application.referenceNumber} awaits review.`);notify('citizen',`Registration application ${application.referenceNumber} submitted for review.`,{userId:application.applicantId});setAUD(current=>[{id:createUniqueId('ACT'),user:application.applicantId,userName:application.fullName,role:'Citizen Applicant',action:auditAction,desc:`${auditAction}: ${application.referenceNumber}`,dt:submittedAt,ip:'local-demo',applicantId:application.applicantId,applicantName:application.fullName,relatedReference:application.referenceNumber,reviewedBy:''},...current]);nav('/registration-status/'+application.referenceNumber)};
+ const submitRegistration=async(application,files)=>{const submittedAt=application.submittedAt,resubmitted=Boolean(application.previousApplicationId),auditAction=resubmitted?'Citizen registration resubmitted':'Citizen registration submitted';await saveSharedRegistrationDocuments(application.id,files);setRA(current=>[application,...current]);setRegistrationDocuments(current=>({...current,[application.id]:files}));notify('admin',`New Citizen registration ${application.referenceNumber} awaits review.`);notify('citizen',`Registration application ${application.referenceNumber} submitted for review.`,{userId:application.applicantId});setAUD(current=>[{id:createUniqueId('ACT'),user:application.applicantId,userName:application.fullName,role:'Citizen Applicant',action:auditAction,desc:`${auditAction}: ${application.referenceNumber}`,dt:submittedAt,ip:'',applicantId:application.applicantId,applicantName:application.fullName,relatedReference:application.referenceNumber,reviewedBy:''},...current]);nav('/registration-status/'+application.referenceNumber)};
  const act=(id,s,n,x={},to)=>{setC(cs=>cs.map(c=>c.id==id?{...c,...x,status:s,hist:[...c.hist,[s,TODAY,n]]}:c));notify('citizen',id+' is now: '+s);to&&notify(to,id+' needs attention: '+s)};
  const wrap=h2=>h`<div>${h2}${tt&&h`<div className=${'fixed bottom-4 right-4 z-[60] px-4 py-2 rounded-lg text-sm shadow-lg '+(tt.t=='err'?'bg-red-600':'bg-green-600')+' text-white'}>${tt.m}</div>`}${cf&&h`<${Modal} t="Please confirm" close=${()=>scf(null)} w="max-w-sm"><p className="text-sm mb-4">${cf.m}</p><div className="flex justify-end gap-2"><button className=${B2} onClick=${()=>scf(null)}>Cancel</button><button className=${B1} onClick=${()=>{const f=cf.f;scf(null);f()}}>Confirm</button></div><//>`}</div>`;
  const reapplyRef=new URLSearchParams(search).get('reapply'),previousApplication=RA.find(application=>application.referenceNumber===reapplyRef&&application.status==='Rejected');
  if(!sharedDataReady)return h`<div className="min-h-screen flex items-center justify-center text-sm text-mu">Loading portal data...</div>`;
  if(portal==='staff'&&(view==='register'||view==='registrationStatus'))return null;
  if(view==='registrationStatus'){const application=RA.find(item=>item.referenceNumber===parts[statusIndex]);return wrap(h`<${RegistrationStatus} application=${application} onLogin=${()=>go0('login-public')} onReapply=${item=>nav('/register?reapply='+encodeURIComponent(item.referenceNumber))}/>`);};
- if(view==='register')return wrap(h`<${Register} go=${go0} toast=${toast} users=${U} applications=${RA} previousApplication=${previousApplication} onSubmit=${submitRegistration}/>`); 
- if(view==='login')return wrap(h`<${Login} portal=${portal} go=${go0} users=${U} applications=${RA} onLogin=${login} onStatus=${reference=>nav('/registration-status/'+encodeURIComponent(reference))} toast=${toast}/>`); 
+ if(view==='register')return wrap(h`<${Register} go=${go0} toast=${toast} users=${USERS} citizens=${CIT} applications=${RA} previousApplication=${previousApplication} onSubmit=${submitRegistration}/>`); 
+ if(view==='login')return wrap(h`<${Login} portal=${portal} go=${go0} users=${USERS} applications=${RA} onLogin=${login} onStatus=${reference=>nav('/registration-status/'+encodeURIComponent(reference))} toast=${toast}/>`); 
  if(!sessionReady||!activeUser||activeUser.role!==role||PORTAL_OF[role]!==portal)return null;
- const user=role=='citizen'&&activeUser?.role=='citizen'?(U.citizens||[]).find(x=>x.id==activeUser.id)||U.citizen:U[role],visibleUsers=role=='citizen'&&user.id!=U.citizen.id?{...U,citizen:user}:U,S={role,user,C,setC,OFF,setOFF,ACC,setACC,STN:STNS,setSTN,AUD,setAUD,N,setN,U:visibleUsers,setU:setCurrentU,RA,setRA,registrationDocuments,setRegistrationDocuments,registrationReviewId,setRegistrationReviewId,setM,toast,notify,act,ask:(m,f)=>scf({m,f}),go:p=>go0(role+'-'+p)};
+ const authUser=USERS.find(item=>item.id===activeUser.id&&item.role===role),profileCollection=PROFILE_COLLECTIONS[role],profile=authUser&&data[profileCollection].find(item=>item.id===authUser.profileId),user=profile?{...profile,email:authUser.email}:null;
+ if(!user)return null;
+ const S={role,user,C,setC,OFF,setOFF,ACC,setACC,STN:STNS,setSTN,AUD,setAUD,N,setN,USERS,CIT,ADM,setU,setCIT,setADM,setProfile:setCurrentProfile,RA,setRA,registrationDocuments,setRegistrationDocuments,registrationReviewId,setRegistrationReviewId,setM,toast,notify,act,ask:(m,f)=>scf({m,f}),go:p=>go0(role+'-'+p)};
  const P=PAGES[role][page],unread=N.filter(n=>n.role==role&&(!n.userId||n.userId==user.id)&&!n.read).length;
  return wrap(h`<div className="min-h-screen flex">${sb&&h`<div className="fixed inset-0 bg-black/60 z-30 lg:hidden" onClick=${()=>ssb(false)}></div>`}
  <aside className=${'fixed lg:sticky top-0 h-screen z-40 w-64 shrink-0 bg-sb border-r border-bd flex flex-col transition-transform '+(sb?'':'-translate-x-full lg:translate-x-0')}><div className="p-4 flex items-center gap-2 border-b border-bd"><div className="w-8 h-8 rounded-lg bg-pr flex items-center justify-center"><${Ic} n="shield" s=${18}/></div><div className="text-xs font-semibold leading-tight">Police Complaint<br/>Management System</div></div><nav className="flex-1 overflow-y-auto p-2 space-y-1">${NAV[role].map(([k,l,i])=>h`<button key=${k} onClick=${()=>S.go(k)} className=${'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-left '+(k==page?'bg-pr text-white':'text-mu hover:bg-ip hover:text-tx')}><${Ic} n=${i}/>${l}</button>`)}</nav><button onClick=${logout} className="m-2 flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-mu hover:bg-ip"><${Ic} n="logout"/>Logout</button></aside>
