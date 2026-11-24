@@ -7,7 +7,7 @@ import { B1, B2 } from '../../lib/constants';
 import { gb, grp, sd } from '../../lib/helpers';
 import { maskIdentityNumber } from '../../lib/registration';
 
-export const AdDash=({S})=>h`<${Pg} t="Super Administrator Dashboard" sub="System-wide overview (demo data)"/>
+export const AdDash=({S})=>h`<${Pg} t="Super Administrator Dashboard" sub="System-wide overview"/>
 <${Grid} n=${6}><${Stat} key="stations" l="Police stations" v=${S.STN.length}/><${Stat} key="accounts" l="Station accounts" v=${S.ACC.length}/><${Stat} key="officers" l="Police officers" v=${S.OFF.length}/><${Stat} key="complaints" l="Total complaints" v=${S.C.length}/><${Stat} key="pending" l="Pending" v=${S.C.filter(c=>grp(c.status)<2).length} c="text-yellow-400"/><${Stat} key="resolved" l="Resolved" v=${S.C.filter(c=>c.status=='Resolved / Closed').length} c="text-green-400"/><//>
 <div className="grid lg:grid-cols-2 gap-3 mt-4"><${Card} t="Complaint status distribution"><${Dn} d=${sd(S.C)}/><//><${Card} t="Complaints by month"><${Bars} d=${gb(S.C,c=>c.date.slice(0,7))}/><//></div>
 <div className="flex gap-2 flex-wrap my-4">${[['stations','View stations'],['accounts','Manage accounts'],['officers','Manage officers'],['audit','Open audit logs']].map(x=>h`<button key=${x[0]} className=${B1} onClick=${()=>S.go(x[0])}>${x[1]}</button>`)}</div>

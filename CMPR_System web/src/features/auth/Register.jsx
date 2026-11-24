@@ -122,7 +122,7 @@ export function Register({ go, toast, users = [], citizens = [], applications = 
       ['Pending Review', 'Resubmitted'].includes(application.status)
       && application.id !== previousApplication?.id
     ));
-    if (email && (users.some(user => user.email.trim().toLowerCase() === email)
+    if (email && (users.some(user => user.role !== 'station' && user.email.trim().toLowerCase() === email)
       || activeApplications.some(application => application.email.trim().toLowerCase() === email))) {
       nextErrors.email = 'An application or account already uses this email.';
     }
@@ -197,7 +197,7 @@ export function Register({ go, toast, users = [], citizens = [], applications = 
   };
 
   return h`<div className="min-h-screen flex items-center justify-center p-4"><div className="w-full max-w-3xl bg-cd border border-bd rounded-xl p-6 space-y-4">
-    <div><h1 className="font-bold text-lg">Citizen registration</h1><p className="text-mu text-xs mt-1">Frontend demo only. Use fictional information; submitted text is stored in local development data. Identity images are shared through the local development cache for staff review.</p></div>
+    <div><h1 className="font-bold text-lg">Citizen registration</h1><p className="text-mu text-xs mt-1">Provide your details exactly as they appear on your identity document. Your application will be reviewed by a police administrator.</p></div>
     ${previousApplication&&h`<div className="rounded-lg border border-orange-500/40 bg-orange-500/10 p-3 text-sm"><b className="text-orange-400">Previous rejection:</b> ${previousApplication.rejectionReason}</div>`}
     <div><h2 className="font-semibold text-sm mb-3">Personal Information</h2><div className="grid sm:grid-cols-2 gap-3">
       <${Fld} l="Full Name" err=${errors.fullName}><input className=${INP} value=${form.fullName} onChange=${setField('fullName')}/><//>

@@ -13,7 +13,7 @@ export function RegistrationStatus({ application, onLogin, onReapply }) {
   const pending = application.status === 'Pending Review' || application.status === 'Resubmitted';
   const submitted = new Date(application.submittedAt).toLocaleString();
   return h`<div className="min-h-screen flex items-center justify-center p-4"><div className="w-full max-w-2xl space-y-4">
-    <${Pg} t="Citizen registration status" sub="Frontend demonstration application"/>
+    <${Pg} t="Citizen registration status" sub="Application status"/>
     <${Card}>
       ${pending&&h`<div><h1 className="font-bold text-xl text-orange-400">UNDER REVIEW</h1><p className="text-sm mt-2">Your registration application has been submitted successfully. Your identity verification is currently under review by the Super Administrator.</p></div>`}
       ${application.status=='Approved'&&h`<div><h1 className="font-bold text-xl text-green-400">APPROVED</h1><p className="text-sm mt-2">Your identity verification is approved. You can now sign in to the Citizen portal.</p></div>`}

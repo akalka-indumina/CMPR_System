@@ -1,10 +1,10 @@
 import { h } from '../../lib/h';
 import { Ic } from '../../components/ui/Icon';
 import { B2 } from '../../lib/constants';
+import { visibleNotification } from '../../lib/helpers';
 
 export function NotificationPanel({ S, onClose }) {
-  const visible = notification => notification.role === S.role
-    && (!notification.userId || notification.userId === S.user.id);
+  const visible = notification => visibleNotification(notification, S.role, S.user, S.C);
   const notifications = S.N.filter(visible);
   const unreadCount = notifications.filter(notification => !notification.read).length;
 

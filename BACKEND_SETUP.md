@@ -112,3 +112,38 @@ CMPR System web/
 ## Important - still a demo
 - There is **no secure login on the server yet**. Passwords are still checked in the browser and the data is sent to every browser. Do not put real personal data in it.
 - The next step for a real system is: login on the server (with a token), and Express checking which role may do what.
+
+---
+
+## Complaint submission, routing, privacy and evidence (new)
+
+### How a complaint travels
+1. The citizen picks an **Incident District** (all 25) and then a **Police Station** of that district, adds evidence files and submits.
+2. The server saves the complaint with that station's `stationCode`. Only that station's accounts (and the Super Administrator) can see it. `off` (assigned officer) is empty, so **no officer can see it yet**.
+3. The station accepts it and assigns an officer **of the same station**. From that moment that officer (and only that officer) can see it.
+
+### Who sees what (enforced on the SERVER, in `server/src/complaintRules.js`)
+| Role | Complaints visible | Complainant details |
+|---|---|---|
+| Citizen | their own | - |
+| Station account | only their own station | name, contact number, address, district, ID number, email |
+| Police officer | only complaints assigned to them | **name and contact number only** |
+| Super Administrator | all | all |
+
+### Evidence
+Files (JPG, PNG, PDF, MP4, max 10 MB, up to 10 per complaint) are uploaded to `POST /api/complaints/:id/evidence` and stored in the MongoDB collection `complaintEvidence`. The type is checked from the file's real content. Anyone who may see the complaint may open its evidence (`GET /api/complaints/:id/evidence/:evidenceId`).
+
+### New server pieces
+| File | Purpose |
+|---|---|
+| `src/auth.js` | `POST /api/auth/login`, `/logout`, session tokens (collection `sessions`, expire after 12 h) |
+| `src/complaintRoutes.js` | list / create / action / evidence endpoints |
+| `src/complaintRules.js` | all permission and workflow rules (unit-tested: `npm test` inside `server`) |
+| `src/dataGuard.js` | stops non-admins from changing users/officers/stations through `PUT /api/data` |
+
+New MongoDB collections: `complaintEvidence`, `sessions`, `counters` (complaint numbers). `complaints` is no longer part of `/api/data`.
+
+### After updating
+* Restart the server (`npm run dev:all`). No new npm packages are needed.
+* Everybody must **sign in again** (old browser sessions have no token).
+* ID photos for registrations are now viewable only by a signed-in administrator.

@@ -105,7 +105,7 @@ export function CitizenRegistrationRequests({ S }) {
       const identityNumber = normalizeIdentityNumber(selected.identityNumber || selected.nic);
       const alreadyExists = S.CIT.some(user => (
         normalizeIdentityNumber(user.identityNumber || user.nic) === identityNumber
-      )) || S.USERS.some(user => user.email.trim().toLowerCase() === selected.email.trim().toLowerCase());
+      )) || S.USERS.some(user => user.role !== 'station' && user.email.trim().toLowerCase() === selected.email.trim().toLowerCase());
       if (alreadyExists) {
         S.toast('A matching Citizen account already exists. This application was not approved.', 'err');
         return;
@@ -220,7 +220,7 @@ export function CitizenRegistrationRequests({ S }) {
   };
 
   return h`<div className="space-y-4">
-    <${Pg} t="Citizen Registration Requests" sub="Review frontend demonstration identity applications"/>
+    <${Pg} t="Citizen Registration Requests" sub="Review citizen identity applications"/>
     <${Grid} n=${4}>
       <${Stat} l="Total Applications" v=${applications.length}/>
       <${Stat} l="Pending Reviews" v=${pendingCount} c="text-orange-400"/>

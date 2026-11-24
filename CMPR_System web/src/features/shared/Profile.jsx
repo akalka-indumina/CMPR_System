@@ -5,13 +5,20 @@ import { Card, Fld, Pg } from '../../components/ui/Primitives';
 import { B1, B2, INP } from '../../lib/constants';
 
 export function Profile({ S }) {
-  const u = S.user;
+  const isStation = S.role === 'station';
+  const u = isStation ? (S.ACC.find(account => account.id === S.user.id) || S.user) : S.user;
 
   // View mode is the default
   const [editing, setEditing] = useState(false);
   const [d, setD] = useState({ ...u });
 
-  const fields = [
+  const fields = isStation ? [
+    ['id', 'Account ID'],
+    ['station', 'Police Station'],
+    ['district', 'District'],
+    ['tel', 'Contact Number'],
+    ['email', 'Email Address']
+  ] : [
     ['name', 'Full Name'],
     ...(S.role === 'citizen'
       ? [
@@ -74,7 +81,7 @@ export function Profile({ S }) {
       S.toast('Enter a valid email address', 'err');
       return;
     }
-    if (S.USERS.some(account => account.profileId !== u.id
+    if (S.USERS.some(account => account.role !== 'station' && account.profileId !== u.id
       && account.email.toLowerCase() === d.email.trim().toLowerCase())) {
       S.toast('Another account already uses this email address', 'err');
       return;
@@ -123,7 +130,7 @@ export function Profile({ S }) {
       sub="View and manage your personal information"
     >
       ${
-        !editing && h`
+        !editing && !isStation && h`
           <button
             className=${B1}
             onClick=${startEditing}

@@ -1,6 +1,6 @@
 // store.js - all the code that reads from and writes to MongoDB.
 //
-// The React app keeps its data as one object with 10 collections, each stored
+// The React app keeps its shared data as one object with 9 collections, each stored
 // here as its own MongoDB collection.
 // Here every part becomes its own MongoDB "collection" (like a table) and every
 // item inside it becomes one "document" (like a row). The order of the items is
@@ -9,8 +9,9 @@ import { isDeepStrictEqual } from 'node:util';
 import { getDb } from './db.js';
 
 // collection name -> the field that makes each item unique
+// NOTE: complaints are NOT in this list any more. They have their own protected API
+// (complaintRoutes.js) so that each user only receives the complaints they may see.
 const LISTS = {
-  complaints: 'id',
   users: 'id',
   administrators: 'id',
   citizens: 'id',
@@ -41,8 +42,9 @@ export function validateData(data) {
   const users = data.users;
   const roles = new Set(['admin', 'station', 'officer', 'citizen']);
   if (users.some(user => !isObject(user)
-    || typeof user.email !== 'string' || !user.email.trim()
+    || typeof user.email !== 'string'
     || !roles.has(user.role)
+    || (user.role !== 'station' && !user.email.trim()) // station accounts sign in with their Account ID
     || typeof user.profileId !== 'string' || !user.profileId
     || typeof user.active !== 'boolean'
     || Object.hasOwn(user, 'password')
@@ -53,7 +55,8 @@ export function validateData(data) {
         || typeof user.passwordHash !== 'string' || !user.passwordHash)))) {
     return 'Every user needs an email, role, profile reference, active flag, and hashed credentials if set.';
   }
-  const emails = users.map(user => user.email.trim().toLowerCase());
+  // Station accounts share their station's contact email, so only other roles must be unique.
+  const emails = users.filter(user => user.role !== 'station').map(user => user.email.trim().toLowerCase());
   if (new Set(emails).size !== emails.length) return '"users" has a duplicate email.';
   const profileCollections = {
     admin: 'administrators',
