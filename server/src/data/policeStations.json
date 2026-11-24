@@ -1,0 +1,4403 @@
+[
+ {
+  "code": "colombo-pettah",
+  "name": "Pettah",
+  "district": "Colombo",
+  "addr": "Pettah Police Station, Pettah, Colombo District",
+  "tel": "011 386 0056",
+  "email": "pettah@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-keselwatta",
+  "name": "Keselwatta",
+  "district": "Colombo",
+  "addr": "Keselwatta Police Station, Keselwatta, Colombo District",
+  "tel": "011 286 2257",
+  "email": "keselwatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-dam-street",
+  "name": "Dam Street",
+  "district": "Colombo",
+  "addr": "Dam Street Police Station, Dam Street, Colombo District",
+  "tel": "011 659 8021",
+  "email": "dam-street@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-aduruppu-weediya",
+  "name": "Aduruppu Weediya",
+  "district": "Colombo",
+  "addr": "Aduruppu Weediya Police Station, Aduruppu Weediya, Colombo District",
+  "tel": "011 397 7181",
+  "email": "aduruppu-weediya@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-fort",
+  "name": "Fort",
+  "district": "Colombo",
+  "addr": "Fort Police Station, Fort, Colombo District",
+  "tel": "011 599 9315",
+  "email": "fort@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-slave-island",
+  "name": "Slave Island",
+  "district": "Colombo",
+  "addr": "Slave Island Police Station, Slave Island, Colombo District",
+  "tel": "011 309 0017",
+  "email": "slave-island@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-maradana",
+  "name": "Maradana",
+  "district": "Colombo",
+  "addr": "Maradana Police Station, Maradana, Colombo District",
+  "tel": "011 671 0946",
+  "email": "maradana@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-maligawatta",
+  "name": "Maligawatta",
+  "district": "Colombo",
+  "addr": "Maligawatta Police Station, Maligawatta, Colombo District",
+  "tel": "011 381 7422",
+  "email": "maligawatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-colombo-harbour",
+  "name": "Colombo Harbour",
+  "district": "Colombo",
+  "addr": "Colombo Harbour Police Station, Colombo Harbour, Colombo District",
+  "tel": "011 403 8895",
+  "email": "colombo-harbour@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-fore-shore",
+  "name": "Fore Shore",
+  "district": "Colombo",
+  "addr": "Fore Shore Police Station, Fore Shore, Colombo District",
+  "tel": "011 475 4106",
+  "email": "fore-shore@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-modara",
+  "name": "Modara",
+  "district": "Colombo",
+  "addr": "Modara Police Station, Modara, Colombo District",
+  "tel": "011 209 8662",
+  "email": "modara@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-kotahena",
+  "name": "Kotahena",
+  "district": "Colombo",
+  "addr": "Kotahena Police Station, Kotahena, Colombo District",
+  "tel": "011 482 2682",
+  "email": "kotahena@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-mattakkuliya",
+  "name": "Mattakkuliya",
+  "district": "Colombo",
+  "addr": "Mattakkuliya Police Station, Mattakkuliya, Colombo District",
+  "tel": "011 570 5289",
+  "email": "mattakkuliya@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-bloemendhal",
+  "name": "Bloemendhal",
+  "district": "Colombo",
+  "addr": "Bloemendhal Police Station, Bloemendhal, Colombo District",
+  "tel": "011 333 9660",
+  "email": "bloemendhal@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-grandpass",
+  "name": "Grandpass",
+  "district": "Colombo",
+  "addr": "Grandpass Police Station, Grandpass, Colombo District",
+  "tel": "011 733 4409",
+  "email": "grandpass@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-dematagoda",
+  "name": "Dematagoda",
+  "district": "Colombo",
+  "addr": "Dematagoda Police Station, Dematagoda, Colombo District",
+  "tel": "011 473 2291",
+  "email": "dematagoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-kollupitiya",
+  "name": "Kollupitiya",
+  "district": "Colombo",
+  "addr": "Kollupitiya Police Station, Kollupitiya, Colombo District",
+  "tel": "011 642 0496",
+  "email": "kollupitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-bambalapitiya",
+  "name": "Bambalapitiya",
+  "district": "Colombo",
+  "addr": "Bambalapitiya Police Station, Bambalapitiya, Colombo District",
+  "tel": "011 405 2488",
+  "email": "bambalapitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-kirulapone",
+  "name": "Kirulapone",
+  "district": "Colombo",
+  "addr": "Kirulapone Police Station, Kirulapone, Colombo District",
+  "tel": "011 236 8470",
+  "email": "kirulapone@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-wellawatta",
+  "name": "Wellawatta",
+  "district": "Colombo",
+  "addr": "Wellawatta Police Station, Wellawatta, Colombo District",
+  "tel": "011 551 7848",
+  "email": "wellawatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-narahenpita",
+  "name": "Narahenpita",
+  "district": "Colombo",
+  "addr": "Narahenpita Police Station, Narahenpita, Colombo District",
+  "tel": "011 594 9967",
+  "email": "narahenpita@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-borella",
+  "name": "Borella",
+  "district": "Colombo",
+  "addr": "Borella Police Station, Borella, Colombo District",
+  "tel": "011 683 7006",
+  "email": "borella@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-cinnamon-garden",
+  "name": "Cinnamon Garden",
+  "district": "Colombo",
+  "addr": "Cinnamon Garden Police Station, Cinnamon Garden, Colombo District",
+  "tel": "011 340 3147",
+  "email": "cinnamon-garden@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-mirihana",
+  "name": "Mirihana",
+  "district": "Colombo",
+  "addr": "Mirihana Police Station, Mirihana, Colombo District",
+  "tel": "011 315 3268",
+  "email": "mirihana@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-maharagama",
+  "name": "Maharagama",
+  "district": "Colombo",
+  "addr": "Maharagama Police Station, Maharagama, Colombo District",
+  "tel": "011 582 6507",
+  "email": "maharagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-boralesgamuwa",
+  "name": "Boralesgamuwa",
+  "district": "Colombo",
+  "addr": "Boralesgamuwa Police Station, Boralesgamuwa, Colombo District",
+  "tel": "011 394 1250",
+  "email": "boralesgamuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-wellampitiya",
+  "name": "Wellampitiya",
+  "district": "Colombo",
+  "addr": "Wellampitiya Police Station, Wellampitiya, Colombo District",
+  "tel": "011 521 9729",
+  "email": "wellampitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-thalangama",
+  "name": "Thalangama",
+  "district": "Colombo",
+  "addr": "Thalangama Police Station, Thalangama, Colombo District",
+  "tel": "011 549 7995",
+  "email": "thalangama@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-welikada",
+  "name": "Welikada",
+  "district": "Colombo",
+  "addr": "Welikada Police Station, Welikada, Colombo District",
+  "tel": "011 259 0526",
+  "email": "welikada@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-nawagamuwa",
+  "name": "Nawagamuwa",
+  "district": "Colombo",
+  "addr": "Nawagamuwa Police Station, Nawagamuwa, Colombo District",
+  "tel": "011 596 6783",
+  "email": "nawagamuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-mulleriyawa",
+  "name": "Mulleriyawa",
+  "district": "Colombo",
+  "addr": "Mulleriyawa Police Station, Mulleriyawa, Colombo District",
+  "tel": "011 696 1585",
+  "email": "mulleriyawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-homagama",
+  "name": "Homagama",
+  "district": "Colombo",
+  "addr": "Homagama Police Station, Homagama, Colombo District",
+  "tel": "011 262 3520",
+  "email": "homagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-kottawa",
+  "name": "Kottawa",
+  "district": "Colombo",
+  "addr": "Kottawa Police Station, Kottawa, Colombo District",
+  "tel": "011 646 8102",
+  "email": "kottawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-athurugiriya",
+  "name": "Athurugiriya",
+  "district": "Colombo",
+  "addr": "Athurugiriya Police Station, Athurugiriya, Colombo District",
+  "tel": "011 385 2339",
+  "email": "athurugiriya@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-padukka",
+  "name": "Padukka",
+  "district": "Colombo",
+  "addr": "Padukka Police Station, Padukka, Colombo District",
+  "tel": "011 759 5304",
+  "email": "padukka@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-hanwella",
+  "name": "Hanwella",
+  "district": "Colombo",
+  "addr": "Hanwella Police Station, Hanwella, Colombo District",
+  "tel": "011 233 6607",
+  "email": "hanwella@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-gothatuwa",
+  "name": "Gothatuwa",
+  "district": "Colombo",
+  "addr": "Gothatuwa Police Station, Gothatuwa, Colombo District",
+  "tel": "011 545 8199",
+  "email": "gothatuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-meepe",
+  "name": "Meepe",
+  "district": "Colombo",
+  "addr": "Meepe Police Station, Meepe, Colombo District",
+  "tel": "011 741 9553",
+  "email": "meepe@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-mount-lavinia",
+  "name": "Mount Lavinia",
+  "district": "Colombo",
+  "addr": "Mount Lavinia Police Station, Mount Lavinia, Colombo District",
+  "tel": "011 201 1463",
+  "email": "mount-lavinia@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-piliyandala",
+  "name": "Piliyandala",
+  "district": "Colombo",
+  "addr": "Piliyandala Police Station, Piliyandala, Colombo District",
+  "tel": "011 370 4501",
+  "email": "piliyandala@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-angulana",
+  "name": "Angulana",
+  "district": "Colombo",
+  "addr": "Angulana Police Station, Angulana, Colombo District",
+  "tel": "011 387 7131",
+  "email": "angulana@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-dehiwala",
+  "name": "Dehiwala",
+  "district": "Colombo",
+  "addr": "Dehiwala Police Station, Dehiwala, Colombo District",
+  "tel": "011 665 1246",
+  "email": "dehiwala@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-kohuwala",
+  "name": "Kohuwala",
+  "district": "Colombo",
+  "addr": "Kohuwala Police Station, Kohuwala, Colombo District",
+  "tel": "011 304 7205",
+  "email": "kohuwala@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-moratuwa",
+  "name": "Moratuwa",
+  "district": "Colombo",
+  "addr": "Moratuwa Police Station, Moratuwa, Colombo District",
+  "tel": "011 200 5523",
+  "email": "moratuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-kahathuduwa",
+  "name": "Kahathuduwa",
+  "district": "Colombo",
+  "addr": "Kahathuduwa Police Station, Kahathuduwa, Colombo District",
+  "tel": "011 536 7755",
+  "email": "kahathuduwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-moratumulla",
+  "name": "Moratumulla",
+  "district": "Colombo",
+  "addr": "Moratumulla Police Station, Moratumulla, Colombo District",
+  "tel": "011 524 6652",
+  "email": "moratumulla@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-egodauyana",
+  "name": "Egodauyana",
+  "district": "Colombo",
+  "addr": "Egodauyana Police Station, Egodauyana, Colombo District",
+  "tel": "011 393 3565",
+  "email": "egodauyana@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-mattegoda",
+  "name": "Mattegoda",
+  "district": "Colombo",
+  "addr": "Mattegoda Police Station, Mattegoda, Colombo District",
+  "tel": "011 599 4479",
+  "email": "mattegoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-awissawella",
+  "name": "Awissawella",
+  "district": "Colombo",
+  "addr": "Awissawella Police Station, Awissawella, Colombo District",
+  "tel": "011 346 5997",
+  "email": "awissawella@police.lk",
+  "active": true
+ },
+ {
+  "code": "colombo-kosgama",
+  "name": "Kosgama",
+  "district": "Colombo",
+  "addr": "Kosgama Police Station, Kosgama, Colombo District",
+  "tel": "011 402 5860",
+  "email": "kosgama@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-peliyagoda",
+  "name": "Peliyagoda",
+  "district": "Gampaha",
+  "addr": "Peliyagoda Police Station, Peliyagoda, Gampaha District",
+  "tel": "033 287 8132",
+  "email": "peliyagoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-kelaniya",
+  "name": "Kelaniya",
+  "district": "Gampaha",
+  "addr": "Kelaniya Police Station, Kelaniya, Gampaha District",
+  "tel": "033 473 6364",
+  "email": "kelaniya@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-kandana",
+  "name": "Kandana",
+  "district": "Gampaha",
+  "addr": "Kandana Police Station, Kandana, Gampaha District",
+  "tel": "033 784 0304",
+  "email": "kandana@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-wattala",
+  "name": "Wattala",
+  "district": "Gampaha",
+  "addr": "Wattala Police Station, Wattala, Gampaha District",
+  "tel": "033 717 3237",
+  "email": "wattala@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-mahabage",
+  "name": "Mahabage",
+  "district": "Gampaha",
+  "addr": "Mahabage Police Station, Mahabage, Gampaha District",
+  "tel": "033 730 3532",
+  "email": "mahabage@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-sapugaskanda",
+  "name": "Sapugaskanda",
+  "district": "Gampaha",
+  "addr": "Sapugaskanda Police Station, Sapugaskanda, Gampaha District",
+  "tel": "033 651 2354",
+  "email": "sapugaskanda@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-biyagama",
+  "name": "Biyagama",
+  "district": "Gampaha",
+  "addr": "Biyagama Police Station, Biyagama, Gampaha District",
+  "tel": "033 281 9398",
+  "email": "biyagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-meegahawatta",
+  "name": "Meegahawatta",
+  "district": "Gampaha",
+  "addr": "Meegahawatta Police Station, Meegahawatta, Gampaha District",
+  "tel": "033 392 0754",
+  "email": "meegahawatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-ja-ela",
+  "name": "Ja-Ela",
+  "district": "Gampaha",
+  "addr": "Ja-Ela Police Station, Ja-Ela, Gampaha District",
+  "tel": "033 745 0704",
+  "email": "ja-ela@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-ragama",
+  "name": "Ragama",
+  "district": "Gampaha",
+  "addr": "Ragama Police Station, Ragama, Gampaha District",
+  "tel": "033 755 7917",
+  "email": "ragama@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-kiribathgoda",
+  "name": "Kiribathgoda",
+  "district": "Gampaha",
+  "addr": "Kiribathgoda Police Station, Kiribathgoda, Gampaha District",
+  "tel": "033 476 4923",
+  "email": "kiribathgoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-kadawatha",
+  "name": "Kadawatha",
+  "district": "Gampaha",
+  "addr": "Kadawatha Police Station, Kadawatha, Gampaha District",
+  "tel": "033 397 1444",
+  "email": "kadawatha@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-gampaha",
+  "name": "Gampaha",
+  "district": "Gampaha",
+  "addr": "Gampaha Police Station, Gampaha, Gampaha District",
+  "tel": "033 467 9219",
+  "email": "gampaha@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-minuwangoda",
+  "name": "Minuwangoda",
+  "district": "Gampaha",
+  "addr": "Minuwangoda Police Station, Minuwangoda, Gampaha District",
+  "tel": "033 425 1226",
+  "email": "minuwangoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-kirindiwela",
+  "name": "Kirindiwela",
+  "district": "Gampaha",
+  "addr": "Kirindiwela Police Station, Kirindiwela, Gampaha District",
+  "tel": "033 773 2443",
+  "email": "kirindiwela@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-dompe",
+  "name": "Dompe",
+  "district": "Gampaha",
+  "addr": "Dompe Police Station, Dompe, Gampaha District",
+  "tel": "033 488 2236",
+  "email": "dompe@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-pugoda",
+  "name": "Pugoda",
+  "district": "Gampaha",
+  "addr": "Pugoda Police Station, Pugoda, Gampaha District",
+  "tel": "033 248 3611",
+  "email": "pugoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-ganemulla",
+  "name": "Ganemulla",
+  "district": "Gampaha",
+  "addr": "Ganemulla Police Station, Ganemulla, Gampaha District",
+  "tel": "033 505 7376",
+  "email": "ganemulla@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-weeragula",
+  "name": "Weeragula",
+  "district": "Gampaha",
+  "addr": "Weeragula Police Station, Weeragula, Gampaha District",
+  "tel": "033 287 4961",
+  "email": "weeragula@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-weliweriya",
+  "name": "Weliweriya",
+  "district": "Gampaha",
+  "addr": "Weliweriya Police Station, Weliweriya, Gampaha District",
+  "tel": "033 616 8278",
+  "email": "weliweriya@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-malwathuhiripitiya",
+  "name": "Malwathuhiripitiya",
+  "district": "Gampaha",
+  "addr": "Malwathuhiripitiya Police Station, Malwathuhiripitiya, Gampaha District",
+  "tel": "033 634 6437",
+  "email": "malwathuhiripitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-nittambuwa",
+  "name": "Nittambuwa",
+  "district": "Gampaha",
+  "addr": "Nittambuwa Police Station, Nittambuwa, Gampaha District",
+  "tel": "033 598 8504",
+  "email": "nittambuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-weyangoda",
+  "name": "Weyangoda",
+  "district": "Gampaha",
+  "addr": "Weyangoda Police Station, Weyangoda, Gampaha District",
+  "tel": "033 322 8680",
+  "email": "weyangoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-meerigama",
+  "name": "Meerigama",
+  "district": "Gampaha",
+  "addr": "Meerigama Police Station, Meerigama, Gampaha District",
+  "tel": "033 217 2832",
+  "email": "meerigama@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-yakkala",
+  "name": "Yakkala",
+  "district": "Gampaha",
+  "addr": "Yakkala Police Station, Yakkala, Gampaha District",
+  "tel": "033 592 2950",
+  "email": "yakkala@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-pallewela",
+  "name": "Pallewela",
+  "district": "Gampaha",
+  "addr": "Pallewela Police Station, Pallewela, Gampaha District",
+  "tel": "033 742 5786",
+  "email": "pallewela@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-negombo",
+  "name": "Negombo",
+  "district": "Gampaha",
+  "addr": "Negombo Police Station, Negombo, Gampaha District",
+  "tel": "033 467 9697",
+  "email": "negombo@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-kochchikade",
+  "name": "Kochchikade",
+  "district": "Gampaha",
+  "addr": "Kochchikade Police Station, Kochchikade, Gampaha District",
+  "tel": "033 725 4661",
+  "email": "kochchikade@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-pamunugama",
+  "name": "Pamunugama",
+  "district": "Gampaha",
+  "addr": "Pamunugama Police Station, Pamunugama, Gampaha District",
+  "tel": "033 370 9619",
+  "email": "pamunugama@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-kotadeniyawa",
+  "name": "Kotadeniyawa",
+  "district": "Gampaha",
+  "addr": "Kotadeniyawa Police Station, Kotadeniyawa, Gampaha District",
+  "tel": "033 259 7942",
+  "email": "kotadeniyawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-divulapitiya",
+  "name": "Divulapitiya",
+  "district": "Gampaha",
+  "addr": "Divulapitiya Police Station, Divulapitiya, Gampaha District",
+  "tel": "033 443 7876",
+  "email": "divulapitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-seeduwa",
+  "name": "Seeduwa",
+  "district": "Gampaha",
+  "addr": "Seeduwa Police Station, Seeduwa, Gampaha District",
+  "tel": "033 795 2078",
+  "email": "seeduwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-raddolugama",
+  "name": "Raddolugama",
+  "district": "Gampaha",
+  "addr": "Raddolugama Police Station, Raddolugama, Gampaha District",
+  "tel": "033 462 0969",
+  "email": "raddolugama@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-katunayaka",
+  "name": "Katunayaka",
+  "district": "Gampaha",
+  "addr": "Katunayaka Police Station, Katunayaka, Gampaha District",
+  "tel": "033 674 4918",
+  "email": "katunayaka@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-katunayaka-airport",
+  "name": "Katunayaka Airport",
+  "district": "Gampaha",
+  "addr": "Katunayaka Airport Police Station, Katunayaka Airport, Gampaha District",
+  "tel": "033 791 1249",
+  "email": "katunayaka-airport@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-katana",
+  "name": "Katana",
+  "district": "Gampaha",
+  "addr": "Katana Police Station, Katana, Gampaha District",
+  "tel": "033 739 3235",
+  "email": "katana@police.lk",
+  "active": true
+ },
+ {
+  "code": "gampaha-dungalpitiya",
+  "name": "Dungalpitiya",
+  "district": "Gampaha",
+  "addr": "Dungalpitiya Police Station, Dungalpitiya, Gampaha District",
+  "tel": "033 781 5545",
+  "email": "dungalpitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-panadura-south",
+  "name": "Panadura South",
+  "district": "Kalutara",
+  "addr": "Panadura South Police Station, Panadura South, Kalutara District",
+  "tel": "034 605 7630",
+  "email": "panadura-south@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-panadura-north",
+  "name": "Panadura North",
+  "district": "Kalutara",
+  "addr": "Panadura North Police Station, Panadura North, Kalutara District",
+  "tel": "034 544 4657",
+  "email": "panadura-north@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-wadduwa",
+  "name": "Wadduwa",
+  "district": "Kalutara",
+  "addr": "Wadduwa Police Station, Wadduwa, Kalutara District",
+  "tel": "034 599 5709",
+  "email": "wadduwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-bandaragama",
+  "name": "Bandaragama",
+  "district": "Kalutara",
+  "addr": "Bandaragama Police Station, Bandaragama, Kalutara District",
+  "tel": "034 629 4613",
+  "email": "bandaragama@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-anguruwatota",
+  "name": "Anguruwatota",
+  "district": "Kalutara",
+  "addr": "Anguruwatota Police Station, Anguruwatota, Kalutara District",
+  "tel": "034 547 0185",
+  "email": "anguruwatota@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-millaniya",
+  "name": "Millaniya",
+  "district": "Kalutara",
+  "addr": "Millaniya Police Station, Millaniya, Kalutara District",
+  "tel": "034 578 2992",
+  "email": "millaniya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-horana",
+  "name": "Horana",
+  "district": "Kalutara",
+  "addr": "Horana Police Station, Horana, Kalutara District",
+  "tel": "034 510 5520",
+  "email": "horana@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-ingiriya",
+  "name": "Ingiriya",
+  "district": "Kalutara",
+  "addr": "Ingiriya Police Station, Ingiriya, Kalutara District",
+  "tel": "034 434 4412",
+  "email": "ingiriya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-moragahahena",
+  "name": "Moragahahena",
+  "district": "Kalutara",
+  "addr": "Moragahahena Police Station, Moragahahena, Kalutara District",
+  "tel": "034 582 4649",
+  "email": "moragahahena@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-moronthuduwa",
+  "name": "Moronthuduwa",
+  "district": "Kalutara",
+  "addr": "Moronthuduwa Police Station, Moronthuduwa, Kalutara District",
+  "tel": "034 239 2850",
+  "email": "moronthuduwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-kalutara-south",
+  "name": "Kalutara South",
+  "district": "Kalutara",
+  "addr": "Kalutara South Police Station, Kalutara South, Kalutara District",
+  "tel": "034 688 4111",
+  "email": "kalutara-south@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-kalutara-north",
+  "name": "Kalutara North",
+  "district": "Kalutara",
+  "addr": "Kalutara North Police Station, Kalutara North, Kalutara District",
+  "tel": "034 686 9436",
+  "email": "kalutara-north@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-payagala",
+  "name": "Payagala",
+  "district": "Kalutara",
+  "addr": "Payagala Police Station, Payagala, Kalutara District",
+  "tel": "034 352 0607",
+  "email": "payagala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-dodangoda",
+  "name": "Dodangoda",
+  "district": "Kalutara",
+  "addr": "Dodangoda Police Station, Dodangoda, Kalutara District",
+  "tel": "034 663 0631",
+  "email": "dodangoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-aluthgama",
+  "name": "Aluthgama",
+  "district": "Kalutara",
+  "addr": "Aluthgama Police Station, Aluthgama, Kalutara District",
+  "tel": "034 774 7442",
+  "email": "aluthgama@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-welipenna",
+  "name": "Welipenna",
+  "district": "Kalutara",
+  "addr": "Welipenna Police Station, Welipenna, Kalutara District",
+  "tel": "034 656 4235",
+  "email": "welipenna@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-beruwala",
+  "name": "Beruwala",
+  "district": "Kalutara",
+  "addr": "Beruwala Police Station, Beruwala, Kalutara District",
+  "tel": "034 789 1647",
+  "email": "beruwala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-mathugama",
+  "name": "Mathugama",
+  "district": "Kalutara",
+  "addr": "Mathugama Police Station, Mathugama, Kalutara District",
+  "tel": "034 730 7948",
+  "email": "mathugama@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-bulathsinhala",
+  "name": "Bulathsinhala",
+  "district": "Kalutara",
+  "addr": "Bulathsinhala Police Station, Bulathsinhala, Kalutara District",
+  "tel": "034 392 8226",
+  "email": "bulathsinhala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-thebuwana",
+  "name": "Thebuwana",
+  "district": "Kalutara",
+  "addr": "Thebuwana Police Station, Thebuwana, Kalutara District",
+  "tel": "034 783 9460",
+  "email": "thebuwana@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-banduraliya",
+  "name": "Banduraliya",
+  "district": "Kalutara",
+  "addr": "Banduraliya Police Station, Banduraliya, Kalutara District",
+  "tel": "034 575 5025",
+  "email": "banduraliya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-meegahathenna",
+  "name": "Meegahathenna",
+  "district": "Kalutara",
+  "addr": "Meegahathenna Police Station, Meegahathenna, Kalutara District",
+  "tel": "034 591 3921",
+  "email": "meegahathenna@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-thiniyawala",
+  "name": "Thiniyawala",
+  "district": "Kalutara",
+  "addr": "Thiniyawala Police Station, Thiniyawala, Kalutara District",
+  "tel": "034 327 5822",
+  "email": "thiniyawala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-agalawatta",
+  "name": "Agalawatta",
+  "district": "Kalutara",
+  "addr": "Agalawatta Police Station, Agalawatta, Kalutara District",
+  "tel": "034 420 6859",
+  "email": "agalawatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "kalutara-warakagoda",
+  "name": "Warakagoda",
+  "district": "Kalutara",
+  "addr": "Warakagoda Police Station, Warakagoda, Kalutara District",
+  "tel": "034 276 6762",
+  "email": "warakagoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-kandy",
+  "name": "Kandy",
+  "district": "Kandy",
+  "addr": "Kandy Police Station, Kandy, Kandy District",
+  "tel": "081 399 0887",
+  "email": "kandy@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-katugastota",
+  "name": "Katugastota",
+  "district": "Kandy",
+  "addr": "Katugastota Police Station, Katugastota, Kandy District",
+  "tel": "081 670 0552",
+  "email": "katugastota@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-ankumbura",
+  "name": "Ankumbura",
+  "district": "Kandy",
+  "addr": "Ankumbura Police Station, Ankumbura, Kandy District",
+  "tel": "081 540 0888",
+  "email": "ankumbura@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-galagedara",
+  "name": "Galagedara",
+  "district": "Kandy",
+  "addr": "Galagedara Police Station, Galagedara, Kandy District",
+  "tel": "081 532 9782",
+  "email": "galagedara@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-hatharaliyadda",
+  "name": "Hatharaliyadda",
+  "district": "Kandy",
+  "addr": "Hatharaliyadda Police Station, Hatharaliyadda, Kandy District",
+  "tel": "081 416 2940",
+  "email": "hatharaliyadda@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-menikhinna",
+  "name": "Menikhinna",
+  "district": "Kandy",
+  "addr": "Menikhinna Police Station, Menikhinna, Kandy District",
+  "tel": "081 427 4368",
+  "email": "menikhinna@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-thalathuoya",
+  "name": "Thalathuoya",
+  "district": "Kandy",
+  "addr": "Thalathuoya Police Station, Thalathuoya, Kandy District",
+  "tel": "081 487 2480",
+  "email": "thalathuoya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-pallekele",
+  "name": "Pallekele",
+  "district": "Kandy",
+  "addr": "Pallekele Police Station, Pallekele, Kandy District",
+  "tel": "081 572 1869",
+  "email": "pallekele@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-peradeniya",
+  "name": "Peradeniya",
+  "district": "Kandy",
+  "addr": "Peradeniya Police Station, Peradeniya, Kandy District",
+  "tel": "081 437 5821",
+  "email": "peradeniya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-daulagala",
+  "name": "Daulagala",
+  "district": "Kandy",
+  "addr": "Daulagala Police Station, Daulagala, Kandy District",
+  "tel": "081 543 4425",
+  "email": "daulagala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-kadugannawa",
+  "name": "Kadugannawa",
+  "district": "Kandy",
+  "addr": "Kadugannawa Police Station, Kadugannawa, Kandy District",
+  "tel": "081 445 3206",
+  "email": "kadugannawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-alawathugoda",
+  "name": "Alawathugoda",
+  "district": "Kandy",
+  "addr": "Alawathugoda Police Station, Alawathugoda, Kandy District",
+  "tel": "081 704 7768",
+  "email": "alawathugoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-wattegama",
+  "name": "Wattegama",
+  "district": "Kandy",
+  "addr": "Wattegama Police Station, Wattegama, Kandy District",
+  "tel": "081 775 3964",
+  "email": "wattegama@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-panwila",
+  "name": "Panwila",
+  "district": "Kandy",
+  "addr": "Panwila Police Station, Panwila, Kandy District",
+  "tel": "081 688 7918",
+  "email": "panwila@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-theldeniya",
+  "name": "Theldeniya",
+  "district": "Kandy",
+  "addr": "Theldeniya Police Station, Theldeniya, Kandy District",
+  "tel": "081 584 3448",
+  "email": "theldeniya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-hasalaka",
+  "name": "Hasalaka",
+  "district": "Kandy",
+  "addr": "Hasalaka Police Station, Hasalaka, Kandy District",
+  "tel": "081 495 4408",
+  "email": "hasalaka@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-ududumbara",
+  "name": "Ududumbara",
+  "district": "Kandy",
+  "addr": "Ududumbara Police Station, Ududumbara, Kandy District",
+  "tel": "081 686 5751",
+  "email": "ududumbara@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-rangala",
+  "name": "Rangala",
+  "district": "Kandy",
+  "addr": "Rangala Police Station, Rangala, Kandy District",
+  "tel": "081 549 1026",
+  "email": "rangala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-welambada",
+  "name": "Welambada",
+  "district": "Kandy",
+  "addr": "Welambada Police Station, Welambada, Kandy District",
+  "tel": "081 434 9895",
+  "email": "welambada@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-poojapitiya",
+  "name": "Poojapitiya",
+  "district": "Kandy",
+  "addr": "Poojapitiya Police Station, Poojapitiya, Kandy District",
+  "tel": "081 554 3695",
+  "email": "poojapitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-gampola",
+  "name": "Gampola",
+  "district": "Kandy",
+  "addr": "Gampola Police Station, Gampola, Kandy District",
+  "tel": "081 428 9290",
+  "email": "gampola@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-pussellawa",
+  "name": "Pussellawa",
+  "district": "Kandy",
+  "addr": "Pussellawa Police Station, Pussellawa, Kandy District",
+  "tel": "081 438 2646",
+  "email": "pussellawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-nawa-kurunduwatta",
+  "name": "Nawa Kurunduwatta",
+  "district": "Kandy",
+  "addr": "Nawa Kurunduwatta Police Station, Nawa Kurunduwatta, Kandy District",
+  "tel": "081 743 2391",
+  "email": "nawa-kurunduwatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-nawalapitiya",
+  "name": "Nawalapitiya",
+  "district": "Kandy",
+  "addr": "Nawalapitiya Police Station, Nawalapitiya, Kandy District",
+  "tel": "081 397 9298",
+  "email": "nawalapitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kandy-galaha",
+  "name": "Galaha",
+  "district": "Kandy",
+  "addr": "Galaha Police Station, Galaha, Kandy District",
+  "tel": "081 512 0069",
+  "email": "galaha@police.lk",
+  "active": true
+ },
+ {
+  "code": "matale-matale",
+  "name": "Matale",
+  "district": "Matale",
+  "addr": "Matale Police Station, Matale, Matale District",
+  "tel": "066 497 2661",
+  "email": "matale@police.lk",
+  "active": true
+ },
+ {
+  "code": "matale-rattota",
+  "name": "Rattota",
+  "district": "Matale",
+  "addr": "Rattota Police Station, Rattota, Matale District",
+  "tel": "066 217 9113",
+  "email": "rattota@police.lk",
+  "active": true
+ },
+ {
+  "code": "matale-mahawela",
+  "name": "Mahawela",
+  "district": "Matale",
+  "addr": "Mahawela Police Station, Mahawela, Matale District",
+  "tel": "066 419 6556",
+  "email": "mahawela@police.lk",
+  "active": true
+ },
+ {
+  "code": "matale-yatawatta",
+  "name": "Yatawatta",
+  "district": "Matale",
+  "addr": "Yatawatta Police Station, Yatawatta, Matale District",
+  "tel": "066 730 6094",
+  "email": "yatawatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "matale-laggala",
+  "name": "Laggala",
+  "district": "Matale",
+  "addr": "Laggala Police Station, Laggala, Matale District",
+  "tel": "066 241 7879",
+  "email": "laggala@police.lk",
+  "active": true
+ },
+ {
+  "code": "matale-naula",
+  "name": "Naula",
+  "district": "Matale",
+  "addr": "Naula Police Station, Naula, Matale District",
+  "tel": "066 536 0570",
+  "email": "naula@police.lk",
+  "active": true
+ },
+ {
+  "code": "matale-wilgamuwa",
+  "name": "Wilgamuwa",
+  "district": "Matale",
+  "addr": "Wilgamuwa Police Station, Wilgamuwa, Matale District",
+  "tel": "066 743 4080",
+  "email": "wilgamuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "matale-dambulla",
+  "name": "Dambulla",
+  "district": "Matale",
+  "addr": "Dambulla Police Station, Dambulla, Matale District",
+  "tel": "066 238 3860",
+  "email": "dambulla@police.lk",
+  "active": true
+ },
+ {
+  "code": "matale-galewela",
+  "name": "Galewela",
+  "district": "Matale",
+  "addr": "Galewela Police Station, Galewela, Matale District",
+  "tel": "066 671 7440",
+  "email": "galewela@police.lk",
+  "active": true
+ },
+ {
+  "code": "matale-sigiriya",
+  "name": "Sigiriya",
+  "district": "Matale",
+  "addr": "Sigiriya Police Station, Sigiriya, Matale District",
+  "tel": "066 681 6637",
+  "email": "sigiriya@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-nuwara-eliya",
+  "name": "Nuwara Eliya",
+  "district": "Nuwara Eliya",
+  "addr": "Nuwara Eliya Police Station, Nuwara Eliya, Nuwara Eliya District",
+  "tel": "052 399 3011",
+  "email": "nuwara-eliya@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-hanguranketha",
+  "name": "Hanguranketha",
+  "district": "Nuwara Eliya",
+  "addr": "Hanguranketha Police Station, Hanguranketha, Nuwara Eliya District",
+  "tel": "052 257 5721",
+  "email": "hanguranketha@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-pundaluoya",
+  "name": "Pundaluoya",
+  "district": "Nuwara Eliya",
+  "addr": "Pundaluoya Police Station, Pundaluoya, Nuwara Eliya District",
+  "tel": "052 701 6730",
+  "email": "pundaluoya@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-nanuoya",
+  "name": "Nanuoya",
+  "district": "Nuwara Eliya",
+  "addr": "Nanuoya Police Station, Nanuoya, Nuwara Eliya District",
+  "tel": "052 676 4455",
+  "email": "nanuoya@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-kotmale",
+  "name": "Kotmale",
+  "district": "Nuwara Eliya",
+  "addr": "Kotmale Police Station, Kotmale, Nuwara Eliya District",
+  "tel": "052 283 9154",
+  "email": "kotmale@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-kandapola",
+  "name": "Kandapola",
+  "district": "Nuwara Eliya",
+  "addr": "Kandapola Police Station, Kandapola, Nuwara Eliya District",
+  "tel": "052 448 4544",
+  "email": "kandapola@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-thalawakale",
+  "name": "Thalawakale",
+  "district": "Nuwara Eliya",
+  "addr": "Thalawakale Police Station, Thalawakale, Nuwara Eliya District",
+  "tel": "052 661 1569",
+  "email": "thalawakale@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-agarapathana",
+  "name": "Agarapathana",
+  "district": "Nuwara Eliya",
+  "addr": "Agarapathana Police Station, Agarapathana, Nuwara Eliya District",
+  "tel": "052 282 0184",
+  "email": "agarapathana@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-lindula",
+  "name": "Lindula",
+  "district": "Nuwara Eliya",
+  "addr": "Lindula Police Station, Lindula, Nuwara Eliya District",
+  "tel": "052 392 0704",
+  "email": "lindula@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-dimbulapathana",
+  "name": "Dimbulapathana",
+  "district": "Nuwara Eliya",
+  "addr": "Dimbulapathana Police Station, Dimbulapathana, Nuwara Eliya District",
+  "tel": "052 453 1732",
+  "email": "dimbulapathana@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-dayagama",
+  "name": "Dayagama",
+  "district": "Nuwara Eliya",
+  "addr": "Dayagama Police Station, Dayagama, Nuwara Eliya District",
+  "tel": "052 580 1198",
+  "email": "dayagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-walapone",
+  "name": "Walapone",
+  "district": "Nuwara Eliya",
+  "addr": "Walapone Police Station, Walapone, Nuwara Eliya District",
+  "tel": "052 322 9620",
+  "email": "walapone@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-ragala",
+  "name": "Ragala",
+  "district": "Nuwara Eliya",
+  "addr": "Ragala Police Station, Ragala, Nuwara Eliya District",
+  "tel": "052 430 0807",
+  "email": "ragala@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-udupussellawa",
+  "name": "Udupussellawa",
+  "district": "Nuwara Eliya",
+  "addr": "Udupussellawa Police Station, Udupussellawa, Nuwara Eliya District",
+  "tel": "052 205 7345",
+  "email": "udupussellawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-maturata",
+  "name": "Maturata",
+  "district": "Nuwara Eliya",
+  "addr": "Maturata Police Station, Maturata, Nuwara Eliya District",
+  "tel": "052 569 4726",
+  "email": "maturata@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-theripeha",
+  "name": "Theripeha",
+  "district": "Nuwara Eliya",
+  "addr": "Theripeha Police Station, Theripeha, Nuwara Eliya District",
+  "tel": "052 342 0410",
+  "email": "theripeha@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-mandaram-nuwara",
+  "name": "Mandaram Nuwara",
+  "district": "Nuwara Eliya",
+  "addr": "Mandaram Nuwara Police Station, Mandaram Nuwara, Nuwara Eliya District",
+  "tel": "052 378 5032",
+  "email": "mandaram-nuwara@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-pattipola",
+  "name": "Pattipola",
+  "district": "Nuwara Eliya",
+  "addr": "Pattipola Police Station, Pattipola, Nuwara Eliya District",
+  "tel": "052 571 6088",
+  "email": "pattipola@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-hatton",
+  "name": "Hatton",
+  "district": "Nuwara Eliya",
+  "addr": "Hatton Police Station, Hatton, Nuwara Eliya District",
+  "tel": "052 470 1149",
+  "email": "hatton@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-watawala",
+  "name": "Watawala",
+  "district": "Nuwara Eliya",
+  "addr": "Watawala Police Station, Watawala, Nuwara Eliya District",
+  "tel": "052 690 8456",
+  "email": "watawala@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-ginigathhena",
+  "name": "Ginigathhena",
+  "district": "Nuwara Eliya",
+  "addr": "Ginigathhena Police Station, Ginigathhena, Nuwara Eliya District",
+  "tel": "052 257 2103",
+  "email": "ginigathhena@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-nortonbridge",
+  "name": "Nortonbridge",
+  "district": "Nuwara Eliya",
+  "addr": "Nortonbridge Police Station, Nortonbridge, Nuwara Eliya District",
+  "tel": "052 421 5210",
+  "email": "nortonbridge@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-nallathanniya",
+  "name": "Nallathanniya",
+  "district": "Nuwara Eliya",
+  "addr": "Nallathanniya Police Station, Nallathanniya, Nuwara Eliya District",
+  "tel": "052 760 0740",
+  "email": "nallathanniya@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-bogawantalawa",
+  "name": "Bogawantalawa",
+  "district": "Nuwara Eliya",
+  "addr": "Bogawantalawa Police Station, Bogawantalawa, Nuwara Eliya District",
+  "tel": "052 724 7394",
+  "email": "bogawantalawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-norwood",
+  "name": "Norwood",
+  "district": "Nuwara Eliya",
+  "addr": "Norwood Police Station, Norwood, Nuwara Eliya District",
+  "tel": "052 611 5715",
+  "email": "norwood@police.lk",
+  "active": true
+ },
+ {
+  "code": "nuwara-eliya-maskeliya",
+  "name": "Maskeliya",
+  "district": "Nuwara Eliya",
+  "addr": "Maskeliya Police Station, Maskeliya, Nuwara Eliya District",
+  "tel": "052 707 2825",
+  "email": "maskeliya@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-galle",
+  "name": "Galle",
+  "district": "Galle",
+  "addr": "Galle Police Station, Galle, Galle District",
+  "tel": "091 277 5376",
+  "email": "galle@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-ratgama",
+  "name": "Ratgama",
+  "district": "Galle",
+  "addr": "Ratgama Police Station, Ratgama, Galle District",
+  "tel": "091 778 5243",
+  "email": "ratgama@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-hikkaduwa",
+  "name": "Hikkaduwa",
+  "district": "Galle",
+  "addr": "Hikkaduwa Police Station, Hikkaduwa, Galle District",
+  "tel": "091 240 5690",
+  "email": "hikkaduwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-akmeemana",
+  "name": "Akmeemana",
+  "district": "Galle",
+  "addr": "Akmeemana Police Station, Akmeemana, Galle District",
+  "tel": "091 553 4964",
+  "email": "akmeemana@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-wanduramba",
+  "name": "Wanduramba",
+  "district": "Galle",
+  "addr": "Wanduramba Police Station, Wanduramba, Galle District",
+  "tel": "091 310 6212",
+  "email": "wanduramba@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-yakkalamulla",
+  "name": "Yakkalamulla",
+  "district": "Galle",
+  "addr": "Yakkalamulla Police Station, Yakkalamulla, Galle District",
+  "tel": "091 653 7635",
+  "email": "yakkalamulla@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-poddala",
+  "name": "Poddala",
+  "district": "Galle",
+  "addr": "Poddala Police Station, Poddala, Galle District",
+  "tel": "091 604 5314",
+  "email": "poddala@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-habaraduwa",
+  "name": "Habaraduwa",
+  "district": "Galle",
+  "addr": "Habaraduwa Police Station, Habaraduwa, Galle District",
+  "tel": "091 209 4661",
+  "email": "habaraduwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-ahangama",
+  "name": "Ahangama",
+  "district": "Galle",
+  "addr": "Ahangama Police Station, Ahangama, Galle District",
+  "tel": "091 678 2749",
+  "email": "ahangama@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-galle-harbour",
+  "name": "Galle Harbour",
+  "district": "Galle",
+  "addr": "Galle Harbour Police Station, Galle Harbour, Galle District",
+  "tel": "091 478 7627",
+  "email": "galle-harbour@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-nagoda",
+  "name": "Nagoda",
+  "district": "Galle",
+  "addr": "Nagoda Police Station, Nagoda, Galle District",
+  "tel": "091 659 2151",
+  "email": "nagoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-hiniduma",
+  "name": "Hiniduma",
+  "district": "Galle",
+  "addr": "Hiniduma Police Station, Hiniduma, Galle District",
+  "tel": "091 368 1229",
+  "email": "hiniduma@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-neluwa",
+  "name": "Neluwa",
+  "district": "Galle",
+  "addr": "Neluwa Police Station, Neluwa, Galle District",
+  "tel": "091 466 2466",
+  "email": "neluwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-udugama",
+  "name": "Udugama",
+  "district": "Galle",
+  "addr": "Udugama Police Station, Udugama, Galle District",
+  "tel": "091 486 9985",
+  "email": "udugama@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-imaduwa",
+  "name": "Imaduwa",
+  "district": "Galle",
+  "addr": "Imaduwa Police Station, Imaduwa, Galle District",
+  "tel": "091 298 1384",
+  "email": "imaduwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-elpitiya",
+  "name": "Elpitiya",
+  "district": "Galle",
+  "addr": "Elpitiya Police Station, Elpitiya, Galle District",
+  "tel": "091 523 3665",
+  "email": "elpitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-uragasmanhandiya",
+  "name": "Uragasmanhandiya",
+  "district": "Galle",
+  "addr": "Uragasmanhandiya Police Station, Uragasmanhandiya, Galle District",
+  "tel": "091 208 4693",
+  "email": "uragasmanhandiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-pitigala",
+  "name": "Pitigala",
+  "district": "Galle",
+  "addr": "Pitigala Police Station, Pitigala, Galle District",
+  "tel": "091 418 1111",
+  "email": "pitigala@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-karandeniya",
+  "name": "Karandeniya",
+  "district": "Galle",
+  "addr": "Karandeniya Police Station, Karandeniya, Galle District",
+  "tel": "091 467 4025",
+  "email": "karandeniya@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-baddegama",
+  "name": "Baddegama",
+  "district": "Galle",
+  "addr": "Baddegama Police Station, Baddegama, Galle District",
+  "tel": "091 577 2834",
+  "email": "baddegama@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-batapola",
+  "name": "Batapola",
+  "district": "Galle",
+  "addr": "Batapola Police Station, Batapola, Galle District",
+  "tel": "091 693 3194",
+  "email": "batapola@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-meetiyagoda",
+  "name": "Meetiyagoda",
+  "district": "Galle",
+  "addr": "Meetiyagoda Police Station, Meetiyagoda, Galle District",
+  "tel": "091 329 1277",
+  "email": "meetiyagoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-thelikada",
+  "name": "Thelikada",
+  "district": "Galle",
+  "addr": "Thelikada Police Station, Thelikada, Galle District",
+  "tel": "091 544 4040",
+  "email": "thelikada@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-ambalangoda",
+  "name": "Ambalangoda",
+  "district": "Galle",
+  "addr": "Ambalangoda Police Station, Ambalangoda, Galle District",
+  "tel": "091 555 0567",
+  "email": "ambalangoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-ahungalla",
+  "name": "Ahungalla",
+  "district": "Galle",
+  "addr": "Ahungalla Police Station, Ahungalla, Galle District",
+  "tel": "091 203 9005",
+  "email": "ahungalla@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-kosgoda",
+  "name": "Kosgoda",
+  "district": "Galle",
+  "addr": "Kosgoda Police Station, Kosgoda, Galle District",
+  "tel": "091 725 4258",
+  "email": "kosgoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "galle-bentota",
+  "name": "Bentota",
+  "district": "Galle",
+  "addr": "Bentota Police Station, Bentota, Galle District",
+  "tel": "091 510 6380",
+  "email": "bentota@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-matara",
+  "name": "Matara",
+  "district": "Matara",
+  "addr": "Matara Police Station, Matara, Matara District",
+  "tel": "041 416 3415",
+  "email": "matara@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-gandara",
+  "name": "Gandara",
+  "district": "Matara",
+  "addr": "Gandara Police Station, Gandara, Matara District",
+  "tel": "041 705 6771",
+  "email": "gandara@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-dikwella",
+  "name": "Dikwella",
+  "district": "Matara",
+  "addr": "Dikwella Police Station, Dikwella, Matara District",
+  "tel": "041 391 4292",
+  "email": "dikwella@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-thihagoda",
+  "name": "Thihagoda",
+  "district": "Matara",
+  "addr": "Thihagoda Police Station, Thihagoda, Matara District",
+  "tel": "041 302 4873",
+  "email": "thihagoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-kamburupitiya",
+  "name": "Kamburupitiya",
+  "district": "Matara",
+  "addr": "Kamburupitiya Police Station, Kamburupitiya, Matara District",
+  "tel": "041 799 8133",
+  "email": "kamburupitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-hakmana",
+  "name": "Hakmana",
+  "district": "Matara",
+  "addr": "Hakmana Police Station, Hakmana, Matara District",
+  "tel": "041 781 4319",
+  "email": "hakmana@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-morawaka",
+  "name": "Morawaka",
+  "district": "Matara",
+  "addr": "Morawaka Police Station, Morawaka, Matara District",
+  "tel": "041 675 2098",
+  "email": "morawaka@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-urubokka",
+  "name": "Urubokka",
+  "district": "Matara",
+  "addr": "Urubokka Police Station, Urubokka, Matara District",
+  "tel": "041 471 8934",
+  "email": "urubokka@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-mawarala",
+  "name": "Mawarala",
+  "district": "Matara",
+  "addr": "Mawarala Police Station, Mawarala, Matara District",
+  "tel": "041 316 2358",
+  "email": "mawarala@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-deniyaya",
+  "name": "Deniyaya",
+  "district": "Matara",
+  "addr": "Deniyaya Police Station, Deniyaya, Matara District",
+  "tel": "041 799 0932",
+  "email": "deniyaya@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-weligama",
+  "name": "Weligama",
+  "district": "Matara",
+  "addr": "Weligama Police Station, Weligama, Matara District",
+  "tel": "041 553 9922",
+  "email": "weligama@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-akuressa",
+  "name": "Akuressa",
+  "district": "Matara",
+  "addr": "Akuressa Police Station, Akuressa, Matara District",
+  "tel": "041 754 2890",
+  "email": "akuressa@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-kananke",
+  "name": "Kananke",
+  "district": "Matara",
+  "addr": "Kananke Police Station, Kananke, Matara District",
+  "tel": "041 348 8168",
+  "email": "kananke@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-pitabeddara",
+  "name": "Pitabeddara",
+  "district": "Matara",
+  "addr": "Pitabeddara Police Station, Pitabeddara, Matara District",
+  "tel": "041 601 0361",
+  "email": "pitabeddara@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-kotawila",
+  "name": "Kotawila",
+  "district": "Matara",
+  "addr": "Kotawila Police Station, Kotawila, Matara District",
+  "tel": "041 464 5786",
+  "email": "kotawila@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-kosmodara",
+  "name": "Kosmodara",
+  "district": "Matara",
+  "addr": "Kosmodara Police Station, Kosmodara, Matara District",
+  "tel": "041 258 0489",
+  "email": "kosmodara@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-malimbada",
+  "name": "Malimbada",
+  "district": "Matara",
+  "addr": "Malimbada Police Station, Malimbada, Matara District",
+  "tel": "041 416 9263",
+  "email": "malimbada@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-rotumba",
+  "name": "Rotumba",
+  "district": "Matara",
+  "addr": "Rotumba Police Station, Rotumba, Matara District",
+  "tel": "041 298 8094",
+  "email": "rotumba@police.lk",
+  "active": true
+ },
+ {
+  "code": "matara-deyyandara",
+  "name": "Deyyandara",
+  "district": "Matara",
+  "addr": "Deyyandara Police Station, Deyyandara, Matara District",
+  "tel": "041 326 3518",
+  "email": "deyyandara@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-tangalle",
+  "name": "Tangalle",
+  "district": "Hambantota",
+  "addr": "Tangalle Police Station, Tangalle, Hambantota District",
+  "tel": "047 417 8481",
+  "email": "tangalle@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-hungama",
+  "name": "Hungama",
+  "district": "Hambantota",
+  "addr": "Hungama Police Station, Hungama, Hambantota District",
+  "tel": "047 748 3323",
+  "email": "hungama@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-weeraketiya",
+  "name": "Weeraketiya",
+  "district": "Hambantota",
+  "addr": "Weeraketiya Police Station, Weeraketiya, Hambantota District",
+  "tel": "047 369 9069",
+  "email": "weeraketiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-angunakolapelessa",
+  "name": "Angunakolapelessa",
+  "district": "Hambantota",
+  "addr": "Angunakolapelessa Police Station, Angunakolapelessa, Hambantota District",
+  "tel": "047 564 9345",
+  "email": "angunakolapelessa@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-walasmulla",
+  "name": "Walasmulla",
+  "district": "Hambantota",
+  "addr": "Walasmulla Police Station, Walasmulla, Hambantota District",
+  "tel": "047 511 8158",
+  "email": "walasmulla@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-beliatta",
+  "name": "Beliatta",
+  "district": "Hambantota",
+  "addr": "Beliatta Police Station, Beliatta, Hambantota District",
+  "tel": "047 361 7281",
+  "email": "beliatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-katuwana",
+  "name": "Katuwana",
+  "district": "Hambantota",
+  "addr": "Katuwana Police Station, Katuwana, Hambantota District",
+  "tel": "047 233 5741",
+  "email": "katuwana@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-middeniya",
+  "name": "Middeniya",
+  "district": "Hambantota",
+  "addr": "Middeniya Police Station, Middeniya, Hambantota District",
+  "tel": "047 266 6009",
+  "email": "middeniya@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-sooriyawewa",
+  "name": "Sooriyawewa",
+  "district": "Hambantota",
+  "addr": "Sooriyawewa Police Station, Sooriyawewa, Hambantota District",
+  "tel": "047 677 6901",
+  "email": "sooriyawewa@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-hambantota",
+  "name": "Hambantota",
+  "district": "Hambantota",
+  "addr": "Hambantota Police Station, Hambantota, Hambantota District",
+  "tel": "047 514 6557",
+  "email": "hambantota@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-ambalantota",
+  "name": "Ambalantota",
+  "district": "Hambantota",
+  "addr": "Ambalantota Police Station, Ambalantota, Hambantota District",
+  "tel": "047 413 1897",
+  "email": "ambalantota@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-tissamaharamaya",
+  "name": "Tissamaharamaya",
+  "district": "Hambantota",
+  "addr": "Tissamaharamaya Police Station, Tissamaharamaya, Hambantota District",
+  "tel": "047 646 1192",
+  "email": "tissamaharamaya@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-kataragama",
+  "name": "Kataragama",
+  "district": "Hambantota",
+  "addr": "Kataragama Police Station, Kataragama, Hambantota District",
+  "tel": "047 432 9531",
+  "email": "kataragama@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-lunugamvehera",
+  "name": "Lunugamvehera",
+  "district": "Hambantota",
+  "addr": "Lunugamvehera Police Station, Lunugamvehera, Hambantota District",
+  "tel": "047 593 2867",
+  "email": "lunugamvehera@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-weeravila",
+  "name": "Weeravila",
+  "district": "Hambantota",
+  "addr": "Weeravila Police Station, Weeravila, Hambantota District",
+  "tel": "047 742 5392",
+  "email": "weeravila@police.lk",
+  "active": true
+ },
+ {
+  "code": "hambantota-kirinda",
+  "name": "Kirinda",
+  "district": "Hambantota",
+  "addr": "Kirinda Police Station, Kirinda, Hambantota District",
+  "tel": "047 466 2878",
+  "email": "kirinda@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-kankesanthurai",
+  "name": "Kankesanthurai",
+  "district": "Jaffna",
+  "addr": "Kankesanthurai Police Station, Kankesanthurai, Jaffna District",
+  "tel": "021 503 1471",
+  "email": "kankesanthurai@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-ilavalai",
+  "name": "Ilavalai",
+  "district": "Jaffna",
+  "addr": "Ilavalai Police Station, Ilavalai, Jaffna District",
+  "tel": "021 488 9407",
+  "email": "ilavalai@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-achchuveli",
+  "name": "Achchuveli",
+  "district": "Jaffna",
+  "addr": "Achchuveli Police Station, Achchuveli, Jaffna District",
+  "tel": "021 748 6839",
+  "email": "achchuveli@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-thelippalai",
+  "name": "Thelippalai",
+  "district": "Jaffna",
+  "addr": "Thelippalai Police Station, Thelippalai, Jaffna District",
+  "tel": "021 276 6344",
+  "email": "thelippalai@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-palaly",
+  "name": "Palaly",
+  "district": "Jaffna",
+  "addr": "Palaly Police Station, Palaly, Jaffna District",
+  "tel": "021 573 1714",
+  "email": "palaly@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-point-pedro",
+  "name": "Point Pedro",
+  "district": "Jaffna",
+  "addr": "Point Pedro Police Station, Point Pedro, Jaffna District",
+  "tel": "021 780 0872",
+  "email": "point-pedro@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-velvettithurai",
+  "name": "Velvettithurai",
+  "district": "Jaffna",
+  "addr": "Velvettithurai Police Station, Velvettithurai, Jaffna District",
+  "tel": "021 715 9904",
+  "email": "velvettithurai@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-nelliady",
+  "name": "Nelliady",
+  "district": "Jaffna",
+  "addr": "Nelliady Police Station, Nelliady, Jaffna District",
+  "tel": "021 689 5059",
+  "email": "nelliady@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-jaffna",
+  "name": "Jaffna",
+  "district": "Jaffna",
+  "addr": "Jaffna Police Station, Jaffna, Jaffna District",
+  "tel": "021 205 0579",
+  "email": "jaffna@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-manipay",
+  "name": "Manipay",
+  "district": "Jaffna",
+  "addr": "Manipay Police Station, Manipay, Jaffna District",
+  "tel": "021 536 1617",
+  "email": "manipay@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-chunnakam",
+  "name": "Chunnakam",
+  "district": "Jaffna",
+  "addr": "Chunnakam Police Station, Chunnakam, Jaffna District",
+  "tel": "021 651 3251",
+  "email": "chunnakam@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-kayts",
+  "name": "Kayts",
+  "district": "Jaffna",
+  "addr": "Kayts Police Station, Kayts, Jaffna District",
+  "tel": "021 600 2452",
+  "email": "kayts@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-delft",
+  "name": "Delft",
+  "district": "Jaffna",
+  "addr": "Delft Police Station, Delft, Jaffna District",
+  "tel": "021 245 9780",
+  "email": "delft@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-vaddukoddai",
+  "name": "Vaddukoddai",
+  "district": "Jaffna",
+  "addr": "Vaddukoddai Police Station, Vaddukoddai, Jaffna District",
+  "tel": "021 764 6596",
+  "email": "vaddukoddai@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-chavakachcheri",
+  "name": "Chavakachcheri",
+  "district": "Jaffna",
+  "addr": "Chavakachcheri Police Station, Chavakachcheri, Jaffna District",
+  "tel": "021 495 6591",
+  "email": "chavakachcheri@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-kopay",
+  "name": "Kopay",
+  "district": "Jaffna",
+  "addr": "Kopay Police Station, Kopay, Jaffna District",
+  "tel": "021 448 2852",
+  "email": "kopay@police.lk",
+  "active": true
+ },
+ {
+  "code": "jaffna-kodikamam",
+  "name": "Kodikamam",
+  "district": "Jaffna",
+  "addr": "Kodikamam Police Station, Kodikamam, Jaffna District",
+  "tel": "021 763 7826",
+  "email": "kodikamam@police.lk",
+  "active": true
+ },
+ {
+  "code": "kilinochchi-kilinochchi",
+  "name": "Kilinochchi",
+  "district": "Kilinochchi",
+  "addr": "Kilinochchi Police Station, Kilinochchi, Kilinochchi District",
+  "tel": "021 237 4968",
+  "email": "kilinochchi@police.lk",
+  "active": true
+ },
+ {
+  "code": "kilinochchi-pallai",
+  "name": "Pallai",
+  "district": "Kilinochchi",
+  "addr": "Pallai Police Station, Pallai, Kilinochchi District",
+  "tel": "021 427 9952",
+  "email": "pallai@police.lk",
+  "active": true
+ },
+ {
+  "code": "kilinochchi-poonaryn",
+  "name": "Poonaryn",
+  "district": "Kilinochchi",
+  "addr": "Poonaryn Police Station, Poonaryn, Kilinochchi District",
+  "tel": "021 751 8319",
+  "email": "poonaryn@police.lk",
+  "active": true
+ },
+ {
+  "code": "kilinochchi-nachchikuda",
+  "name": "Nachchikuda",
+  "district": "Kilinochchi",
+  "addr": "Nachchikuda Police Station, Nachchikuda, Kilinochchi District",
+  "tel": "021 231 9186",
+  "email": "nachchikuda@police.lk",
+  "active": true
+ },
+ {
+  "code": "kilinochchi-mulankavil",
+  "name": "Mulankavil",
+  "district": "Kilinochchi",
+  "addr": "Mulankavil Police Station, Mulankavil, Kilinochchi District",
+  "tel": "021 245 7692",
+  "email": "mulankavil@police.lk",
+  "active": true
+ },
+ {
+  "code": "kilinochchi-dharmapuram",
+  "name": "Dharmapuram",
+  "district": "Kilinochchi",
+  "addr": "Dharmapuram Police Station, Dharmapuram, Kilinochchi District",
+  "tel": "021 584 5020",
+  "email": "dharmapuram@police.lk",
+  "active": true
+ },
+ {
+  "code": "kilinochchi-akkarayankulam",
+  "name": "Akkarayankulam",
+  "district": "Kilinochchi",
+  "addr": "Akkarayankulam Police Station, Akkarayankulam, Kilinochchi District",
+  "tel": "021 270 8345",
+  "email": "akkarayankulam@police.lk",
+  "active": true
+ },
+ {
+  "code": "mannar-mannar",
+  "name": "Mannar",
+  "district": "Mannar",
+  "addr": "Mannar Police Station, Mannar, Mannar District",
+  "tel": "023 290 9478",
+  "email": "mannar@police.lk",
+  "active": true
+ },
+ {
+  "code": "mannar-silavathurai",
+  "name": "Silavathurai",
+  "district": "Mannar",
+  "addr": "Silavathurai Police Station, Silavathurai, Mannar District",
+  "tel": "023 639 1116",
+  "email": "silavathurai@police.lk",
+  "active": true
+ },
+ {
+  "code": "mannar-iluppaikadavai",
+  "name": "Iluppaikadavai",
+  "district": "Mannar",
+  "addr": "Iluppaikadavai Police Station, Iluppaikadavai, Mannar District",
+  "tel": "023 386 4805",
+  "email": "iluppaikadavai@police.lk",
+  "active": true
+ },
+ {
+  "code": "mannar-vidattaltivu",
+  "name": "Vidattaltivu",
+  "district": "Mannar",
+  "addr": "Vidattaltivu Police Station, Vidattaltivu, Mannar District",
+  "tel": "023 784 6841",
+  "email": "vidattaltivu@police.lk",
+  "active": true
+ },
+ {
+  "code": "mannar-thalaimannar",
+  "name": "Thalaimannar",
+  "district": "Mannar",
+  "addr": "Thalaimannar Police Station, Thalaimannar, Mannar District",
+  "tel": "023 737 5369",
+  "email": "thalaimannar@police.lk",
+  "active": true
+ },
+ {
+  "code": "mannar-murunkan",
+  "name": "Murunkan",
+  "district": "Mannar",
+  "addr": "Murunkan Police Station, Murunkan, Mannar District",
+  "tel": "023 575 4615",
+  "email": "murunkan@police.lk",
+  "active": true
+ },
+ {
+  "code": "mannar-madhu",
+  "name": "Madhu",
+  "district": "Mannar",
+  "addr": "Madhu Police Station, Madhu, Mannar District",
+  "tel": "023 288 3253",
+  "email": "madhu@police.lk",
+  "active": true
+ },
+ {
+  "code": "mannar-vankalai",
+  "name": "Vankalai",
+  "district": "Mannar",
+  "addr": "Vankalai Police Station, Vankalai, Mannar District",
+  "tel": "023 703 1830",
+  "email": "vankalai@police.lk",
+  "active": true
+ },
+ {
+  "code": "mannar-pesalai",
+  "name": "Pesalai",
+  "district": "Mannar",
+  "addr": "Pesalai Police Station, Pesalai, Mannar District",
+  "tel": "023 785 5662",
+  "email": "pesalai@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-vavuniya",
+  "name": "Vavuniya",
+  "district": "Vavuniya",
+  "addr": "Vavuniya Police Station, Vavuniya, Vavuniya District",
+  "tel": "024 545 1335",
+  "email": "vavuniya@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-kanagarayankulam",
+  "name": "Kanagarayankulam",
+  "district": "Vavuniya",
+  "addr": "Kanagarayankulam Police Station, Kanagarayankulam, Vavuniya District",
+  "tel": "024 475 9437",
+  "email": "kanagarayankulam@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-irattaperiyakulam",
+  "name": "Irattaperiyakulam",
+  "district": "Vavuniya",
+  "addr": "Irattaperiyakulam Police Station, Irattaperiyakulam, Vavuniya District",
+  "tel": "024 209 6384",
+  "email": "irattaperiyakulam@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-nedunkerni",
+  "name": "Nedunkerni",
+  "district": "Vavuniya",
+  "addr": "Nedunkerni Police Station, Nedunkerni, Vavuniya District",
+  "tel": "024 634 7613",
+  "email": "nedunkerni@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-chettikulam",
+  "name": "Chettikulam",
+  "district": "Vavuniya",
+  "addr": "Chettikulam Police Station, Chettikulam, Vavuniya District",
+  "tel": "024 460 7618",
+  "email": "chettikulam@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-omanthai",
+  "name": "Omanthai",
+  "district": "Vavuniya",
+  "addr": "Omanthai Police Station, Omanthai, Vavuniya District",
+  "tel": "024 590 6126",
+  "email": "omanthai@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-puliyankulam",
+  "name": "Puliyankulam",
+  "district": "Vavuniya",
+  "addr": "Puliyankulam Police Station, Puliyankulam, Vavuniya District",
+  "tel": "024 793 7049",
+  "email": "puliyankulam@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-parayanalankulam",
+  "name": "Parayanalankulam",
+  "district": "Vavuniya",
+  "addr": "Parayanalankulam Police Station, Parayanalankulam, Vavuniya District",
+  "tel": "024 522 9540",
+  "email": "parayanalankulam@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-ulukkulama",
+  "name": "Ulukkulama",
+  "district": "Vavuniya",
+  "addr": "Ulukkulama Police Station, Ulukkulama, Vavuniya District",
+  "tel": "024 517 7927",
+  "email": "ulukkulama@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-mamaduwa",
+  "name": "Mamaduwa",
+  "district": "Vavuniya",
+  "addr": "Mamaduwa Police Station, Mamaduwa, Vavuniya District",
+  "tel": "024 673 0941",
+  "email": "mamaduwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-puwarasankulam",
+  "name": "Puwarasankulam",
+  "district": "Vavuniya",
+  "addr": "Puwarasankulam Police Station, Puwarasankulam, Vavuniya District",
+  "tel": "024 523 6094",
+  "email": "puwarasankulam@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-echchankulam",
+  "name": "Echchankulam",
+  "district": "Vavuniya",
+  "addr": "Echchankulam Police Station, Echchankulam, Vavuniya District",
+  "tel": "024 299 8615",
+  "email": "echchankulam@police.lk",
+  "active": true
+ },
+ {
+  "code": "vavuniya-bogaswewa",
+  "name": "Bogaswewa",
+  "district": "Vavuniya",
+  "addr": "Bogaswewa Police Station, Bogaswewa, Vavuniya District",
+  "tel": "024 554 3753",
+  "email": "bogaswewa@police.lk",
+  "active": true
+ },
+ {
+  "code": "mullaitivu-mullaitivu",
+  "name": "Mullaitivu",
+  "district": "Mullaitivu",
+  "addr": "Mullaitivu Police Station, Mullaitivu, Mullaitivu District",
+  "tel": "021 278 6319",
+  "email": "mullaitivu@police.lk",
+  "active": true
+ },
+ {
+  "code": "mullaitivu-puthukkudiyiruppu",
+  "name": "Puthukkudiyiruppu",
+  "district": "Mullaitivu",
+  "addr": "Puthukkudiyiruppu Police Station, Puthukkudiyiruppu, Mullaitivu District",
+  "tel": "021 670 8180",
+  "email": "puthukkudiyiruppu@police.lk",
+  "active": true
+ },
+ {
+  "code": "mullaitivu-mulliyawalai",
+  "name": "Mulliyawalai",
+  "district": "Mullaitivu",
+  "addr": "Mulliyawalai Police Station, Mulliyawalai, Mullaitivu District",
+  "tel": "021 501 3206",
+  "email": "mulliyawalai@police.lk",
+  "active": true
+ },
+ {
+  "code": "mullaitivu-oddusuddan",
+  "name": "Oddusuddan",
+  "district": "Mullaitivu",
+  "addr": "Oddusuddan Police Station, Oddusuddan, Mullaitivu District",
+  "tel": "021 399 0582",
+  "email": "oddusuddan@police.lk",
+  "active": true
+ },
+ {
+  "code": "mullaitivu-weli-oya",
+  "name": "Weli Oya",
+  "district": "Mullaitivu",
+  "addr": "Weli Oya Police Station, Weli Oya, Mullaitivu District",
+  "tel": "021 718 6169",
+  "email": "weli-oya@police.lk",
+  "active": true
+ },
+ {
+  "code": "mullaitivu-mankulam",
+  "name": "Mankulam",
+  "district": "Mullaitivu",
+  "addr": "Mankulam Police Station, Mankulam, Mullaitivu District",
+  "tel": "021 571 2183",
+  "email": "mankulam@police.lk",
+  "active": true
+ },
+ {
+  "code": "mullaitivu-mallavi",
+  "name": "Mallavi",
+  "district": "Mullaitivu",
+  "addr": "Mallavi Police Station, Mallavi, Mullaitivu District",
+  "tel": "021 700 2612",
+  "email": "mallavi@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-batticaloa",
+  "name": "Batticaloa",
+  "district": "Batticaloa",
+  "addr": "Batticaloa Police Station, Batticaloa, Batticaloa District",
+  "tel": "065 724 4281",
+  "email": "batticaloa@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-vavunativu",
+  "name": "Vavunativu",
+  "district": "Batticaloa",
+  "addr": "Vavunativu Police Station, Vavunativu, Batticaloa District",
+  "tel": "065 509 6840",
+  "email": "vavunativu@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-kattankudy",
+  "name": "Kattankudy",
+  "district": "Batticaloa",
+  "addr": "Kattankudy Police Station, Kattankudy, Batticaloa District",
+  "tel": "065 373 2854",
+  "email": "kattankudy@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-eravur",
+  "name": "Eravur",
+  "district": "Batticaloa",
+  "addr": "Eravur Police Station, Eravur, Batticaloa District",
+  "tel": "065 290 4380",
+  "email": "eravur@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-karadiyanaru",
+  "name": "Karadiyanaru",
+  "district": "Batticaloa",
+  "addr": "Karadiyanaru Police Station, Karadiyanaru, Batticaloa District",
+  "tel": "065 789 9825",
+  "email": "karadiyanaru@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-aiththamalai",
+  "name": "Aiththamalai",
+  "district": "Batticaloa",
+  "addr": "Aiththamalai Police Station, Aiththamalai, Batticaloa District",
+  "tel": "065 463 3447",
+  "email": "aiththamalai@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-valachchenai",
+  "name": "Valachchenai",
+  "district": "Batticaloa",
+  "addr": "Valachchenai Police Station, Valachchenai, Batticaloa District",
+  "tel": "065 517 5334",
+  "email": "valachchenai@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-kalkudah",
+  "name": "Kalkudah",
+  "district": "Batticaloa",
+  "addr": "Kalkudah Police Station, Kalkudah, Batticaloa District",
+  "tel": "065 573 0578",
+  "email": "kalkudah@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-vakarai",
+  "name": "Vakarai",
+  "district": "Batticaloa",
+  "addr": "Vakarai Police Station, Vakarai, Batticaloa District",
+  "tel": "065 312 9970",
+  "email": "vakarai@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-kalawanchikudy",
+  "name": "Kalawanchikudy",
+  "district": "Batticaloa",
+  "addr": "Kalawanchikudy Police Station, Kalawanchikudy, Batticaloa District",
+  "tel": "065 437 8716",
+  "email": "kalawanchikudy@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-vellaveli",
+  "name": "Vellaveli",
+  "district": "Batticaloa",
+  "addr": "Vellaveli Police Station, Vellaveli, Batticaloa District",
+  "tel": "065 213 9151",
+  "email": "vellaveli@police.lk",
+  "active": true
+ },
+ {
+  "code": "batticaloa-kokkadicholai",
+  "name": "Kokkadicholai",
+  "district": "Batticaloa",
+  "addr": "Kokkadicholai Police Station, Kokkadicholai, Batticaloa District",
+  "tel": "065 298 2095",
+  "email": "kokkadicholai@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-ampara",
+  "name": "Ampara",
+  "district": "Ampara",
+  "addr": "Ampara Police Station, Ampara, Ampara District",
+  "tel": "063 706 5581",
+  "email": "ampara@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-damana",
+  "name": "Damana",
+  "district": "Ampara",
+  "addr": "Damana Police Station, Damana, Ampara District",
+  "tel": "063 538 7927",
+  "email": "damana@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-inginiyagala",
+  "name": "Inginiyagala",
+  "district": "Ampara",
+  "addr": "Inginiyagala Police Station, Inginiyagala, Ampara District",
+  "tel": "063 464 3062",
+  "email": "inginiyagala@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-uhana",
+  "name": "Uhana",
+  "district": "Ampara",
+  "addr": "Uhana Police Station, Uhana, Ampara District",
+  "tel": "063 686 7129",
+  "email": "uhana@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-bakkiella",
+  "name": "Bakkiella",
+  "district": "Ampara",
+  "addr": "Bakkiella Police Station, Bakkiella, Ampara District",
+  "tel": "063 448 7755",
+  "email": "bakkiella@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-central-camp",
+  "name": "Central Camp",
+  "district": "Ampara",
+  "addr": "Central Camp Police Station, Central Camp, Ampara District",
+  "tel": "063 485 1448",
+  "email": "central-camp@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-mangalagama",
+  "name": "Mangalagama",
+  "district": "Ampara",
+  "addr": "Mangalagama Police Station, Mangalagama, Ampara District",
+  "tel": "063 404 1948",
+  "email": "mangalagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-mahaoya",
+  "name": "Mahaoya",
+  "district": "Ampara",
+  "addr": "Mahaoya Police Station, Mahaoya, Ampara District",
+  "tel": "063 385 2223",
+  "email": "mahaoya@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-dehiattakandiya",
+  "name": "Dehiattakandiya",
+  "district": "Ampara",
+  "addr": "Dehiattakandiya Police Station, Dehiattakandiya, Ampara District",
+  "tel": "063 559 1597",
+  "email": "dehiattakandiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-padiyathalawa",
+  "name": "Padiyathalawa",
+  "district": "Ampara",
+  "addr": "Padiyathalawa Police Station, Padiyathalawa, Ampara District",
+  "tel": "063 302 6506",
+  "email": "padiyathalawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-kalmunai",
+  "name": "Kalmunai",
+  "district": "Ampara",
+  "addr": "Kalmunai Police Station, Kalmunai, Ampara District",
+  "tel": "063 657 2356",
+  "email": "kalmunai@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-samanthurai",
+  "name": "Samanthurai",
+  "district": "Ampara",
+  "addr": "Samanthurai Police Station, Samanthurai, Ampara District",
+  "tel": "063 497 3977",
+  "email": "samanthurai@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-chavalakade",
+  "name": "Chavalakade",
+  "district": "Ampara",
+  "addr": "Chavalakade Police Station, Chavalakade, Ampara District",
+  "tel": "063 561 0264",
+  "email": "chavalakade@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-akkaraipattu",
+  "name": "Akkaraipattu",
+  "district": "Ampara",
+  "addr": "Akkaraipattu Police Station, Akkaraipattu, Ampara District",
+  "tel": "063 601 3946",
+  "email": "akkaraipattu@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-thirukkovil",
+  "name": "Thirukkovil",
+  "district": "Ampara",
+  "addr": "Thirukkovil Police Station, Thirukkovil, Ampara District",
+  "tel": "063 244 1968",
+  "email": "thirukkovil@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-pottuvil",
+  "name": "Pottuvil",
+  "district": "Ampara",
+  "addr": "Pottuvil Police Station, Pottuvil, Ampara District",
+  "tel": "063 670 7948",
+  "email": "pottuvil@police.lk",
+  "active": true
+ },
+ {
+  "code": "ampara-panama",
+  "name": "Panama",
+  "district": "Ampara",
+  "addr": "Panama Police Station, Panama, Ampara District",
+  "tel": "063 229 8339",
+  "email": "panama@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-trincomalee",
+  "name": "Trincomalee",
+  "district": "Trincomalee",
+  "addr": "Trincomalee Police Station, Trincomalee, Trincomalee District",
+  "tel": "026 261 9022",
+  "email": "trincomalee@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-trincomalee-harbour",
+  "name": "Trincomalee Harbour",
+  "district": "Trincomalee",
+  "addr": "Trincomalee Harbour Police Station, Trincomalee Harbour, Trincomalee District",
+  "tel": "026 509 5638",
+  "email": "trincomalee-harbour@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-china-bay",
+  "name": "China Bay",
+  "district": "Trincomalee",
+  "addr": "China Bay Police Station, China Bay, Trincomalee District",
+  "tel": "026 248 5363",
+  "email": "china-bay@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-kuchchaveli",
+  "name": "Kuchchaveli",
+  "district": "Trincomalee",
+  "addr": "Kuchchaveli Police Station, Kuchchaveli, Trincomalee District",
+  "tel": "026 787 6705",
+  "email": "kuchchaveli@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-uppuveli",
+  "name": "Uppuveli",
+  "district": "Trincomalee",
+  "addr": "Uppuveli Police Station, Uppuveli, Trincomalee District",
+  "tel": "026 395 4219",
+  "email": "uppuveli@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-pulmoddai",
+  "name": "Pulmoddai",
+  "district": "Trincomalee",
+  "addr": "Pulmoddai Police Station, Pulmoddai, Trincomalee District",
+  "tel": "026 478 0023",
+  "email": "pulmoddai@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-sripura",
+  "name": "Sripura",
+  "district": "Trincomalee",
+  "addr": "Sripura Police Station, Sripura, Trincomalee District",
+  "tel": "026 204 8367",
+  "email": "sripura@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-nilaveli",
+  "name": "Nilaveli",
+  "district": "Trincomalee",
+  "addr": "Nilaveli Police Station, Nilaveli, Trincomalee District",
+  "tel": "026 638 1912",
+  "email": "nilaveli@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-mutur",
+  "name": "Mutur",
+  "district": "Trincomalee",
+  "addr": "Mutur Police Station, Mutur, Trincomalee District",
+  "tel": "026 318 5163",
+  "email": "mutur@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-sampur",
+  "name": "Sampur",
+  "district": "Trincomalee",
+  "addr": "Sampur Police Station, Sampur, Trincomalee District",
+  "tel": "026 681 6672",
+  "email": "sampur@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-kinniya",
+  "name": "Kinniya",
+  "district": "Trincomalee",
+  "addr": "Kinniya Police Station, Kinniya, Trincomalee District",
+  "tel": "026 657 0899",
+  "email": "kinniya@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-kantale",
+  "name": "Kantale",
+  "district": "Trincomalee",
+  "addr": "Kantale Police Station, Kantale, Trincomalee District",
+  "tel": "026 588 8342",
+  "email": "kantale@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-agbopura",
+  "name": "Agbopura",
+  "district": "Trincomalee",
+  "addr": "Agbopura Police Station, Agbopura, Trincomalee District",
+  "tel": "026 511 3466",
+  "email": "agbopura@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-thambalagamuwa",
+  "name": "Thambalagamuwa",
+  "district": "Trincomalee",
+  "addr": "Thambalagamuwa Police Station, Thambalagamuwa, Trincomalee District",
+  "tel": "026 482 2161",
+  "email": "thambalagamuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-serunuwara",
+  "name": "Serunuwara",
+  "district": "Trincomalee",
+  "addr": "Serunuwara Police Station, Serunuwara, Trincomalee District",
+  "tel": "026 283 3843",
+  "email": "serunuwara@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-suriyapura",
+  "name": "Suriyapura",
+  "district": "Trincomalee",
+  "addr": "Suriyapura Police Station, Suriyapura, Trincomalee District",
+  "tel": "026 603 3284",
+  "email": "suriyapura@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-wan-ela",
+  "name": "Wan Ela",
+  "district": "Trincomalee",
+  "addr": "Wan Ela Police Station, Wan Ela, Trincomalee District",
+  "tel": "026 709 6016",
+  "email": "wan-ela@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-morawewa",
+  "name": "Morawewa",
+  "district": "Trincomalee",
+  "addr": "Morawewa Police Station, Morawewa, Trincomalee District",
+  "tel": "026 485 3249",
+  "email": "morawewa@police.lk",
+  "active": true
+ },
+ {
+  "code": "trincomalee-gomarankadawala",
+  "name": "Gomarankadawala",
+  "district": "Trincomalee",
+  "addr": "Gomarankadawala Police Station, Gomarankadawala, Trincomalee District",
+  "tel": "026 738 2023",
+  "email": "gomarankadawala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-kurunegala",
+  "name": "Kurunegala",
+  "district": "Kurunegala",
+  "addr": "Kurunegala Police Station, Kurunegala, Kurunegala District",
+  "tel": "037 253 0655",
+  "email": "kurunegala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-polgahawela",
+  "name": "Polgahawela",
+  "district": "Kurunegala",
+  "addr": "Polgahawela Police Station, Polgahawela, Kurunegala District",
+  "tel": "037 528 5547",
+  "email": "polgahawela@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-alawwa",
+  "name": "Alawwa",
+  "district": "Kurunegala",
+  "addr": "Alawwa Police Station, Alawwa, Kurunegala District",
+  "tel": "037 624 2259",
+  "email": "alawwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-pothuhera",
+  "name": "Pothuhera",
+  "district": "Kurunegala",
+  "addr": "Pothuhera Police Station, Pothuhera, Kurunegala District",
+  "tel": "037 364 1936",
+  "email": "pothuhera@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-wariyapola",
+  "name": "Wariyapola",
+  "district": "Kurunegala",
+  "addr": "Wariyapola Police Station, Wariyapola, Kurunegala District",
+  "tel": "037 295 5355",
+  "email": "wariyapola@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-weerambugedara",
+  "name": "Weerambugedara",
+  "district": "Kurunegala",
+  "addr": "Weerambugedara Police Station, Weerambugedara, Kurunegala District",
+  "tel": "037 262 2638",
+  "email": "weerambugedara@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-wellawa",
+  "name": "Wellawa",
+  "district": "Kurunegala",
+  "addr": "Wellawa Police Station, Wellawa, Kurunegala District",
+  "tel": "037 551 7821",
+  "email": "wellawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-gokarella",
+  "name": "Gokarella",
+  "district": "Kurunegala",
+  "addr": "Gokarella Police Station, Gokarella, Kurunegala District",
+  "tel": "037 253 2804",
+  "email": "gokarella@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-mawathagama",
+  "name": "Mawathagama",
+  "district": "Kurunegala",
+  "addr": "Mawathagama Police Station, Mawathagama, Kurunegala District",
+  "tel": "037 288 9346",
+  "email": "mawathagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-rideegama",
+  "name": "Rideegama",
+  "district": "Kurunegala",
+  "addr": "Rideegama Police Station, Rideegama, Kurunegala District",
+  "tel": "037 690 1367",
+  "email": "rideegama@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-kumbukgete",
+  "name": "Kumbukgete",
+  "district": "Kurunegala",
+  "addr": "Kumbukgete Police Station, Kumbukgete, Kurunegala District",
+  "tel": "037 591 0737",
+  "email": "kumbukgete@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-kuliyapitiya",
+  "name": "Kuliyapitiya",
+  "district": "Kurunegala",
+  "addr": "Kuliyapitiya Police Station, Kuliyapitiya, Kurunegala District",
+  "tel": "037 513 4171",
+  "email": "kuliyapitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-narammala",
+  "name": "Narammala",
+  "district": "Kurunegala",
+  "addr": "Narammala Police Station, Narammala, Kurunegala District",
+  "tel": "037 480 2807",
+  "email": "narammala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-pannala",
+  "name": "Pannala",
+  "district": "Kurunegala",
+  "addr": "Pannala Police Station, Pannala, Kurunegala District",
+  "tel": "037 613 7015",
+  "email": "pannala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-giriulla",
+  "name": "Giriulla",
+  "district": "Kurunegala",
+  "addr": "Giriulla Police Station, Giriulla, Kurunegala District",
+  "tel": "037 267 9133",
+  "email": "giriulla@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-hettipola",
+  "name": "Hettipola",
+  "district": "Kurunegala",
+  "addr": "Hettipola Police Station, Hettipola, Kurunegala District",
+  "tel": "037 564 8736",
+  "email": "hettipola@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-katupotha",
+  "name": "Katupotha",
+  "district": "Kurunegala",
+  "addr": "Katupotha Police Station, Katupotha, Kurunegala District",
+  "tel": "037 626 4349",
+  "email": "katupotha@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-dummalasuriya",
+  "name": "Dummalasuriya",
+  "district": "Kurunegala",
+  "addr": "Dummalasuriya Police Station, Dummalasuriya, Kurunegala District",
+  "tel": "037 599 3030",
+  "email": "dummalasuriya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-bingiriya",
+  "name": "Bingiriya",
+  "district": "Kurunegala",
+  "addr": "Bingiriya Police Station, Bingiriya, Kurunegala District",
+  "tel": "037 347 4119",
+  "email": "bingiriya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-nikaweratiya",
+  "name": "Nikaweratiya",
+  "district": "Kurunegala",
+  "addr": "Nikaweratiya Police Station, Nikaweratiya, Kurunegala District",
+  "tel": "037 258 0429",
+  "email": "nikaweratiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-kobeigane",
+  "name": "Kobeigane",
+  "district": "Kurunegala",
+  "addr": "Kobeigane Police Station, Kobeigane, Kurunegala District",
+  "tel": "037 642 2240",
+  "email": "kobeigane@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-kotawehera",
+  "name": "Kotawehera",
+  "district": "Kurunegala",
+  "addr": "Kotawehera Police Station, Kotawehera, Kurunegala District",
+  "tel": "037 456 3022",
+  "email": "kotawehera@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-rasnayakapura",
+  "name": "Rasnayakapura",
+  "district": "Kurunegala",
+  "addr": "Rasnayakapura Police Station, Rasnayakapura, Kurunegala District",
+  "tel": "037 636 2903",
+  "email": "rasnayakapura@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-maho",
+  "name": "Maho",
+  "district": "Kurunegala",
+  "addr": "Maho Police Station, Maho, Kurunegala District",
+  "tel": "037 502 3969",
+  "email": "maho@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-ambanpola",
+  "name": "Ambanpola",
+  "district": "Kurunegala",
+  "addr": "Ambanpola Police Station, Ambanpola, Kurunegala District",
+  "tel": "037 253 3229",
+  "email": "ambanpola@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-polpithigama",
+  "name": "Polpithigama",
+  "district": "Kurunegala",
+  "addr": "Polpithigama Police Station, Polpithigama, Kurunegala District",
+  "tel": "037 508 9173",
+  "email": "polpithigama@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-galgamuwa",
+  "name": "Galgamuwa",
+  "district": "Kurunegala",
+  "addr": "Galgamuwa Police Station, Galgamuwa, Kurunegala District",
+  "tel": "037 477 5518",
+  "email": "galgamuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-meegalewa",
+  "name": "Meegalewa",
+  "district": "Kurunegala",
+  "addr": "Meegalewa Police Station, Meegalewa, Kurunegala District",
+  "tel": "037 274 2669",
+  "email": "meegalewa@police.lk",
+  "active": true
+ },
+ {
+  "code": "kurunegala-giribawa",
+  "name": "Giribawa",
+  "district": "Kurunegala",
+  "addr": "Giribawa Police Station, Giribawa, Kurunegala District",
+  "tel": "037 493 6521",
+  "email": "giribawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-puttalam",
+  "name": "Puttalam",
+  "district": "Puttalam",
+  "addr": "Puttalam Police Station, Puttalam, Puttalam District",
+  "tel": "032 774 4713",
+  "email": "puttalam@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-anamaduwa",
+  "name": "Anamaduwa",
+  "district": "Puttalam",
+  "addr": "Anamaduwa Police Station, Anamaduwa, Puttalam District",
+  "tel": "032 355 9902",
+  "email": "anamaduwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-pallama",
+  "name": "Pallama",
+  "district": "Puttalam",
+  "addr": "Pallama Police Station, Pallama, Puttalam District",
+  "tel": "032 788 4240",
+  "email": "pallama@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-nawagaththegama",
+  "name": "Nawagaththegama",
+  "district": "Puttalam",
+  "addr": "Nawagaththegama Police Station, Nawagaththegama, Puttalam District",
+  "tel": "032 455 2808",
+  "email": "nawagaththegama@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-wanathawilluwa",
+  "name": "Wanathawilluwa",
+  "district": "Puttalam",
+  "addr": "Wanathawilluwa Police Station, Wanathawilluwa, Puttalam District",
+  "tel": "032 670 4534",
+  "email": "wanathawilluwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-karuwalagaswewa",
+  "name": "Karuwalagaswewa",
+  "district": "Puttalam",
+  "addr": "Karuwalagaswewa Police Station, Karuwalagaswewa, Puttalam District",
+  "tel": "032 426 2329",
+  "email": "karuwalagaswewa@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-saliyawewa",
+  "name": "Saliyawewa",
+  "district": "Puttalam",
+  "addr": "Saliyawewa Police Station, Saliyawewa, Puttalam District",
+  "tel": "032 405 7861",
+  "email": "saliyawewa@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-kalpitiya",
+  "name": "Kalpitiya",
+  "district": "Puttalam",
+  "addr": "Kalpitiya Police Station, Kalpitiya, Puttalam District",
+  "tel": "032 474 2622",
+  "email": "kalpitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-mundalama",
+  "name": "Mundalama",
+  "district": "Puttalam",
+  "addr": "Mundalama Police Station, Mundalama, Puttalam District",
+  "tel": "032 291 1429",
+  "email": "mundalama@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-norochcholai",
+  "name": "Norochcholai",
+  "district": "Puttalam",
+  "addr": "Norochcholai Police Station, Norochcholai, Puttalam District",
+  "tel": "032 312 1243",
+  "email": "norochcholai@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-udappuwa",
+  "name": "Udappuwa",
+  "district": "Puttalam",
+  "addr": "Udappuwa Police Station, Udappuwa, Puttalam District",
+  "tel": "032 367 8565",
+  "email": "udappuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-chilaw",
+  "name": "Chilaw",
+  "district": "Puttalam",
+  "addr": "Chilaw Police Station, Chilaw, Puttalam District",
+  "tel": "032 639 4608",
+  "email": "chilaw@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-madampe",
+  "name": "Madampe",
+  "district": "Puttalam",
+  "addr": "Madampe Police Station, Madampe, Puttalam District",
+  "tel": "032 568 4994",
+  "email": "madampe@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-marawila",
+  "name": "Marawila",
+  "district": "Puttalam",
+  "addr": "Marawila Police Station, Marawila, Puttalam District",
+  "tel": "032 739 9594",
+  "email": "marawila@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-koswatta",
+  "name": "Koswatta",
+  "district": "Puttalam",
+  "addr": "Koswatta Police Station, Koswatta, Puttalam District",
+  "tel": "032 464 4820",
+  "email": "koswatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-wennappuwa",
+  "name": "Wennappuwa",
+  "district": "Puttalam",
+  "addr": "Wennappuwa Police Station, Wennappuwa, Puttalam District",
+  "tel": "032 317 1075",
+  "email": "wennappuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-dankotuwa",
+  "name": "Dankotuwa",
+  "district": "Puttalam",
+  "addr": "Dankotuwa Police Station, Dankotuwa, Puttalam District",
+  "tel": "032 321 8149",
+  "email": "dankotuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "puttalam-arachchikattuwa",
+  "name": "Arachchikattuwa",
+  "district": "Puttalam",
+  "addr": "Arachchikattuwa Police Station, Arachchikattuwa, Puttalam District",
+  "tel": "032 370 6382",
+  "email": "arachchikattuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-anuradhapura",
+  "name": "Anuradhapura",
+  "district": "Anuradhapura",
+  "addr": "Anuradhapura Police Station, Anuradhapura, Anuradhapura District",
+  "tel": "025 747 4658",
+  "email": "anuradhapura@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-hidogama",
+  "name": "Hidogama",
+  "district": "Anuradhapura",
+  "addr": "Hidogama Police Station, Hidogama, Anuradhapura District",
+  "tel": "025 281 5451",
+  "email": "hidogama@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-mihintale",
+  "name": "Mihintale",
+  "district": "Anuradhapura",
+  "addr": "Mihintale Police Station, Mihintale, Anuradhapura District",
+  "tel": "025 672 8409",
+  "email": "mihintale@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-kekirawa",
+  "name": "Kekirawa",
+  "district": "Anuradhapura",
+  "addr": "Kekirawa Police Station, Kekirawa, Anuradhapura District",
+  "tel": "025 799 9700",
+  "email": "kekirawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-thirappane",
+  "name": "Thirappane",
+  "district": "Anuradhapura",
+  "addr": "Thirappane Police Station, Thirappane, Anuradhapura District",
+  "tel": "025 665 5301",
+  "email": "thirappane@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-eppawala",
+  "name": "Eppawala",
+  "district": "Anuradhapura",
+  "addr": "Eppawala Police Station, Eppawala, Anuradhapura District",
+  "tel": "025 551 1070",
+  "email": "eppawala@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-galnewa",
+  "name": "Galnewa",
+  "district": "Anuradhapura",
+  "addr": "Galnewa Police Station, Galnewa, Anuradhapura District",
+  "tel": "025 427 5239",
+  "email": "galnewa@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-galkiriyagama",
+  "name": "Galkiriyagama",
+  "district": "Anuradhapura",
+  "addr": "Galkiriyagama Police Station, Galkiriyagama, Anuradhapura District",
+  "tel": "025 574 4226",
+  "email": "galkiriyagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-kebithigollewa",
+  "name": "Kebithigollewa",
+  "district": "Anuradhapura",
+  "addr": "Kebithigollewa Police Station, Kebithigollewa, Anuradhapura District",
+  "tel": "025 704 3552",
+  "email": "kebithigollewa@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-medawachchiya",
+  "name": "Medawachchiya",
+  "district": "Anuradhapura",
+  "addr": "Medawachchiya Police Station, Medawachchiya, Anuradhapura District",
+  "tel": "025 346 1613",
+  "email": "medawachchiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-padaviya",
+  "name": "Padaviya",
+  "district": "Anuradhapura",
+  "addr": "Padaviya Police Station, Padaviya, Anuradhapura District",
+  "tel": "025 745 1888",
+  "email": "padaviya@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-thambuttegama",
+  "name": "Thambuttegama",
+  "district": "Anuradhapura",
+  "addr": "Thambuttegama Police Station, Thambuttegama, Anuradhapura District",
+  "tel": "025 675 7270",
+  "email": "thambuttegama@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-rajanganaya",
+  "name": "Rajanganaya",
+  "district": "Anuradhapura",
+  "addr": "Rajanganaya Police Station, Rajanganaya, Anuradhapura District",
+  "tel": "025 316 4375",
+  "email": "rajanganaya@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-nochchiyagama",
+  "name": "Nochchiyagama",
+  "district": "Anuradhapura",
+  "addr": "Nochchiyagama Police Station, Nochchiyagama, Anuradhapura District",
+  "tel": "025 480 4486",
+  "email": "nochchiyagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-thalawa",
+  "name": "Thalawa",
+  "district": "Anuradhapura",
+  "addr": "Thalawa Police Station, Thalawa, Anuradhapura District",
+  "tel": "025 742 8613",
+  "email": "thalawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-horowpathana",
+  "name": "Horowpathana",
+  "district": "Anuradhapura",
+  "addr": "Horowpathana Police Station, Horowpathana, Anuradhapura District",
+  "tel": "025 439 8883",
+  "email": "horowpathana@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-kahatagasdigiliya",
+  "name": "Kahatagasdigiliya",
+  "district": "Anuradhapura",
+  "addr": "Kahatagasdigiliya Police Station, Kahatagasdigiliya, Anuradhapura District",
+  "tel": "025 540 6958",
+  "email": "kahatagasdigiliya@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-thanthirimalaya",
+  "name": "Thanthirimalaya",
+  "district": "Anuradhapura",
+  "addr": "Thanthirimalaya Police Station, Thanthirimalaya, Anuradhapura District",
+  "tel": "025 270 7448",
+  "email": "thanthirimalaya@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-mahawilachchiya",
+  "name": "Mahawilachchiya",
+  "district": "Anuradhapura",
+  "addr": "Mahawilachchiya Police Station, Mahawilachchiya, Anuradhapura District",
+  "tel": "025 443 6162",
+  "email": "mahawilachchiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-galenbindunuwewa",
+  "name": "Galenbindunuwewa",
+  "district": "Anuradhapura",
+  "addr": "Galenbindunuwewa Police Station, Galenbindunuwewa, Anuradhapura District",
+  "tel": "025 367 4891",
+  "email": "galenbindunuwewa@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-ipalogama",
+  "name": "Ipalogama",
+  "district": "Anuradhapura",
+  "addr": "Ipalogama Police Station, Ipalogama, Anuradhapura District",
+  "tel": "025 777 7835",
+  "email": "ipalogama@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-parasangaswewa",
+  "name": "Parasangaswewa",
+  "district": "Anuradhapura",
+  "addr": "Parasangaswewa Police Station, Parasangaswewa, Anuradhapura District",
+  "tel": "025 731 8013",
+  "email": "parasangaswewa@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-moragoda",
+  "name": "Moragoda",
+  "district": "Anuradhapura",
+  "addr": "Moragoda Police Station, Moragoda, Anuradhapura District",
+  "tel": "025 369 5855",
+  "email": "moragoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "anuradhapura-habarana",
+  "name": "Habarana",
+  "district": "Anuradhapura",
+  "addr": "Habarana Police Station, Habarana, Anuradhapura District",
+  "tel": "025 203 7081",
+  "email": "habarana@police.lk",
+  "active": true
+ },
+ {
+  "code": "polonnaruwa-polonnaruwa",
+  "name": "Polonnaruwa",
+  "district": "Polonnaruwa",
+  "addr": "Polonnaruwa Police Station, Polonnaruwa, Polonnaruwa District",
+  "tel": "027 634 0536",
+  "email": "polonnaruwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "polonnaruwa-pulasthipura",
+  "name": "Pulasthipura",
+  "district": "Polonnaruwa",
+  "addr": "Pulasthipura Police Station, Pulasthipura, Polonnaruwa District",
+  "tel": "027 204 2495",
+  "email": "pulasthipura@police.lk",
+  "active": true
+ },
+ {
+  "code": "polonnaruwa-welikanda",
+  "name": "Welikanda",
+  "district": "Polonnaruwa",
+  "addr": "Welikanda Police Station, Welikanda, Polonnaruwa District",
+  "tel": "027 243 3645",
+  "email": "welikanda@police.lk",
+  "active": true
+ },
+ {
+  "code": "polonnaruwa-aralaganwila",
+  "name": "Aralaganwila",
+  "district": "Polonnaruwa",
+  "addr": "Aralaganwila Police Station, Aralaganwila, Polonnaruwa District",
+  "tel": "027 696 4677",
+  "email": "aralaganwila@police.lk",
+  "active": true
+ },
+ {
+  "code": "polonnaruwa-hingurakgoda",
+  "name": "Hingurakgoda",
+  "district": "Polonnaruwa",
+  "addr": "Hingurakgoda Police Station, Hingurakgoda, Polonnaruwa District",
+  "tel": "027 449 1978",
+  "email": "hingurakgoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "polonnaruwa-medirigiriya",
+  "name": "Medirigiriya",
+  "district": "Polonnaruwa",
+  "addr": "Medirigiriya Police Station, Medirigiriya, Polonnaruwa District",
+  "tel": "027 405 0229",
+  "email": "medirigiriya@police.lk",
+  "active": true
+ },
+ {
+  "code": "polonnaruwa-bakamuna",
+  "name": "Bakamuna",
+  "district": "Polonnaruwa",
+  "addr": "Bakamuna Police Station, Bakamuna, Polonnaruwa District",
+  "tel": "027 730 4832",
+  "email": "bakamuna@police.lk",
+  "active": true
+ },
+ {
+  "code": "polonnaruwa-minneriya",
+  "name": "Minneriya",
+  "district": "Polonnaruwa",
+  "addr": "Minneriya Police Station, Minneriya, Polonnaruwa District",
+  "tel": "027 455 8350",
+  "email": "minneriya@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-badulla",
+  "name": "Badulla",
+  "district": "Badulla",
+  "addr": "Badulla Police Station, Badulla, Badulla District",
+  "tel": "055 775 9560",
+  "email": "badulla@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-passara",
+  "name": "Passara",
+  "district": "Badulla",
+  "addr": "Passara Police Station, Passara, Badulla District",
+  "tel": "055 456 7942",
+  "email": "passara@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-madolsima",
+  "name": "Madolsima",
+  "district": "Badulla",
+  "addr": "Madolsima Police Station, Madolsima, Badulla District",
+  "tel": "055 284 7255",
+  "email": "madolsima@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-lunugala",
+  "name": "Lunugala",
+  "district": "Badulla",
+  "addr": "Lunugala Police Station, Lunugala, Badulla District",
+  "tel": "055 592 3467",
+  "email": "lunugala@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-mahiyangane",
+  "name": "Mahiyangane",
+  "district": "Badulla",
+  "addr": "Mahiyangane Police Station, Mahiyangane, Badulla District",
+  "tel": "055 298 2407",
+  "email": "mahiyangane@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-girandurukotte",
+  "name": "Girandurukotte",
+  "district": "Badulla",
+  "addr": "Girandurukotte Police Station, Girandurukotte, Badulla District",
+  "tel": "055 691 5307",
+  "email": "girandurukotte@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-kandaketiya",
+  "name": "Kandaketiya",
+  "district": "Badulla",
+  "addr": "Kandaketiya Police Station, Kandaketiya, Badulla District",
+  "tel": "055 589 9323",
+  "email": "kandaketiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-haliela",
+  "name": "Haliela",
+  "district": "Badulla",
+  "addr": "Haliela Police Station, Haliela, Badulla District",
+  "tel": "055 379 9513",
+  "email": "haliela@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-rideemaliyadda",
+  "name": "Rideemaliyadda",
+  "district": "Badulla",
+  "addr": "Rideemaliyadda Police Station, Rideemaliyadda, Badulla District",
+  "tel": "055 529 3089",
+  "email": "rideemaliyadda@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-bandarawela",
+  "name": "Bandarawela",
+  "district": "Badulla",
+  "addr": "Bandarawela Police Station, Bandarawela, Badulla District",
+  "tel": "055 260 2279",
+  "email": "bandarawela@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-ella",
+  "name": "Ella",
+  "district": "Badulla",
+  "addr": "Ella Police Station, Ella, Badulla District",
+  "tel": "055 660 8331",
+  "email": "ella@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-welimada",
+  "name": "Welimada",
+  "district": "Badulla",
+  "addr": "Welimada Police Station, Welimada, Badulla District",
+  "tel": "055 540 0238",
+  "email": "welimada@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-uva-paranagama",
+  "name": "Uva Paranagama",
+  "district": "Badulla",
+  "addr": "Uva Paranagama Police Station, Uva Paranagama, Badulla District",
+  "tel": "055 657 4434",
+  "email": "uva-paranagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-etampitiya",
+  "name": "Etampitiya",
+  "district": "Badulla",
+  "addr": "Etampitiya Police Station, Etampitiya, Badulla District",
+  "tel": "055 713 5728",
+  "email": "etampitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-haputale",
+  "name": "Haputale",
+  "district": "Badulla",
+  "addr": "Haputale Police Station, Haputale, Badulla District",
+  "tel": "055 476 4826",
+  "email": "haputale@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-diyatalawa",
+  "name": "Diyatalawa",
+  "district": "Badulla",
+  "addr": "Diyatalawa Police Station, Diyatalawa, Badulla District",
+  "tel": "055 401 9833",
+  "email": "diyatalawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-koslanda",
+  "name": "Koslanda",
+  "district": "Badulla",
+  "addr": "Koslanda Police Station, Koslanda, Badulla District",
+  "tel": "055 443 4612",
+  "email": "koslanda@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-haldummulla",
+  "name": "Haldummulla",
+  "district": "Badulla",
+  "addr": "Haldummulla Police Station, Haldummulla, Badulla District",
+  "tel": "055 688 4475",
+  "email": "haldummulla@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-bogahakumbura",
+  "name": "Bogahakumbura",
+  "district": "Badulla",
+  "addr": "Bogahakumbura Police Station, Bogahakumbura, Badulla District",
+  "tel": "055 625 6057",
+  "email": "bogahakumbura@police.lk",
+  "active": true
+ },
+ {
+  "code": "badulla-ambagasdowa",
+  "name": "Ambagasdowa",
+  "district": "Badulla",
+  "addr": "Ambagasdowa Police Station, Ambagasdowa, Badulla District",
+  "tel": "055 512 8049",
+  "email": "ambagasdowa@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-monaragala",
+  "name": "Monaragala",
+  "district": "Monaragala",
+  "addr": "Monaragala Police Station, Monaragala, Monaragala District",
+  "tel": "055 226 7445",
+  "email": "monaragala@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-siyambalanduwa",
+  "name": "Siyambalanduwa",
+  "district": "Monaragala",
+  "addr": "Siyambalanduwa Police Station, Siyambalanduwa, Monaragala District",
+  "tel": "055 656 8346",
+  "email": "siyambalanduwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-dambagalla",
+  "name": "Dambagalla",
+  "district": "Monaragala",
+  "addr": "Dambagalla Police Station, Dambagalla, Monaragala District",
+  "tel": "055 773 3579",
+  "email": "dambagalla@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-athimale",
+  "name": "Athimale",
+  "district": "Monaragala",
+  "addr": "Athimale Police Station, Athimale, Monaragala District",
+  "tel": "055 646 5787",
+  "email": "athimale@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-bibila",
+  "name": "Bibila",
+  "district": "Monaragala",
+  "addr": "Bibila Police Station, Bibila, Monaragala District",
+  "tel": "055 602 3342",
+  "email": "bibila@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-medagama",
+  "name": "Medagama",
+  "district": "Monaragala",
+  "addr": "Medagama Police Station, Medagama, Monaragala District",
+  "tel": "055 737 5252",
+  "email": "medagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-buttala",
+  "name": "Buttala",
+  "district": "Monaragala",
+  "addr": "Buttala Police Station, Buttala, Monaragala District",
+  "tel": "055 686 0901",
+  "email": "buttala@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-badalkumbura",
+  "name": "Badalkumbura",
+  "district": "Monaragala",
+  "addr": "Badalkumbura Police Station, Badalkumbura, Monaragala District",
+  "tel": "055 211 9149",
+  "email": "badalkumbura@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-gonaganara",
+  "name": "Gonaganara",
+  "district": "Monaragala",
+  "addr": "Gonaganara Police Station, Gonaganara, Monaragala District",
+  "tel": "055 468 1117",
+  "email": "gonaganara@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-wellawaya",
+  "name": "Wellawaya",
+  "district": "Monaragala",
+  "addr": "Wellawaya Police Station, Wellawaya, Monaragala District",
+  "tel": "055 367 0975",
+  "email": "wellawaya@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-sewanagala",
+  "name": "Sewanagala",
+  "district": "Monaragala",
+  "addr": "Sewanagala Police Station, Sewanagala, Monaragala District",
+  "tel": "055 326 4463",
+  "email": "sewanagala@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-thanamalwila",
+  "name": "Thanamalwila",
+  "district": "Monaragala",
+  "addr": "Thanamalwila Police Station, Thanamalwila, Monaragala District",
+  "tel": "055 588 5339",
+  "email": "thanamalwila@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-hambegamuwa",
+  "name": "Hambegamuwa",
+  "district": "Monaragala",
+  "addr": "Hambegamuwa Police Station, Hambegamuwa, Monaragala District",
+  "tel": "055 661 8928",
+  "email": "hambegamuwa@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-mahakalugolla",
+  "name": "Mahakalugolla",
+  "district": "Monaragala",
+  "addr": "Mahakalugolla Police Station, Mahakalugolla, Monaragala District",
+  "tel": "055 297 5151",
+  "email": "mahakalugolla@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-kudaoya",
+  "name": "Kudaoya",
+  "district": "Monaragala",
+  "addr": "Kudaoya Police Station, Kudaoya, Monaragala District",
+  "tel": "055 668 6635",
+  "email": "kudaoya@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-okkampitiya",
+  "name": "Okkampitiya",
+  "district": "Monaragala",
+  "addr": "Okkampitiya Police Station, Okkampitiya, Monaragala District",
+  "tel": "055 274 8282",
+  "email": "okkampitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-karandugala",
+  "name": "Karandugala",
+  "district": "Monaragala",
+  "addr": "Karandugala Police Station, Karandugala, Monaragala District",
+  "tel": "055 678 7461",
+  "email": "karandugala@police.lk",
+  "active": true
+ },
+ {
+  "code": "monaragala-govindapura",
+  "name": "Govindapura",
+  "district": "Monaragala",
+  "addr": "Govindapura Police Station, Govindapura, Monaragala District",
+  "tel": "055 652 0395",
+  "email": "govindapura@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-ratnapura",
+  "name": "Ratnapura",
+  "district": "Ratnapura",
+  "addr": "Ratnapura Police Station, Ratnapura, Ratnapura District",
+  "tel": "045 394 1193",
+  "email": "ratnapura@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-wewelwatta",
+  "name": "Wewelwatta",
+  "district": "Ratnapura",
+  "addr": "Wewelwatta Police Station, Wewelwatta, Ratnapura District",
+  "tel": "045 752 5596",
+  "email": "wewelwatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-balangoda",
+  "name": "Balangoda",
+  "district": "Ratnapura",
+  "addr": "Balangoda Police Station, Balangoda, Ratnapura District",
+  "tel": "045 624 1127",
+  "email": "balangoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-opanayaka",
+  "name": "Opanayaka",
+  "district": "Ratnapura",
+  "addr": "Opanayaka Police Station, Opanayaka, Ratnapura District",
+  "tel": "045 467 5219",
+  "email": "opanayaka@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-katota",
+  "name": "Katota",
+  "district": "Ratnapura",
+  "addr": "Katota Police Station, Katota, Ratnapura District",
+  "tel": "045 644 6315",
+  "email": "katota@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-weligepola",
+  "name": "Weligepola",
+  "district": "Ratnapura",
+  "addr": "Weligepola Police Station, Weligepola, Ratnapura District",
+  "tel": "045 572 3128",
+  "email": "weligepola@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-kahawatta",
+  "name": "Kahawatta",
+  "district": "Ratnapura",
+  "addr": "Kahawatta Police Station, Kahawatta, Ratnapura District",
+  "tel": "045 699 4688",
+  "email": "kahawatta@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-rakwana",
+  "name": "Rakwana",
+  "district": "Ratnapura",
+  "addr": "Rakwana Police Station, Rakwana, Ratnapura District",
+  "tel": "045 792 3673",
+  "email": "rakwana@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-godakawela",
+  "name": "Godakawela",
+  "district": "Ratnapura",
+  "addr": "Godakawela Police Station, Godakawela, Ratnapura District",
+  "tel": "045 621 5610",
+  "email": "godakawela@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-ayagama",
+  "name": "Ayagama",
+  "district": "Ratnapura",
+  "addr": "Ayagama Police Station, Ayagama, Ratnapura District",
+  "tel": "045 252 4571",
+  "email": "ayagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-kalawana",
+  "name": "Kalawana",
+  "district": "Ratnapura",
+  "addr": "Kalawana Police Station, Kalawana, Ratnapura District",
+  "tel": "045 334 5427",
+  "email": "kalawana@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-nivithigala",
+  "name": "Nivithigala",
+  "district": "Ratnapura",
+  "addr": "Nivithigala Police Station, Nivithigala, Ratnapura District",
+  "tel": "045 753 1888",
+  "email": "nivithigala@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-kuruwita",
+  "name": "Kuruwita",
+  "district": "Ratnapura",
+  "addr": "Kuruwita Police Station, Kuruwita, Ratnapura District",
+  "tel": "045 379 3781",
+  "email": "kuruwita@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-eheliyagoda",
+  "name": "Eheliyagoda",
+  "district": "Ratnapura",
+  "addr": "Eheliyagoda Police Station, Eheliyagoda, Ratnapura District",
+  "tel": "045 327 9933",
+  "email": "eheliyagoda@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-kiriella",
+  "name": "Kiriella",
+  "district": "Ratnapura",
+  "addr": "Kiriella Police Station, Kiriella, Ratnapura District",
+  "tel": "045 651 6355",
+  "email": "kiriella@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-embilipitiya",
+  "name": "Embilipitiya",
+  "district": "Ratnapura",
+  "addr": "Embilipitiya Police Station, Embilipitiya, Ratnapura District",
+  "tel": "045 523 4200",
+  "email": "embilipitiya@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-kuttigala",
+  "name": "Kuttigala",
+  "district": "Ratnapura",
+  "addr": "Kuttigala Police Station, Kuttigala, Ratnapura District",
+  "tel": "045 536 4841",
+  "email": "kuttigala@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-kolonna",
+  "name": "Kolonna",
+  "district": "Ratnapura",
+  "addr": "Kolonna Police Station, Kolonna, Ratnapura District",
+  "tel": "045 458 3340",
+  "email": "kolonna@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-panamure",
+  "name": "Panamure",
+  "district": "Ratnapura",
+  "addr": "Panamure Police Station, Panamure, Ratnapura District",
+  "tel": "045 546 3343",
+  "email": "panamure@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-udawalawa",
+  "name": "Udawalawa",
+  "district": "Ratnapura",
+  "addr": "Udawalawa Police Station, Udawalawa, Ratnapura District",
+  "tel": "045 264 8536",
+  "email": "udawalawa@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-pinnawala",
+  "name": "Pinnawala",
+  "district": "Ratnapura",
+  "addr": "Pinnawala Police Station, Pinnawala, Ratnapura District",
+  "tel": "045 293 0945",
+  "email": "pinnawala@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-siripagama",
+  "name": "Siripagama",
+  "district": "Ratnapura",
+  "addr": "Siripagama Police Station, Siripagama, Ratnapura District",
+  "tel": "045 422 1089",
+  "email": "siripagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "ratnapura-pelmadulla",
+  "name": "Pelmadulla",
+  "district": "Ratnapura",
+  "addr": "Pelmadulla Police Station, Pelmadulla, Ratnapura District",
+  "tel": "045 580 6282",
+  "email": "pelmadulla@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-kegalle",
+  "name": "Kegalle",
+  "district": "Kegalle",
+  "addr": "Kegalle Police Station, Kegalle, Kegalle District",
+  "tel": "035 388 9940",
+  "email": "kegalle@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-warakapola",
+  "name": "Warakapola",
+  "district": "Kegalle",
+  "addr": "Warakapola Police Station, Warakapola, Kegalle District",
+  "tel": "035 576 7641",
+  "email": "warakapola@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-aranayaka",
+  "name": "Aranayaka",
+  "district": "Kegalle",
+  "addr": "Aranayaka Police Station, Aranayaka, Kegalle District",
+  "tel": "035 681 6314",
+  "email": "aranayaka@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-dedigama",
+  "name": "Dedigama",
+  "district": "Kegalle",
+  "addr": "Dedigama Police Station, Dedigama, Kegalle District",
+  "tel": "035 799 7934",
+  "email": "dedigama@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-mawanella",
+  "name": "Mawanella",
+  "district": "Kegalle",
+  "addr": "Mawanella Police Station, Mawanella, Kegalle District",
+  "tel": "035 779 7477",
+  "email": "mawanella@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-rambukkana",
+  "name": "Rambukkana",
+  "district": "Kegalle",
+  "addr": "Rambukkana Police Station, Rambukkana, Kegalle District",
+  "tel": "035 568 9465",
+  "email": "rambukkana@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-pindeniya",
+  "name": "Pindeniya",
+  "district": "Kegalle",
+  "addr": "Pindeniya Police Station, Pindeniya, Kegalle District",
+  "tel": "035 683 1329",
+  "email": "pindeniya@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-hemmathagama",
+  "name": "Hemmathagama",
+  "district": "Kegalle",
+  "addr": "Hemmathagama Police Station, Hemmathagama, Kegalle District",
+  "tel": "035 696 1383",
+  "email": "hemmathagama@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-deraniyagala",
+  "name": "Deraniyagala",
+  "district": "Kegalle",
+  "addr": "Deraniyagala Police Station, Deraniyagala, Kegalle District",
+  "tel": "035 484 1537",
+  "email": "deraniyagala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-ruwanwella",
+  "name": "Ruwanwella",
+  "district": "Kegalle",
+  "addr": "Ruwanwella Police Station, Ruwanwella, Kegalle District",
+  "tel": "035 449 1209",
+  "email": "ruwanwella@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-yatiyantota",
+  "name": "Yatiyantota",
+  "district": "Kegalle",
+  "addr": "Yatiyantota Police Station, Yatiyantota, Kegalle District",
+  "tel": "035 360 1393",
+  "email": "yatiyantota@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-kithulgala",
+  "name": "Kithulgala",
+  "district": "Kegalle",
+  "addr": "Kithulgala Police Station, Kithulgala, Kegalle District",
+  "tel": "035 442 8584",
+  "email": "kithulgala@police.lk",
+  "active": true
+ },
+ {
+  "code": "kegalle-bulathkohupitiya",
+  "name": "Bulathkohupitiya",
+  "district": "Kegalle",
+  "addr": "Bulathkohupitiya Police Station, Bulathkohupitiya, Kegalle District",
+  "tel": "035 489 0809",
+  "email": "bulathkohupitiya@police.lk",
+  "active": true
+ }
+]

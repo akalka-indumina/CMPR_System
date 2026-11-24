@@ -6,7 +6,7 @@ import { Modal } from './components/ui/Primitives';
 import { Login } from './features/auth/Login';
 import { Register } from './features/auth/Register';
 import { RegistrationStatus } from './features/auth/RegistrationStatus';
-import { B1, B2, NAV, PORTAL_OF, RL, TODAY } from './lib/constants';
+import { B1, B2, NAV, PORTAL_OF, RL } from './lib/constants';
 import {
  initializeSharedAppData,
  loadAppData,
@@ -15,7 +15,8 @@ import {
  persistSharedAppData,
  saveSharedRegistrationDocuments,
 } from './lib/appData';
-import { createUniqueId } from './lib/helpers';
+import { createUniqueId, visibleNotification } from './lib/helpers';
+import * as api from './lib/api';
 import { PAGES } from './routes/pages';
 import { Ic } from './components/ui/Icon';
 import { NotificationPanel } from './features/shared/Notifications';
@@ -55,14 +56,14 @@ export default function App(){
  const isRegistrationStatus=statusIndex>=0&&parts.length>statusIndex;
  const isDashboard=Boolean(NAV[role]?.some(item=>item[0]===page));
  const view=isPublicLogin||isStaffLogin?'login':isRegister?'register':isRegistrationStatus?'registrationStatus':isDashboard?'app':'notFound';
- const[data,setData]=useState(loadAppData),[sharedDataReady,setSharedDataReady]=useState(false),[activeUser,setActiveUser]=useState(null),[sessionReady,setSessionReady]=useState(false),[registrationDocuments,setRegistrationDocuments]=useState({}),[registrationReviewId,setRegistrationReviewId]=useState(null),[theme,setTheme]=useState(getInitialTheme),[notificationOpen,setNotificationOpen]=useState(false),[m,setM]=useState(null),[tt,stt]=useState(null),[cf,scf]=useState(null),[sb,ssb]=useState(false);
+ const[data,setData]=useState(loadAppData),[complaints,setComplaints]=useState([]),[sharedDataReady,setSharedDataReady]=useState(false),[activeUser,setActiveUser]=useState(null),[sessionReady,setSessionReady]=useState(false),[registrationDocuments,setRegistrationDocuments]=useState({}),[registrationReviewId,setRegistrationReviewId]=useState(null),[theme,setTheme]=useState(getInitialTheme),[notificationOpen,setNotificationOpen]=useState(false),[m,setM]=useState(null),[tt,stt]=useState(null),[cf,scf]=useState(null),[sb,ssb]=useState(false);
  const notificationRef=useRef(null);
  useEffect(()=>{
   let mounted=true;
   initializeSharedAppData(loadAppData(),portal).then(sharedData=>{
    if(mounted){setData(sharedData);setSharedDataReady(true)}
   }).catch(error=>{
-   console.error('Shared demo data could not be initialized.',error);
+   console.error('Shared application data could not be initialized.',error);
    if(mounted)setSharedDataReady(true);
   });
   return()=>{mounted=false};
@@ -78,7 +79,7 @@ export default function App(){
     }
     reportedError=false;
    }catch(error){
-    if(mounted&&!reportedError)console.error('Shared demo data could not be refreshed.',error);
+    if(mounted&&!reportedError)console.error('Shared application data could not be refreshed.',error);
     reportedError=true;
    }
   };
@@ -97,13 +98,14 @@ export default function App(){
     const saved=window.sessionStorage.getItem(key);
     if(!saved)continue;
     const session=JSON.parse(saved);
+    if(!session?.token){window.sessionStorage.removeItem(key);continue}
     const accountRole=session?.role;
     const account=data.users.find(user=>user.id===session.id&&user.role===accountRole&&user.active&&user.passwordSalt&&user.passwordHash);
     const profiles=account?data[PROFILE_COLLECTIONS[account.role]]:[];
     const profile=account&&profiles.find(item=>item.id===account.profileId);
     if(profile&&(accountRole!=='citizen'||profile.status==='Approved')
      &&PORTAL_OF[accountRole]===(key===STAFF_SESSION_KEY?'staff':'public')){
-     restoredUser={role:accountRole,id:account.id};
+     restoredUser={role:accountRole,id:account.id,token:session.token};
      break;
     }
     window.sessionStorage.removeItem(key);
@@ -167,12 +169,26 @@ export default function App(){
  useEffect(()=>{
   if(!sharedDataReady)return;
   persistAppData(data);
-  persistSharedAppData(data).catch(error=>console.error('Shared demo data could not be saved.',error));
+  persistSharedAppData(data).catch(error=>console.error('Shared application data could not be saved.',error));
  },[data,sharedDataReady]);
+ const refreshComplaints=useCallback(async()=>{try{const list=await api.fetchComplaints();setComplaints(current=>JSON.stringify(current)===JSON.stringify(list)?current:list)}catch(error){console.error('Complaints could not be refreshed.',error)}},[]);
+ useEffect(()=>{
+  api.setUnauthorizedHandler(()=>{try{window.sessionStorage.removeItem(CITIZEN_SESSION_KEY);window.sessionStorage.removeItem(STAFF_SESSION_KEY)}catch(error){console.warn(error)}setActiveUser(null)});
+  return()=>api.setUnauthorizedHandler(null);
+ },[]);
+ useEffect(()=>{
+  api.setAuthToken(activeUser?.token||'');
+  if(!activeUser?.token){setComplaints([]);return undefined}
+  let mounted=true;
+  const load=async()=>{try{const list=await api.fetchComplaints();if(mounted)setComplaints(current=>JSON.stringify(current)===JSON.stringify(list)?current:list)}catch(error){if(error.status!==401)console.error('Complaints could not be loaded.',error)}};
+  load();
+  const timer=window.setInterval(load,2000);
+  return()=>{mounted=false;window.clearInterval(timer)};
+ },[activeUser?.token]);
  useEffect(()=>{if(typeof document!=='undefined')document.documentElement.dataset.theme=theme;try{window.localStorage.setItem(THEME_STORAGE_KEY,theme)}catch(error){console.warn('Theme preference could not be saved.',error)}},[theme]);
  useEffect(()=>{if(!notificationOpen)return;const closeOnOutside=event=>{if(!notificationRef.current?.contains(event.target))setNotificationOpen(false)};const closeOnEscape=event=>{if(event.key==='Escape')setNotificationOpen(false)};document.addEventListener('pointerdown',closeOnOutside);document.addEventListener('keydown',closeOnEscape);return()=>{document.removeEventListener('pointerdown',closeOnOutside);document.removeEventListener('keydown',closeOnEscape)}},[notificationOpen]);
  const setField=useCallback((key,update)=>setData(current=>{const value=typeof update=='function'?update(current[key]):update;return Object.is(value,current[key])?current:{...current,[key]:value}}),[]);
- const setC=useCallback(update=>setField('complaints',update),[setField]),setU=useCallback(update=>setField('users',update),[setField]),setCIT=useCallback(update=>setField('citizens',update),[setField]),setADM=useCallback(update=>setField('administrators',update),[setField]),setACC=useCallback(update=>setField('accounts',update),[setField]),setSTN=useCallback(update=>setField('stations',update),[setField]),setOFF=useCallback(update=>setField('officers',update),[setField]),setN=useCallback(update=>setField('notifications',update),[setField]),setAUD=useCallback(update=>setField('audit',update),[setField]),setRA=useCallback(update=>setField('registrationApplications',update),[setField]);
+ const setU=useCallback(update=>setField('users',update),[setField]),setCIT=useCallback(update=>setField('citizens',update),[setField]),setADM=useCallback(update=>setField('administrators',update),[setField]),setACC=useCallback(update=>setField('accounts',update),[setField]),setSTN=useCallback(update=>setField('stations',update),[setField]),setOFF=useCallback(update=>setField('officers',update),[setField]),setN=useCallback(update=>setField('notifications',update),[setField]),setAUD=useCallback(update=>setField('audit',update),[setField]),setRA=useCallback(update=>setField('registrationApplications',update),[setField]);
  const setCurrentProfile=useCallback(update=>setData(current=>{
   const account=current.users.find(item=>item.id===activeUser?.id);
   if(!account)return current;
@@ -187,17 +203,17 @@ export default function App(){
    [collection]:profiles.map(item=>item.id===account.profileId?profile:item),
   };
  }),[activeUser]);
- const C=data.complaints,USERS=data.users,CIT=data.citizens,STNS=data.stations,N=data.notifications,AUD=data.audit,RA=data.registrationApplications;
+ const C=complaints,USERS=data.users,CIT=data.citizens,STNS=data.stations,N=data.notifications,AUD=data.audit,RA=data.registrationApplications;
  const emailFor=(accountRole,profileId)=>USERS.find(item=>item.role===accountRole&&item.profileId===profileId)?.email||'';
- const ACC=data.accounts.map(item=>({...item,email:emailFor('station',item.id)}));
- const OFF=data.officers.map(item=>({...item,email:emailFor('officer',item.id)}));
+ const ACC=data.accounts.map(item=>{const stn=STNS.find(x=>x.code===item.stationCode);return {...item,district:stn?.district||item.district,tel:stn?.tel||item.tel||'',email:stn?.email||emailFor('station',item.id)}});
+ const OFF=data.officers.map(item=>{const stn=STNS.find(x=>x.code===item.stationCode);return {...item,district:stn?.district||item.district,email:emailFor('officer',item.id)}});
  const ADM=data.administrators.map(item=>({...item,email:emailFor('admin',item.id)}));
  const go0=r=>{const[a,b]=r.split('-');nav(a=='login'?'/':a=='register'?'/register':getRolePath(a,b));ssb(false);setM(null);setNotificationOpen(false)};
  const login=user=>{
   const key=user.role==='citizen'?CITIZEN_SESSION_KEY:STAFF_SESSION_KEY;
   try{
    window.sessionStorage.removeItem(user.role==='citizen'?STAFF_SESSION_KEY:CITIZEN_SESSION_KEY);
-   window.sessionStorage.setItem(key,JSON.stringify({role:user.role,id:user.id}));
+   window.sessionStorage.setItem(key,JSON.stringify({role:user.role,id:user.id,token:user.token}));
   }catch(error){
    console.error('Authentication session could not be saved.',error);
    toast('Could not establish a browser session. Please enable session storage and try again.','err');
@@ -206,7 +222,7 @@ export default function App(){
   setActiveUser(user);
   nav(getRoleHome(user.role),{replace:true});
  };
- const logout=()=>{
+ const logout=()=>{api.logout();
   const citizen=activeUser?.role==='citizen';
   try{
    window.sessionStorage.removeItem(citizen?CITIZEN_SESSION_KEY:STAFF_SESSION_KEY);
@@ -220,7 +236,6 @@ export default function App(){
  };
  const toast=(m,t)=>{stt({m,t});setTimeout(()=>stt(null),2600)};const notify=(r,m,extra={})=>setN(n=>[{id:createUniqueId('NTF'),role:r,m,...extra,read:false},...n]);
  const submitRegistration=async(application,files)=>{const submittedAt=application.submittedAt,resubmitted=Boolean(application.previousApplicationId),auditAction=resubmitted?'Citizen registration resubmitted':'Citizen registration submitted';await saveSharedRegistrationDocuments(application.id,files);setRA(current=>[application,...current]);setRegistrationDocuments(current=>({...current,[application.id]:files}));notify('admin',`New Citizen registration ${application.referenceNumber} awaits review.`);notify('citizen',`Registration application ${application.referenceNumber} submitted for review.`,{userId:application.applicantId});setAUD(current=>[{id:createUniqueId('ACT'),user:application.applicantId,userName:application.fullName,role:'Citizen Applicant',action:auditAction,desc:`${auditAction}: ${application.referenceNumber}`,dt:submittedAt,ip:'',applicantId:application.applicantId,applicantName:application.fullName,relatedReference:application.referenceNumber,reviewedBy:''},...current]);nav('/registration-status/'+application.referenceNumber)};
- const act=(id,s,n,x={},to)=>{setC(cs=>cs.map(c=>c.id==id?{...c,...x,status:s,hist:[...c.hist,[s,TODAY,n]]}:c));notify('citizen',id+' is now: '+s);to&&notify(to,id+' needs attention: '+s)};
  const wrap=h2=>h`<div>${h2}${tt&&h`<div className=${'fixed bottom-4 right-4 z-[60] px-4 py-2 rounded-lg text-sm shadow-lg '+(tt.t=='err'?'bg-red-600':'bg-green-600')+' text-white'}>${tt.m}</div>`}${cf&&h`<${Modal} t="Please confirm" close=${()=>scf(null)} w="max-w-sm"><p className="text-sm mb-4">${cf.m}</p><div className="flex justify-end gap-2"><button className=${B2} onClick=${()=>scf(null)}>Cancel</button><button className=${B1} onClick=${()=>{const f=cf.f;scf(null);f()}}>Confirm</button></div><//>`}</div>`;
  const reapplyRef=new URLSearchParams(search).get('reapply'),previousApplication=RA.find(application=>application.referenceNumber===reapplyRef&&application.status==='Rejected');
  if(!sharedDataReady)return h`<div className="min-h-screen flex items-center justify-center text-sm text-mu">Loading portal data...</div>`;
@@ -231,8 +246,23 @@ export default function App(){
  if(!sessionReady||!activeUser||activeUser.role!==role||PORTAL_OF[role]!==portal)return null;
  const authUser=USERS.find(item=>item.id===activeUser.id&&item.role===role),profileCollection=PROFILE_COLLECTIONS[role],profile=authUser&&data[profileCollection].find(item=>item.id===authUser.profileId),user=profile?{...profile,email:authUser.email}:null;
  if(!user)return null;
- const S={role,user,C,setC,OFF,setOFF,ACC,setACC,STN:STNS,setSTN,AUD,setAUD,N,setN,USERS,CIT,ADM,setU,setCIT,setADM,setProfile:setCurrentProfile,RA,setRA,registrationDocuments,setRegistrationDocuments,registrationReviewId,setRegistrationReviewId,setM,toast,notify,act,ask:(m,f)=>scf({m,f}),go:p=>go0(role+'-'+p)};
- const P=PAGES[role][page],unread=N.filter(n=>n.role==role&&(!n.userId||n.userId==user.id)&&!n.read).length;
+ const act=async(id,action,payload={},to)=>{
+  try{
+   const updated=await api.complaintAction(id,{action,...payload});
+   setComplaints(cs=>cs.map(c=>c.id===id?updated:c));
+   notify('citizen',id+' is now: '+updated.status,{complaintId:id});
+   if(to)notify(to,id+' needs attention: '+updated.status,{complaintId:id});
+   setAUD(cur=>[{id:createUniqueId('ACT'),user:user.id,userName:user.name,role:RL[role],action:'Complaint '+action.replace('_',' '),desc:id+': '+updated.status,dt:new Date().toISOString(),ip:''},...cur]);
+   toast(id+': '+updated.status);
+   return true;
+  }catch(error){
+   toast(error.message,'err');
+   if(error.status===404||error.status===409)refreshComplaints();
+   return false;
+  }
+ };
+ const S={role,user,C,setC:setComplaints,refreshComplaints,OFF,setOFF,ACC,setACC,STN:STNS,setSTN,AUD,setAUD,N,setN,USERS,CIT,ADM,setU,setCIT,setADM,setProfile:setCurrentProfile,RA,setRA,registrationDocuments,setRegistrationDocuments,registrationReviewId,setRegistrationReviewId,setM,toast,notify,act,ask:(m,f)=>scf({m,f}),go:p=>go0(role+'-'+p)};
+ const P=PAGES[role][page],unread=N.filter(n=>visibleNotification(n,role,user,C)&&!n.read).length;
  return wrap(h`<div className="min-h-screen flex">${sb&&h`<div className="fixed inset-0 bg-black/60 z-30 lg:hidden" onClick=${()=>ssb(false)}></div>`}
  <aside className=${'fixed lg:sticky top-0 h-screen z-40 w-64 shrink-0 bg-sb border-r border-bd flex flex-col transition-transform '+(sb?'':'-translate-x-full lg:translate-x-0')}><div className="p-4 flex items-center gap-2 border-b border-bd"><div className="w-8 h-8 rounded-lg bg-pr flex items-center justify-center"><${Ic} n="shield" s=${18}/></div><div className="text-xs font-semibold leading-tight">Police Complaint<br/>Management System</div></div><nav className="flex-1 overflow-y-auto p-2 space-y-1">${NAV[role].map(([k,l,i])=>h`<button key=${k} onClick=${()=>S.go(k)} className=${'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-left '+(k==page?'bg-pr text-white':'text-mu hover:bg-ip hover:text-tx')}><${Ic} n=${i}/>${l}</button>`)}</nav><button onClick=${logout} className="m-2 flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-mu hover:bg-ip"><${Ic} n="logout"/>Logout</button></aside>
  <div className="flex-1 min-w-0"><header className="sticky top-0 z-20 bg-bg/90 backdrop-blur border-b border-bd flex items-center justify-between px-4 py-3"><div className="flex items-center gap-3"><button className="lg:hidden p-1" onClick=${()=>ssb(true)}><${Ic} n="menu"/></button><div className="text-sm"><b>${user.name}</b> <span className="text-mu">\u00b7 ${RL[role]}</span></div></div><div className="flex items-center gap-1"><div className="relative" ref=${notificationRef}><button type="button" aria-label="Notifications" aria-expanded=${notificationOpen} aria-controls="notification-panel" title="Notifications" className="relative p-2 text-mu hover:text-tx rounded-lg hover:bg-ip" onClick=${()=>setNotificationOpen(open=>!open)}><${Ic} n="bell"/>${unread>0&&h`<span className="absolute -top-0.5 -right-0.5 bg-pr text-[10px] rounded-full w-4 h-4 flex items-center justify-center">${unread}</span>`}</button>${notificationOpen&&h`<${NotificationPanel} S=${S} onClose=${()=>setNotificationOpen(false)}/>`}</div><button type="button" aria-label=${theme==='dark'?'Switch to light mode':'Switch to dark mode'} title=${theme==='dark'?'Switch to light mode':'Switch to dark mode'} className="p-2 text-mu hover:text-tx rounded-lg hover:bg-ip" onClick=${()=>setTheme(current=>current==='dark'?'light':'dark')}><${Ic} n=${theme==='dark'?'sun':'moon'}/></button></div></header><main className="p-4 lg:p-6"><${P} S=${S}/></main></div>${m&&h`<${CM} S=${S} id=${m}/>`}</div>`)}

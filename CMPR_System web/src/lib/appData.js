@@ -1,4 +1,5 @@
 import { U0 } from '../data/users';
+import { authHeaders } from './api';
 import {
   REGISTRATION_STATUSES,
   SRI_LANKA_DISTRICTS,
@@ -27,7 +28,8 @@ const isEntityList = (value, fields) => Array.isArray(value)
   && value.every(item => hasStringFields(item, fields))
   && new Set(value.map(item => item.id || item.code)).size === value.length;
 const isUsers = value => Array.isArray(value)
-  && value.every(user => hasStringFields(user, ['id', 'email', 'role', 'profileId'])
+  && value.every(user => hasStringFields(user, user?.role === 'station' ? ['id', 'role', 'profileId'] : ['id', 'email', 'role', 'profileId'])
+    && typeof user.email === 'string'
     && ['admin', 'station', 'officer', 'citizen'].includes(user.role)
     && typeof user.active === 'boolean'
     && !Object.prototype.hasOwnProperty.call(user, 'password')
@@ -35,7 +37,8 @@ const isUsers = value => Array.isArray(value)
       || (typeof user.passwordSalt === 'string' && user.passwordSalt.length > 0
         && typeof user.passwordHash === 'string' && user.passwordHash.length > 0)))
   && new Set(value.map(user => user.id)).size === value.length
-  && new Set(value.map(user => user.email.trim().toLowerCase())).size === value.length;
+  && new Set(value.filter(user => user.role !== 'station').map(user => user.email.trim().toLowerCase())).size
+    === value.filter(user => user.role !== 'station').length;
 const isNotifications = value => Array.isArray(value)
   && value.every(item => hasStringFields(item, ['id', 'role', 'm']) && typeof item.read === 'boolean')
   && new Set(value.map(item => item.id)).size === value.length;
@@ -128,7 +131,7 @@ export function persistAppData(data) {
   try {
     window.localStorage.setItem(APP_DATA_STORAGE_KEY, JSON.stringify(data));
   } catch (error) {
-    console.error('Demo data could not be saved to localStorage.', error);
+    console.error('Application data could not be saved to localStorage.', error);
   }
 }
 
@@ -138,12 +141,12 @@ const SHARED_DOCUMENT_ENDPOINT = '/api/documents';
 async function sharedDataRequest(method, data) {
   const response = await fetch(SHARED_DATA_ENDPOINT, {
     method,
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
     body: JSON.stringify({ data }),
   });
   const result = await response.json();
   if (!response.ok) {
-    throw new Error(result.error || `Shared demo data request failed (${response.status}).`);
+    throw new Error(result.error || `Shared application data request failed (${response.status}).`);
   }
   return result.data;
 }
@@ -160,7 +163,7 @@ export async function loadSharedAppData() {
   if (response.status === 404) return null;
   const result = await response.json();
   if (!response.ok) {
-    throw new Error(result.error || `Shared demo data request failed (${response.status}).`);
+    throw new Error(result.error || `Shared application data request failed (${response.status}).`);
   }
   return result.data;
 }
@@ -185,7 +188,7 @@ export async function saveSharedRegistrationDocuments(applicationId, files) {
   }
   const response = await fetch(`${SHARED_DOCUMENT_ENDPOINT}/${encodeURIComponent(applicationId)}`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', ...authHeaders() },
     body: JSON.stringify({ documents }),
   });
   const result = await response.json();
@@ -195,7 +198,7 @@ export async function saveSharedRegistrationDocuments(applicationId, files) {
 }
 
 export async function loadSharedRegistrationDocuments(applicationId) {
-  const response = await fetch(`${SHARED_DOCUMENT_ENDPOINT}/${encodeURIComponent(applicationId)}`);
+  const response = await fetch(`${SHARED_DOCUMENT_ENDPOINT}/${encodeURIComponent(applicationId)}`, { headers: authHeaders() });
   if (response.status === 404) return null;
   const result = await response.json();
   if (!response.ok) {
@@ -207,6 +210,7 @@ export async function loadSharedRegistrationDocuments(applicationId) {
 export async function deleteSharedRegistrationDocuments(applicationId) {
   const response = await fetch(`${SHARED_DOCUMENT_ENDPOINT}/${encodeURIComponent(applicationId)}`, {
     method: 'DELETE',
+    headers: authHeaders(),
   });
   const result = await response.json();
   if (!response.ok) {

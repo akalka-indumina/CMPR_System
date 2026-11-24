@@ -4,6 +4,7 @@ import { h } from '../../lib/h';
 import { Fld } from '../../components/ui/Primitives';
 import { B1, INP, PORTALS, RL } from '../../lib/constants';
 import { verifyPassword } from '../../lib/credentials';
+import * as api from '../../lib/api';
 
 export function Login({
   go,
@@ -15,10 +16,8 @@ export function Login({
   toast
 }) {
   const P = PORTALS[portal] || PORTALS.staff;
-  const first = P.roles[0];
-
-  const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState(users.find(user => user.role === first && user.active)?.email || '');
+    const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [application, setApplication] = useState(null);
@@ -30,38 +29,18 @@ export function Login({
     setApplication(null);
 
     try {
-      const candidates = users.filter(user => P.roles.includes(user.role) && user.active);
-
       const normalizedEmail = email.trim().toLowerCase();
-      let matchedAccount = null;
 
-      for (const account of candidates) {
-        const identifiers = [
-          account.email,
-          account.id
-        ]
-          .filter(Boolean)
-          .map(identifier => identifier.trim().toLowerCase());
-
-        if (
-          identifiers.includes(normalizedEmail) &&
-          await verifyPassword(password, account)
-        ) {
-          matchedAccount = account;
-          break;
-        }
-      }
-
-      if (matchedAccount) {
+      // The SERVER checks the password and gives back a session token.
+      try {
+        const session = await api.login(email.trim(), password, portal);
         setError('');
-        toast('Signed in as ' + RL[matchedAccount.role] + '.');
-
-        onLogin({
-          role: matchedAccount.role,
-          id: matchedAccount.id
-        });
-
+        toast('Signed in as ' + RL[session.user.role] + '.');
+        onLogin({ role: session.user.role, id: session.user.id, token: session.token });
         return;
+      } catch (serverError) {
+        // 401 = wrong credentials -> continue and check for a pending citizen application
+        if (!(serverError instanceof api.ApiError) || serverError.status !== 401) throw serverError;
       }
 
       let matchingApplication = null;
@@ -99,8 +78,8 @@ export function Login({
         return;
       }
 
-      setError('Incorrect email or password.');
-      toast('Incorrect email or password.', 'err');
+      setError('Incorrect credentials. Check your sign-in name and password.');
+      toast('Incorrect credentials. Check your sign-in name and password.', 'err');
 
     } catch (loginError) {
       const message =
@@ -235,7 +214,7 @@ export function Login({
 
               <!-- USERNAME -->
 
-              <${Fld} l="Username or Email">
+              <${Fld} l=${portal === 'staff' ? 'Email or Station Account ID' : 'Email'}>
 
                 <input
                   className=${INP}
@@ -318,7 +297,7 @@ export function Login({
                   type="button"
                   className="text-red-400 hover:text-red-300"
                   onClick=${() =>
-                    alert('Demo: password recovery requires a secure backend.')}
+                    alert('Password recovery is not available online. Please contact your system administrator.')}
                 >
                   Forgot password?
                 </button>
