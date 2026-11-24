@@ -21,6 +21,12 @@ npm run build    # production build in dist/
 | Public Citizen Portal | `http://localhost:5173/` | Citizen |
 | Police Staff Portal | `http://localhost:5174/` | Super Administrator, Police Station Account, Police Officer |
 
+## Sinhala interface
+
+Use the **සිංහල / English** button to switch the interface language. Sinhala labels are requested from MyMemory's free public API only when needed; no API account or API key is required. The app keeps returned translations in memory only and saves just the language preference. Requests are restricted to a fixed allowlist of interface text, so user names, complaints, and form values are not sent for translation. The browser contacts MyMemory directly, so the service sees the visitor's IP address.
+
+MyMemory's anonymous quota is 5,000 characters per day and its API accepts up to 500 bytes per request. MyMemory's [terms](https://mymemory.translated.net/terms-and-conditions) say submitted text is retained long-term, so only fixed interface text is sent. See its [usage limits](https://mymemory.translated.net/doc/usagelimits.php). If the quota is reached or the service is unavailable, remaining text stays in English. Only phrases listed in `src/lib/uiEnglishText.js` are eligible; add new fixed UI phrases there when the interface changes. Machine translations may be imperfect.
+
 Citizen applications start at `/register`; application status is available at `/registration-status/<reference>` on port 5173. New applicants remain pending until a Super Administrator reviews and approves the application; rejected applicants can correct and resubmit it. Staff dashboard routes remain under `/staff/<role>/<page>` and Citizen routes under `/citizen/<page>`, e.g. `/staff/admin/dash`, `/staff/station/validation`, `/staff/officer/mine`, `/citizen/submit`. These routes are protected by the portal mode and do not expose the other portal's login or registration UI.
 
 The two login flows verify credentials only against their own account types. Approved Citizens can sign in only on port 5173; staff roles are resolved from the verified account only on port 5174. Sessions use browser `sessionStorage` and remain isolated by port. For development, a Vite middleware bridge shares the existing app data between both origins through `node_modules/.cache/pcms-demo/shared-data.json`; each portal also keeps its localStorage cache. The bridge initializes from existing local data when first opened and synchronizes updates while both portals are running.

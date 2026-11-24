@@ -207,7 +207,7 @@ export function Login({
                 </h2>
 
                 <p className="text-slate-300 text-sm mt-2">
-                  ${P.sub}. Sign in to continue.
+                  <span>${P.sub}</span>. <span>Sign in to continue.</span>
                 </p>
 
               </div>
